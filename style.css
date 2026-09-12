@@ -1,0 +1,51 @@
+/*
+Theme Name: FLUFF Sleepwear
+Theme URI: https://vitaldc.com
+Author: Mostafa Saad
+Author URI: https://vitaldc.com
+Description: Premium slow-luxury sleepwear WooCommerce theme crafted for FLUFF Sleepwear by Mostafa Saad (vitaldc.com).
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: fluff
+Tags: e-commerce, woocommerce, luxury, sleepwear, tailwind, responsive-layout
+*/
+
+/* Base CSS overrides if needed */
+@layer base {
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior-y: none;
+    font-family: 'Manrope', sans-serif;
+    background-color: #fdf9f3;
+    color: #1c1c18;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
