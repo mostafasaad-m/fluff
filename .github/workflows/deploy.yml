@@ -23,6 +23,6 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           key: ${{ secrets.SERVER_KEY }}
           port: ${{ secrets.SERVER_PORT || 22 }}
-          source: "."
+          source: "*,!scratch,!.*"
           target: "/var/www/qamareen/wp-content/themes/fluff"
           overwrite: true
