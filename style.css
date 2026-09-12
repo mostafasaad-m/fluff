@@ -36,10 +36,11 @@ Tags: e-commerce, woocommerce, luxury, sleepwear, tailwind, responsive-layout
     overscroll-behavior-y: none;
     font-family: 'Manrope', sans-serif;
     background-color: #F8F6EF;
-    color: rgba(31, 47, 79, 0.85);
+    color: rgba(31, 47, 79, 0.88);
   }
   h1, h2, h3, h4, h5, h6 {
     color: #1F2F4F;
+    font-weight: 700;
   }
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -53,6 +54,43 @@ Tags: e-commerce, woocommerce, luxury, sleepwear, tailwind, responsive-layout
   main > :last-child {
     margin-bottom: 0 !important;
   }
+}
+
+/* Strict Logo Sizing Limits across all pages */
+.custom-logo-link {
+  display: inline-flex;
+  align-items: center;
+  max-height: 2.25rem;
+}
+
+.custom-logo,
+.custom-logo-link img,
+header img,
+header .custom-logo {
+  max-height: 2.25rem !important;
+  height: 2.25rem !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+/* High Contrast Title Vision & Typography */
+.text-high-contrast {
+  color: #1F2F4F !important;
+  font-weight: 700 !important;
+}
+
+.hero-text-shadow {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.header-title-badge {
+  background-color: rgba(248, 246, 239, 0.95);
+  color: #1F2F4F;
+  border: 1px solid rgba(183, 199, 217, 0.6);
+  padding: 0.25rem 0.85rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  box-shadow: 0 1px 4px rgba(31, 47, 79, 0.06);
 }
 
 ::-webkit-scrollbar {
