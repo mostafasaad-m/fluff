@@ -60,7 +60,7 @@ $is_preorder = ( $origin === 'preorder' );
         <!-- Product Title & Info -->
         <div class="space-y-1">
             <div class="flex items-center justify-between text-xs text-[#D4B586] font-label-caps uppercase font-bold">
-                <span><?php echo esc_html( wc_get_product_category_list( $product->get_id(), ', ', '', '' ) ?: 'FLUFF Sleepwear' ); ?></span>
+                <span><?php echo wp_kses_post( wc_get_product_category_list( $product->get_id(), ', ', '', '' ) ?: 'FLUFF Sleepwear' ); ?></span>
                 <?php if ( $rating_html = wc_get_rating_html( $product->get_average_rating() ) ) : ?>
                     <div class="flex items-center gap-0.5 text-[#D4B586]">
                         <span class="material-symbols-outlined text-[14px]">star</span>
