@@ -100,7 +100,6 @@ function fluff_auto_create_pages() {
                 update_post_meta( $page_id, '_wp_page_template', $p['template'] );
             }
         } else {
-            // Ensure template assignment
             update_post_meta( $existing->ID, '_wp_page_template', $p['template'] );
         }
     }
@@ -116,7 +115,6 @@ function fluff_customize_register( $wp_customize ) {
         'priority' => 30,
     ) );
 
-    // WhatsApp Concierge Number
     $wp_customize->add_setting( 'fluff_whatsapp', array(
         'default'           => '201000000000',
         'sanitize_callback' => 'sanitize_text_field',
@@ -127,7 +125,6 @@ function fluff_customize_register( $wp_customize ) {
         'type'        => 'text',
     ) );
 
-    // Top Announcement Text
     $wp_customize->add_setting( 'fluff_announcement_text', array(
         'default'           => 'Rest • Dream • Belong | Cairo & Istanbul Express Delivery | Free Sterling Gift on orders over 1500 EGP',
         'sanitize_callback' => 'sanitize_text_field',
@@ -138,7 +135,6 @@ function fluff_customize_register( $wp_customize ) {
         'type'        => 'text',
     ) );
 
-    // Cairo Delivery Days
     $wp_customize->add_setting( 'fluff_cairo_delivery', array(
         'default'           => '2–4 business days',
         'sanitize_callback' => 'sanitize_text_field',
@@ -149,7 +145,6 @@ function fluff_customize_register( $wp_customize ) {
         'type'        => 'text',
     ) );
 
-    // Istanbul Delivery Days
     $wp_customize->add_setting( 'fluff_istanbul_delivery', array(
         'default'           => '10–12 business days',
         'sanitize_callback' => 'sanitize_text_field',
@@ -160,7 +155,6 @@ function fluff_customize_register( $wp_customize ) {
         'type'        => 'text',
     ) );
 
-    // Complimentary Gift Name
     $wp_customize->add_setting( 'fluff_gift_title', array(
         'default'           => 'Solid 925 Sterling Crescent Moon Pendant',
         'sanitize_callback' => 'sanitize_text_field',
@@ -183,59 +177,41 @@ function fluff_scripts() {
 
     wp_enqueue_script( 'fluff-tailwind-cdn', 'https://cdn.tailwindcss.com', array(), '3.4.0', false );
 
+    // Exact Brand Palette Configured in Tailwind
     $tailwind_config = "
     tailwind.config = {
         darkMode: 'class',
         theme: {
             extend: {
                 colors: {
-                    'secondary-container': '#fedeb2',
-                    'tertiary-fixed': '#fddbd3',
-                    'secondary-fixed-dim': '#e0c298',
+                    'header-bg': '#F8F6EF',
+                    'primary': '#1F2F4F',
                     'on-primary': '#ffffff',
-                    'primary': '#021229',
-                    'on-background': '#1c1c18',
-                    'on-tertiary': '#ffffff',
-                    'surface-variant': '#e6e2dc',
-                    'on-error': '#ffffff',
-                    'on-surface-variant': '#44474d',
-                    'secondary': '#725b38',
-                    'surface-bright': '#fdf9f3',
-                    'inverse-surface': '#31302d',
-                    'on-tertiary-fixed': '#291712',
-                    'on-secondary-fixed': '#281800',
+                    'primary-container': '#1F2F4F',
+                    'secondary': '#D4B586',
+                    'on-secondary': '#1F2F4F',
+                    'secondary-container': '#D4B586',
+                    'on-secondary-container': '#1F2F4F',
+                    'surface': '#F8F6EF',
+                    'surface-bright': '#F8F6EF',
+                    'surface-dim': '#EFECE2',
+                    'surface-container': '#F4F0E6',
+                    'surface-container-low': '#F8F6EF',
                     'surface-container-lowest': '#ffffff',
-                    'on-secondary-container': '#78603e',
-                    'background': '#fdf9f3',
-                    'on-tertiary-fixed-variant': '#58413c',
-                    'on-primary-container': '#808eab',
-                    'error': '#ba1a1a',
-                    'surface-container': '#f1ede7',
-                    'primary-container': '#18273f',
-                    'on-secondary-fixed-variant': '#584323',
-                    'error-container': '#ffdad6',
-                    'surface-container-high': '#ebe8e2',
-                    'tertiary': '#1e0e09',
-                    'surface-dim': '#dddad4',
-                    'outline': '#75777e',
-                    'inverse-primary': '#b8c7e6',
-                    'on-surface': '#1c1c18',
-                    'on-error-container': '#93000a',
-                    'primary-fixed-dim': '#b8c7e6',
-                    'surface-container-highest': '#e6e2dc',
-                    'surface': '#fdf9f3',
-                    'on-tertiary-container': '#a48780',
-                    'tertiary-container': '#35221d',
-                    'on-primary-fixed': '#0c1c33',
-                    'secondary-fixed': '#fedeb2',
-                    'outline-variant': '#c5c6ce',
-                    'on-primary-fixed-variant': '#394761',
-                    'tertiary-fixed-dim': '#e0bfb7',
-                    'surface-container-low': '#f7f3ed',
-                    'surface-tint': '#505f7a',
-                    'on-secondary': '#ffffff',
-                    'primary-fixed': '#d6e3ff',
-                    'inverse-on-surface': '#f4f0ea'
+                    'surface-container-high': '#EAE5D8',
+                    'on-surface': '#1F2F4F',
+                    'on-surface-variant': 'rgba(31, 47, 79, 0.85)',
+                    'outline': '#B7C7D9',
+                    'outline-variant': '#B7C7D9',
+                    'ready-badge': '#647A96',
+                    'on-ready-badge': '#ffffff',
+                    'preorder-badge': '#D8B4C1',
+                    'on-preorder-badge': '#1F2F4F',
+                    'winter-blue': '#1F2F4F',
+                    'summer-mauve': '#D8B4C1',
+                    'luxury-gold': '#D4B586',
+                    'tertiary-fixed': '#D8B4C1',
+                    'on-tertiary-fixed': '#1F2F4F'
                 },
                 fontFamily: {
                     'body-lg': ['Manrope', 'sans-serif'],

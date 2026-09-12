@@ -11,7 +11,21 @@ Text Domain: fluff
 Tags: e-commerce, woocommerce, luxury, sleepwear, tailwind, responsive-layout
 */
 
-/* Base CSS overrides if needed */
+:root {
+  --color-header-bg: #F8F6EF;
+  --color-heading-text: #1F2F4F;
+  --color-normal-text: rgba(31, 47, 79, 0.85);
+  --color-ready-stock-bg: #647A96;
+  --color-ready-stock-text: #ffffff;
+  --color-preorder-bg: #D8B4C1;
+  --color-preorder-text: #1F2F4F;
+  --color-winter-blue: #1F2F4F;
+  --color-summer-mauve: #D8B4C1;
+  --color-border-card: #B7C7D9;
+  --color-border-alt: #AA9B8C;
+  --color-luxury-gold: #D4B586;
+}
+
 @layer base {
   html, body {
     width: 100%;
@@ -21,8 +35,11 @@ Tags: e-commerce, woocommerce, luxury, sleepwear, tailwind, responsive-layout
   body {
     overscroll-behavior-y: none;
     font-family: 'Manrope', sans-serif;
-    background-color: #fdf9f3;
-    color: #1c1c18;
+    background-color: #F8F6EF;
+    color: rgba(31, 47, 79, 0.85);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #1F2F4F;
   }
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -48,4 +65,27 @@ Tags: e-commerce, woocommerce, luxury, sleepwear, tailwind, responsive-layout
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Custom Brand Utility Classes */
+.bg-header-surface {
+  background-color: #F8F6EF;
+  color: #1F2F4F;
+}
+.badge-ready-stock {
+  background-color: #647A96;
+  color: #ffffff;
+}
+.badge-preorder {
+  background-color: #D8B4C1;
+  color: #1F2F4F;
+}
+.border-theme-card {
+  border-color: #B7C7D9;
+}
+.text-luxury-gold {
+  color: #D4B586;
+}
+.bg-luxury-gold {
+  background-color: #D4B586;
 }
