@@ -65,6 +65,49 @@ function fluff_setup() {
 add_action( 'after_setup_theme', 'fluff_setup' );
 
 /**
+ * Automatically create custom template pages if they do not exist yet.
+ */
+function fluff_auto_create_pages() {
+    $pages_to_create = array(
+        array(
+            'title'    => 'Shipping & Luxury Packaging',
+            'slug'     => 'shipping-packaging',
+            'template' => 'template-shipping-packaging.php',
+        ),
+        array(
+            'title'    => 'Sizing & Fit Advisor',
+            'slug'     => 'sizing-fit-advisor',
+            'template' => 'template-sizing-fit-advisor.php',
+        ),
+        array(
+            'title'    => 'Winter Special Edit',
+            'slug'     => 'category-special-collection',
+            'template' => 'template-category-special.php',
+        ),
+    );
+
+    foreach ( $pages_to_create as $p ) {
+        $existing = get_page_by_path( $p['slug'] );
+        if ( ! $existing ) {
+            $page_id = wp_insert_post( array(
+                'post_title'   => $p['title'],
+                'post_name'    => $p['slug'],
+                'post_status'  => 'publish',
+                'post_type'    => 'page',
+                'post_content' => '',
+            ) );
+            if ( $page_id && ! is_wp_error( $page_id ) ) {
+                update_post_meta( $page_id, '_wp_page_template', $p['template'] );
+            }
+        } else {
+            // Ensure template assignment
+            update_post_meta( $existing->ID, '_wp_page_template', $p['template'] );
+        }
+    }
+}
+add_action( 'init', 'fluff_auto_create_pages' );
+
+/**
  * Register Live Theme Variables in WordPress Customizer
  */
 function fluff_customize_register( $wp_customize ) {
