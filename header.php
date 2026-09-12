@@ -10,10 +10,10 @@
 
 <!-- Global Fixed Top Navigation Header -->
 <header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
-    <!-- Announcement Bar -->
+    <!-- Announcement Bar (Live Managed via Customizer) -->
     <div class="bg-primary-container text-surface px-margin-mobile py-1 text-center overflow-hidden">
         <p class="font-label-caps text-label-caps text-surface uppercase tracking-widest truncate">
-            Rest • Dream • Belong | Cairo &amp; Istanbul Express Delivery | Free Sterling Gift on orders over 1500 EGP
+            <?php echo esc_html( fluff_get_option('fluff_announcement_text', 'Rest • Dream • Belong | Cairo & Istanbul Express Delivery | Free Sterling Gift on orders over 1500 EGP') ); ?>
         </p>
     </div>
 

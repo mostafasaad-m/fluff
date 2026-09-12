@@ -3,8 +3,20 @@
  * FLUFF Sleepwear Theme Footer
  * Designed & Developed by Mostafa Saad (vitaldc.com)
  */
+
+$wa_phone = fluff_get_option( 'fluff_whatsapp', '201000000000' );
+$wa_url   = 'https://wa.me/' . preg_replace( '/[^0-9]/', '', $wa_phone );
 ?>
 </main><!-- /main -->
+
+<!-- Floating Live WhatsApp Concierge Button -->
+<aside class="fixed bottom-6 right-4 z-40 pointer-events-auto pb-safe">
+    <a class="flex items-center gap-2 bg-[#25D366] text-white px-4 py-2.5 rounded-full shadow-[0_8px_24px_-2px_rgba(37,211,102,0.35)] hover:bg-[#20ba59] active:scale-95 transition-all duration-200" href="<?php echo esc_url( $wa_url ); ?>" rel="noopener noreferrer" target="_blank">
+        <span class="material-symbols-outlined text-[20px]">chat</span>
+        <span class="font-body-md text-body-md font-semibold tracking-normal text-white">Concierge</span>
+        <span class="material-symbols-outlined text-[16px]">arrow_forward_ios</span>
+    </a>
+</aside>
 
 <!-- Global Editorial Footer -->
 <footer class="bg-primary text-surface pt-12 pb-24 px-margin-mobile relative overflow-hidden">
@@ -23,11 +35,11 @@
             <div class="flex items-center gap-3">
                 <div class="px-3.5 py-1.5 rounded-full bg-primary-container text-secondary-container font-label-caps text-label-caps uppercase flex items-center gap-1.5">
                     <span class="material-symbols-outlined text-[14px]">local_shipping</span>
-                    <span>Cairo Express (2-4d)</span>
+                    <span>Cairo Express (<?php echo esc_html( fluff_get_option('fluff_cairo_delivery', '2-4d') ); ?>)</span>
                 </div>
                 <div class="px-3.5 py-1.5 rounded-full bg-primary-container text-tertiary-fixed font-label-caps text-label-caps uppercase flex items-center gap-1.5">
                     <span class="material-symbols-outlined text-[14px]">flight_takeoff</span>
-                    <span>Istanbul Special (10-12d)</span>
+                    <span>Istanbul Special (<?php echo esc_html( fluff_get_option('fluff_istanbul_delivery', '10-12d') ); ?>)</span>
                 </div>
             </div>
         </div>
@@ -49,7 +61,7 @@
             <div class="flex flex-col gap-2">
                 <span class="font-label-caps text-label-caps text-secondary-fixed uppercase tracking-wider font-bold">Customer Care</span>
                 <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : '#' ); ?>" class="hover:text-surface transition-colors">My Orders &amp; Account</a>
-                <a href="https://wa.me/201000000000" target="_blank" class="hover:text-surface transition-colors flex items-center gap-1">
+                <a href="<?php echo esc_url( $wa_url ); ?>" target="_blank" class="hover:text-surface transition-colors flex items-center gap-1">
                     <span class="material-symbols-outlined text-[16px] text-[#25D366]">chat</span> WhatsApp Concierge
                 </a>
             </div>
@@ -73,10 +85,8 @@
 
 <!-- Slide-Over WooCommerce Cart Drawer Modal -->
 <div id="fluffCartDrawer" class="fixed inset-0 z-50 transition-all duration-300 transform translate-x-full pointer-events-none">
-    <!-- Backdrop -->
     <div class="absolute inset-0 bg-primary/40 backdrop-blur-sm close-cart-btn"></div>
     <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-surface shadow-2xl flex flex-col justify-between z-10">
-        <!-- Cart Header -->
         <div class="p-4 border-b border-surface-variant flex items-center justify-between bg-surface-bright">
             <div class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-secondary text-[22px]">shopping_bag</span>
@@ -87,7 +97,6 @@
             </button>
         </div>
 
-        <!-- Cart Items Container -->
         <div class="flex-1 overflow-y-auto p-4 space-y-4">
             <?php
             if ( function_exists('WC') && WC()->cart && ! WC()->cart->is_empty() ) :
@@ -140,7 +149,6 @@
             <?php endif; ?>
         </div>
 
-        <!-- Cart Footer / Summary -->
         <div class="p-4 border-t border-surface-variant bg-surface-container-low space-y-3">
             <div class="flex items-center justify-between text-body-md font-body-md text-primary font-semibold">
                 <span>Subtotal</span>

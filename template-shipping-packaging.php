@@ -6,6 +6,9 @@
  */
 
 get_header();
+
+$wa_phone = fluff_get_option( 'fluff_whatsapp', '201000000000' );
+$wa_url   = 'https://wa.me/' . preg_replace( '/[^0-9]/', '', $wa_phone );
 ?>
 
 <div class="px-margin-mobile pt-3 pb-12 max-w-4xl mx-auto space-y-6">
@@ -57,7 +60,9 @@ get_header();
                 <h3 class="font-headline-sm text-headline-sm text-primary font-semibold">Ready Stock (Cairo Hub)</h3>
             </div>
             <p class="font-body-sm text-body-sm text-on-surface-variant">Dispatched within 24 hours directly from Cairo warehouse to all Egyptian governorates.</p>
-            <span class="inline-block px-3 py-1 bg-surface-container rounded-full font-label-caps text-label-caps text-secondary font-bold">2–4 Business Days</span>
+            <span class="inline-block px-3 py-1 bg-surface-container rounded-full font-label-caps text-label-caps text-secondary font-bold">
+                <?php echo esc_html( fluff_get_option('fluff_cairo_delivery', '2-4 Business Days') ); ?>
+            </span>
         </div>
 
         <!-- Istanbul Pre-Order -->
@@ -67,7 +72,27 @@ get_header();
                 <h3 class="font-headline-sm text-headline-sm text-primary font-semibold">Pre-Order (Istanbul Atelier)</h3>
             </div>
             <p class="font-body-sm text-body-sm text-on-surface-variant">Hand-cut and crafted in our Bosphorus ateliers, then flown express to your Cairo address.</p>
-            <span class="inline-block px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full font-label-caps text-label-caps font-bold">10–12 Business Days</span>
+            <span class="inline-block px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full font-label-caps text-label-caps font-bold">
+                <?php echo esc_html( fluff_get_option('fluff_istanbul_delivery', '10-12 Business Days') ); ?>
+            </span>
+        </div>
+    </div>
+
+    <!-- Live Assistance Section -->
+    <div class="bg-surface-container-high/60 rounded-2xl p-6 text-center space-y-3">
+        <span class="material-symbols-outlined text-secondary text-[32px]">support_agent</span>
+        <h4 class="font-headline-sm text-headline-sm text-primary font-semibold">Need Exchange or Sizing Guidance?</h4>
+        <p class="font-body-sm text-body-sm text-on-surface-variant max-w-lg mx-auto">
+            Our Istanbul-Cairo styling team is standing by to inspect measurements before parcel departure.
+        </p>
+        <p class="font-arabic-sub text-arabic-sub text-secondary font-medium" dir="rtl">
+            فريق المساعدة متواجد للإجابة عن استفسارات المقاسات وخدمات التبديل
+        </p>
+        <div class="pt-2">
+            <a class="inline-flex items-center justify-center gap-2 bg-primary text-on-primary py-3 px-6 rounded-full font-label-md text-label-md hover:bg-primary/90 transition-all shadow-md active:scale-95" href="<?php echo esc_url( $wa_url ); ?>" target="_blank" rel="noopener noreferrer">
+                <span class="material-symbols-outlined text-[18px] text-[#25D366]">chat</span>
+                <span>Contact Fluff Concierge on WhatsApp</span>
+            </a>
         </div>
     </div>
 </div>

@@ -13,19 +13,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Helper to get theme mod options with fallback default.
+ */
+function fluff_get_option( $key, $default = '' ) {
+    return get_theme_mod( $key, $default );
+}
+
+/**
  * Sets up theme defaults and registers support for various WordPress features.
  */
 function fluff_setup() {
-    // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );
-
-    // Let WordPress manage the document title.
     add_theme_support( 'title-tag' );
-
-    // Enable support for Post Thumbnails on posts and pages.
     add_theme_support( 'post-thumbnails' );
 
-    // Custom Logo support
     add_theme_support( 'custom-logo', array(
         'height'      => 80,
         'width'       => 240,
@@ -33,13 +34,11 @@ function fluff_setup() {
         'flex-width'  => true,
     ) );
 
-    // Register navigation menus
     register_nav_menus( array(
         'primary' => __( 'Primary Navigation', 'fluff' ),
         'footer'  => __( 'Footer Navigation', 'fluff' ),
     ) );
 
-    // HTML5 markup support
     add_theme_support( 'html5', array(
         'search-form',
         'comment-form',
@@ -50,7 +49,6 @@ function fluff_setup() {
         'script',
     ) );
 
-    // WooCommerce Support
     add_theme_support( 'woocommerce', array(
         'thumbnail_image_width' => 600,
         'single_image_width'    => 800,
@@ -67,18 +65,81 @@ function fluff_setup() {
 add_action( 'after_setup_theme', 'fluff_setup' );
 
 /**
+ * Register Live Theme Variables in WordPress Customizer
+ */
+function fluff_customize_register( $wp_customize ) {
+    $wp_customize->add_section( 'fluff_live_settings', array(
+        'title'    => __( 'FLUFF Live Store Variables', 'fluff' ),
+        'priority' => 30,
+    ) );
+
+    // WhatsApp Concierge Number
+    $wp_customize->add_setting( 'fluff_whatsapp', array(
+        'default'           => '201000000000',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'fluff_whatsapp', array(
+        'label'       => __( 'WhatsApp Concierge Phone (with country code)', 'fluff' ),
+        'section'     => 'fluff_live_settings',
+        'type'        => 'text',
+    ) );
+
+    // Top Announcement Text
+    $wp_customize->add_setting( 'fluff_announcement_text', array(
+        'default'           => 'Rest • Dream • Belong | Cairo & Istanbul Express Delivery | Free Sterling Gift on orders over 1500 EGP',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'fluff_announcement_text', array(
+        'label'       => __( 'Header Announcement Bar Text', 'fluff' ),
+        'section'     => 'fluff_live_settings',
+        'type'        => 'text',
+    ) );
+
+    // Cairo Delivery Days
+    $wp_customize->add_setting( 'fluff_cairo_delivery', array(
+        'default'           => '2–4 business days',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'fluff_cairo_delivery', array(
+        'label'       => __( 'Cairo Delivery Timeframe', 'fluff' ),
+        'section'     => 'fluff_live_settings',
+        'type'        => 'text',
+    ) );
+
+    // Istanbul Delivery Days
+    $wp_customize->add_setting( 'fluff_istanbul_delivery', array(
+        'default'           => '10–12 business days',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'fluff_istanbul_delivery', array(
+        'label'       => __( 'Istanbul Pre-Order Delivery Timeframe', 'fluff' ),
+        'section'     => 'fluff_live_settings',
+        'type'        => 'text',
+    ) );
+
+    // Complimentary Gift Name
+    $wp_customize->add_setting( 'fluff_gift_title', array(
+        'default'           => 'Solid 925 Sterling Crescent Moon Pendant',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'fluff_gift_title', array(
+        'label'       => __( 'Complimentary Gift Title', 'fluff' ),
+        'section'     => 'fluff_live_settings',
+        'type'        => 'text',
+    ) );
+}
+add_action( 'customize_register', 'fluff_customize_register' );
+
+/**
  * Enqueue scripts and styles.
  */
 function fluff_scripts() {
-    // Google Fonts
     wp_enqueue_style( 'fluff-google-fonts-manrope', 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap', array(), null );
     wp_enqueue_style( 'fluff-google-fonts-playfair', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap', array(), null );
     wp_enqueue_style( 'fluff-material-symbols', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200', array(), null );
 
-    // Enqueue Tailwind CDN script
     wp_enqueue_script( 'fluff-tailwind-cdn', 'https://cdn.tailwindcss.com', array(), '3.4.0', false );
 
-    // Inject Tailwind Config Inline
     $tailwind_config = "
     tailwind.config = {
         darkMode: 'class',
@@ -164,10 +225,7 @@ function fluff_scripts() {
     ";
     wp_add_inline_script( 'fluff-tailwind-cdn', $tailwind_config, 'before' );
 
-    // Enqueue Theme Main Stylesheet
     wp_enqueue_style( 'fluff-theme-style', get_stylesheet_uri(), array(), '1.0.0' );
-
-    // Theme JS
     wp_enqueue_script( 'fluff-theme-js', get_template_directory_uri() . '/assets/js/fluff-theme.js', array(), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'fluff_scripts' );
@@ -195,13 +253,11 @@ function fluff_get_product_origin( $product ) {
     if ( ! $product ) return 'ready';
     $meta = get_post_meta( $product->get_id(), '_fluff_stock_type', true );
     if ( $meta ) return $meta;
-    // Default logic: even IDs are Ready Stock, odd are Pre-Order Istanbul
     return ( $product->get_id() % 2 === 0 ) ? 'ready' : 'preorder';
 }
 
 /**
  * Fallback Sample Products Data Helper
- * Generates sample products when WooCommerce catalog is empty.
  */
 function fluff_get_sample_products() {
     return array(
@@ -213,7 +269,7 @@ function fluff_get_sample_products() {
             'regular_price'=> 1650,
             'stock_type'   => 'preorder',
             'badge'        => 'Pre-Order • Istanbul',
-            'delivery'     => '10-12 Days from Istanbul',
+            'delivery'     => fluff_get_option('fluff_istanbul_delivery', '10-12 Days from Istanbul'),
             'rating'       => '4.95',
             'reviews_count'=> 42,
             'category'     => 'Winter Ribbed',
@@ -224,12 +280,12 @@ function fluff_get_sample_products() {
         array(
             'id'           => 102,
             'name'         => 'S02 Cairo Velvet Lounge Set',
-            'arabic_name'  => 'طقم المخمل الفاخر متوفر بمخازن القاهرة',
+            'arabic_name'  => 'طقم المخمل الفاخر متوفر بالمخزون بالقاهرة',
             'price'        => 1480,
             'regular_price'=> 1750,
             'stock_type'   => 'ready',
             'badge'        => 'Ready Stock • Cairo',
-            'delivery'     => '2-4 Days Cairo Express',
+            'delivery'     => fluff_get_option('fluff_cairo_delivery', '2-4 Days Cairo Express'),
             'rating'       => '5.0',
             'reviews_count'=> 29,
             'category'     => 'Ready Stock',
@@ -245,7 +301,7 @@ function fluff_get_sample_products() {
             'regular_price'=> 2300,
             'stock_type'   => 'preorder',
             'badge'        => 'Pre-Order • Istanbul',
-            'delivery'     => '10-12 Days from Istanbul',
+            'delivery'     => fluff_get_option('fluff_istanbul_delivery', '10-12 Days from Istanbul'),
             'rating'       => '4.90',
             'reviews_count'=> 18,
             'category'     => 'Silk & Satin',
@@ -261,7 +317,7 @@ function fluff_get_sample_products() {
             'regular_price'=> 1400,
             'stock_type'   => 'ready',
             'badge'        => 'Ready Stock • Cairo',
-            'delivery'     => '2-4 Days Cairo Express',
+            'delivery'     => fluff_get_option('fluff_cairo_delivery', '2-4 Days Cairo Express'),
             'rating'       => '4.88',
             'reviews_count'=> 56,
             'category'     => 'Summer Cotton',
