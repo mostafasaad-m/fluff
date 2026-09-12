@@ -30,6 +30,6 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
+          source: "."
           target: "/var/www/qamareen/wp-content/themes/fluff"
           overwrite: true
-          strip_components: 0
