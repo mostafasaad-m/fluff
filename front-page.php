@@ -172,53 +172,7 @@ $fluff_used_ids = array();
     </section>
 
     <!-- Special Collection: 'Isdal Family' (Desktop Enhanced Showcase) -->
-    <section class="py-8 md:py-14" id="isdal-section" style="background-color: #F0EDE4;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between mb-6">
-                <div>
-                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block" style="color: #647A96;">PRAYER &amp; MODEST SILKS</span>
-                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold tracking-tight" style="color: #1F2F4F;">Isdal Family</h2>
-                </div>
-                <span class="font-label-badge text-label-badge px-3 py-1.5 font-bold shadow-sm" style="background-color: #F8F6EF; color: #1F2F4F;">
-                    MUMMY &amp; ME
-                </span>
-            </div>
 
-            <!-- Enhanced Desktop Side-by-Side Card -->
-            <div class="product-card-offwhite overflow-hidden shadow-sm p-4 sm:p-6 md:p-8" style="background-color: #F8F6EF; border: none;">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 items-center">
-                    <div class="relative w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[4/3] overflow-hidden">
-                        <img alt="Kids Celestial Starry Satin Isdal Set" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VNgKX7fZPp-dRz4BLC6A4O8njt8PY4X2nXEiwzyP5AzoHBBXA_rwdMJky7R_44cK8MB06coVeYeIbZFzV4hOUyQJsFdfzTuLgveeOx01b_OqWgfpitVMaIFwE1kHk7RTbMCuJR44VbdcN2VDtQtVd77z2PZTGXsvkO-20S5sJw9NIrXXTV3f62vfWuNMODVHF9z0hSeTZqN9ZQZ0DYZ5GRhOkGC_EvXRU6R5KC1wVu7PXtAnFETzYh95aP" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#1F2F4F]/80 via-transparent to-transparent flex items-end p-4">
-                            <span class="font-label-badge text-label-badge px-3 py-1 font-extrabold shadow" style="background-color: #D4B586; color: #1F2F4F;">
-                                MATCHING MOTHER &amp; DAUGHTER
-                            </span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col justify-between h-full py-2">
-                        <div>
-                            <span class="font-label-badge text-label-badge uppercase font-bold tracking-wider" style="color: #647A96;">Modest Comfort Collection</span>
-                            <h3 class="font-headline-md md:font-headline-lg text-headline-md md:text-3xl font-extrabold mt-1" style="color: #1F2F4F;">
-                                Kids Celestial Starry Satin Isdal Set
-                            </h3>
-                            <p class="font-body-md text-body-md mt-3 leading-relaxed" style="color: rgba(31, 47, 79, 0.82);">
-                                Crafted with breathable satin-touch fabric and gentle draping for delicate comfort during prayer, family gatherings, and everyday relaxation. Designed for matching moments between mother and daughter.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-6 border-t flex flex-wrap items-center justify-between gap-4" style="border-color: #B7C7D9;">
-                            <div>
-                                <span class="font-body-sm text-body-sm block" style="color: #647A96;">Special Campaign Price</span>
-                                <span class="font-headline-md text-2xl md:text-3xl font-black" style="color: #1F2F4F;">LE 900.00</span>
-                            </div>
-                            <button class="px-6 py-3 font-label-md text-label-md font-bold active:scale-95 transition-all flex items-center gap-2 shadow-md" style="background-color: #1F2F4F; color: #FFFFFF;" onclick="addToCart('Kids Celestial Starry Satin Isdal Set')">
-                                <span class="material-symbols-outlined text-[20px]">shopping_bag</span> Shop Isdal Collection
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Trust Badges Bar (3 Columns on Desktop) -->
     <section class="py-8 border-t border-b" style="background-color: #F8F6EF; border-color: #B7C7D9;">
