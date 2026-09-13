@@ -185,7 +185,7 @@ function fluff_scripts() {
         theme: {
             extend: {
                 colors: {
-                    'header-bg': '#F8F6EF',
+                    'header-bg': '#d62828',
                     'primary': '#a61d17',
                     'primary-container': '#c9372c',
                     'on-primary': '#ffffff',

@@ -9,65 +9,73 @@
 <?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
 
 <!-- Global Fixed Top Navigation Header -->
-<header class="fixed top-0 w-full z-50 pt-safe bg-surface/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.06)] border-b border-surface-variant text-on-surface">
+<header class="fixed top-0 w-full z-50 pt-safe bg-primary shadow-md text-warm-white" style="background-color: rgb(214, 40, 40);">
     <!-- Announcement Bar -->
-    <aside class="bg-primary text-sale-yellow py-1.5 px-4 flex items-center justify-center overflow-hidden border-b border-white/20">
+    <aside class="bg-primary-container text-sale-yellow py-1 px-4 flex items-center justify-center overflow-hidden" style="background-color: rgb(214, 40, 40); border-bottom: 1px solid rgb(255, 255, 255);">
         <span class="font-label-badge text-label-badge uppercase tracking-wider text-center truncate font-extrabold">
-            <?php echo esc_html( fluff_get_option('fluff_announcement_text', '50% OFF ON SECOND ITEM // CLEARANCE SALE • BUY 2 GET 1 FREE') ); ?>
+            <?php echo esc_html( fluff_get_option('fluff_announcement_text', '50% OFF ON SECOND ITEM // CLEARANCE SALE') ); ?>
         </span>
     </aside>
 
     <!-- Main Navigation Strip -->
-    <div class="h-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
-        <!-- Brand Logo & Mobile Trigger -->
-        <div class="flex items-center gap-2 shrink-0">
-            <button aria-label="Open Menu" data-action="open-menu" class="w-10 h-10 flex md:hidden items-center justify-center text-on-surface hover:text-primary transition-colors rounded-full active:bg-surface-container">
-                <span class="material-symbols-outlined text-[24px]">menu</span>
+    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between relative">
+        <!-- Brand Logo & Mobile Drawer Trigger -->
+        <div class="flex items-center gap-3 z-10">
+            <button aria-label="Open Menu" data-action="open-menu" class="w-10 h-10 flex items-center justify-center text-warm-white hover:text-sale-yellow transition-colors">
+                <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                </svg>
             </button>
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center gap-2">
+            <button aria-label="Search" data-action="open-search" class="w-10 h-10 flex items-center justify-center text-warm-white hover:text-sale-yellow transition-colors">
+                <svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Center Logo (Mobile & Desktop) -->
+        <div class="absolute left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-auto">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center justify-center">
                 <?php if ( has_custom_logo() ) : ?>
                     <div class="max-h-9 max-w-[160px] flex items-center overflow-hidden">
                         <?php the_custom_logo(); ?>
                     </div>
                 <?php else : ?>
-                    <span class="font-headline-lg-mobile md:font-headline-lg text-2xl md:text-3xl font-extrabold tracking-tight text-primary uppercase">FLUFF</span>
+                    <span class="font-extrabold text-[24px] tracking-tight text-warm-white hover:text-sale-yellow transition-colors font-headline-lg-mobile uppercase">Fluff</span>
                 <?php endif; ?>
             </a>
         </div>
 
         <!-- Desktop Navigation Links (PC Enhancement) -->
-        <nav class="hidden md:flex items-center gap-6 lg:gap-8 font-label-md text-xs lg:text-sm uppercase tracking-wider font-bold text-on-surface">
-            <a href="#new-drops" class="hover:text-primary transition-colors py-1 border-b-2 border-transparent hover:border-primary">New Arrivals</a>
-            <a href="#satin-section" class="hover:text-primary transition-colors py-1 border-b-2 border-transparent hover:border-primary">Satin Shorts</a>
-            <a href="#patterned-section" class="hover:text-primary transition-colors py-1 border-b-2 border-transparent hover:border-primary">Everyday &amp; Patterned</a>
-            <a href="#isdal-section" class="hover:text-primary transition-colors py-1 border-b-2 border-transparent hover:border-primary">Isdal Family</a>
-            <a href="<?php echo esc_url( home_url('/sizing-fit-advisor/') ); ?>" class="hover:text-primary transition-colors py-1 border-b-2 border-transparent hover:border-primary">Sizing Guide</a>
-            <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/') ); ?>" class="text-primary hover:text-terracotta-rich transition-colors py-1 font-extrabold flex items-center gap-1">
+        <nav class="hidden lg:flex items-center gap-6 font-label-md text-xs uppercase tracking-wider font-bold text-warm-white z-10 ml-auto mr-4">
+            <a href="#new-drops" class="hover:text-sale-yellow transition-colors py-1">New Arrivals</a>
+            <a href="#satin-section" class="hover:text-sale-yellow transition-colors py-1">Satin Shorts</a>
+            <a href="#patterned-section" class="hover:text-sale-yellow transition-colors py-1">Everyday &amp; Patterned</a>
+            <a href="#isdal-section" class="hover:text-sale-yellow transition-colors py-1">Isdal Family</a>
+            <a href="<?php echo esc_url( home_url('/sizing-fit-advisor/') ); ?>" class="hover:text-sale-yellow transition-colors py-1">Sizing Guide</a>
+            <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/') ); ?>" class="text-sale-yellow hover:underline transition-colors py-1 flex items-center gap-1">
                 Shop All <span class="material-symbols-outlined text-[16px]">chevron_right</span>
             </a>
         </nav>
 
         <!-- Header Actions -->
-        <div class="flex items-center gap-1 shrink-0">
-            <button aria-label="Search" data-action="open-search" class="w-10 h-10 flex items-center justify-center text-on-surface hover:text-primary transition-colors rounded-full active:bg-surface-container">
-                <span class="material-symbols-outlined text-[22px]">search</span>
-            </button>
-            <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>" aria-label="Wishlist" class="w-10 h-10 flex items-center justify-center text-on-surface hover:text-primary transition-colors rounded-full relative active:bg-surface-container">
-                <span class="material-symbols-outlined text-[22px]">favorite</span>
-                <span class="bg-sale-yellow text-on-background text-[9px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center -top-0.5 -right-0.5 absolute shadow-sm">3</span>
+        <div class="flex items-center gap-2 z-10">
+            <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : '#' ); ?>" aria-label="User Account" class="w-10 h-10 flex items-center justify-center text-warm-white hover:text-sale-yellow transition-colors">
+                <svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"></path>
+                </svg>
             </a>
-            <button aria-label="Cart" data-action="open-cart" class="w-10 h-10 flex items-center justify-center text-on-surface hover:text-primary transition-colors relative rounded-full active:bg-surface-container">
-                <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+            <button aria-label="Shopping Bag" data-action="open-cart" class="relative w-10 h-10 flex items-center justify-center text-warm-white hover:text-sale-yellow transition-colors">
+                <svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25c-.669 0-1.189-.578-1.119-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"></path>
+                </svg>
                 <?php
                 $cart_count = ( function_exists('WC') && WC()->cart ) ? WC()->cart->get_cart_contents_count() : 1;
                 ?>
-                <span class="fluff-cart-count-badge bg-primary text-on-primary text-[10px] font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center -top-0.5 -right-0.5 absolute shadow-sm">
+                <span class="fluff-cart-count-badge absolute top-1.5 right-1.5 flex items-center justify-center w-4 h-4 bg-sale-yellow text-on-background font-label-badge text-[9px] rounded-full font-bold">
                     <?php echo esc_html( $cart_count > 0 ? $cart_count : '1' ); ?>
                 </span>
             </button>
-            <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : '#' ); ?>" class="w-8.5 h-8.5 rounded-full bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary flex items-center justify-center ml-1 shadow-sm transition-all" aria-label="Account">
-                <span class="material-symbols-outlined text-[18px]">person</span>
-            </a>
         </div>
     </div>
 </header>

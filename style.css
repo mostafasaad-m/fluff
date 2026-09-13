@@ -12,18 +12,32 @@ Tags: e-commerce, woocommerce, luxury, sleepwear, tailwind, responsive-layout
 */
 
 :root {
-  --color-header-bg: #F8F6EF;
-  --color-heading-text: #1F2F4F;
-  --color-normal-text: rgba(31, 47, 79, 0.85);
-  --color-ready-stock-bg: #647A96;
+  --color-header-bg: #d62828;
+  --color-heading-text: #1f1b1a;
+  --color-normal-text: #5a413d;
+  --color-primary: #a61d17;
+  --color-primary-container: #c9372c;
+  --color-terracotta-rich: #B3281E;
+  --color-sale-yellow: #FFDE21;
+  --color-blush-tint: #FDF3F0;
+  --color-surface: #fff8f6;
+  --color-surface-container: #f6ecea;
+  --color-surface-low: #fcf1ef;
+  --color-charcoal-muted: #57504D;
+  --color-border-card: #e2beb9;
+  --color-border-alt: #8e706c;
+  --color-ready-stock-bg: #6e5a55;
   --color-ready-stock-text: #ffffff;
-  --color-preorder-bg: #D8B4C1;
-  --color-preorder-text: #1F2F4F;
-  --color-winter-blue: #1F2F4F;
-  --color-summer-mauve: #D8B4C1;
-  --color-border-card: #B7C7D9;
-  --color-border-alt: #AA9B8C;
-  --color-luxury-gold: #D4B586;
+  --color-preorder-bg: #f9dcd6;
+  --color-preorder-text: #1f1b1a;
+  --color-winter-blue: #a61d17;
+  --color-summer-mauve: #f9dcd6;
+  --color-luxury-gold: #FFDE21;
+}
+
+/* Sharp Corners Override */
+.rounded-xl, .rounded-2xl, .rounded-lg, [class*='rounded-xl'], [class*='rounded-2xl'], [class*='rounded-lg'], .aspect-\[3\/4\], .aspect-\[4\/3\], img {
+  border-radius: 0px !important;
 }
 
 @layer base {
