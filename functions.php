@@ -193,7 +193,7 @@ function fluff_scripts() {
                     'primary-fixed': '#ffdad5',
                     'primary-fixed-dim': '#ffb4aa',
                     'terracotta-rich': '#B3281E',
-                    'sale-yellow': '#FFDE21',
+                    'sale-yellow': '#F3CB0E',
                     'blush-tint': '#FDF3F0',
                     'warm-white': '#FFFFFF',
                     'cream-canvas': '#FAF7F2',
@@ -287,8 +287,11 @@ function fluff_scripts() {
     ";
     wp_add_inline_script( 'fluff-tailwind-cdn', $tailwind_config, 'before' );
 
-    wp_enqueue_style( 'fluff-theme-style', get_stylesheet_uri(), array(), '1.0.0' );
-    wp_enqueue_script( 'fluff-theme-js', get_template_directory_uri() . '/assets/js/fluff-theme.js', array(), '1.0.0', true );
+    $css_version = file_exists( get_stylesheet_directory() . '/style.css' ) ? filemtime( get_stylesheet_directory() . '/style.css' ) : '1.0.1';
+    $js_version  = file_exists( get_template_directory() . '/assets/js/fluff-theme.js' ) ? filemtime( get_template_directory() . '/assets/js/fluff-theme.js' ) : '1.0.1';
+
+    wp_enqueue_style( 'fluff-theme-style', get_stylesheet_uri(), array(), $css_version );
+    wp_enqueue_script( 'fluff-theme-js', get_template_directory_uri() . '/assets/js/fluff-theme.js', array(), $js_version, true );
 }
 add_action( 'wp_enqueue_scripts', 'fluff_scripts' );
 
@@ -297,10 +300,10 @@ add_action( 'wp_enqueue_scripts', 'fluff_scripts' );
  */
 function fluff_woocommerce_cart_count_fragment( $fragments ) {
     ob_start();
-    $count = WC()->cart ? WC()->cart->get_cart_contents_count() : 0;
+    $count = ( function_exists('WC') && WC()->cart ) ? WC()->cart->get_cart_contents_count() : 0;
     ?>
-    <span class="fluff-cart-count-badge bg-secondary text-on-secondary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center -top-1 -right-1 absolute">
-        <?php echo esc_html( $count ); ?>
+    <span class="fluff-cart-count-badge absolute top-1.5 right-1.5 flex items-center justify-center w-4 h-4 rounded-full font-bold text-[9px]" style="background-color: #F3CB0E !important; color: #1f1b1a !important;">
+        <?php echo esc_html( $count > 0 ? $count : '0' ); ?>
     </span>
     <?php
     $fragments['.fluff-cart-count-badge'] = ob_get_clean();

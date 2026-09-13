@@ -56,21 +56,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Mobile Menu Toggle ---
     const mobileMenu = document.getElementById('fluffMobileMenu');
-    const openMenuBtn = document.querySelector('[aria-label="Open Menu"]');
-    const closeMenuBtn = document.querySelector('[data-action="close-menu"]');
+    const openMenuBtns = document.querySelectorAll('[data-action="open-menu"], [aria-label="Open Menu"]');
+    const closeMenuBtns = document.querySelectorAll('[data-action="close-menu"]');
 
-    if (openMenuBtn && mobileMenu) {
-        openMenuBtn.addEventListener('click', function(e) {
-            e.preventDefault();
+    function openMobileMenu() {
+        if (mobileMenu) {
             mobileMenu.classList.remove('hidden');
-        });
+            mobileMenu.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
+        }
     }
-    if (closeMenuBtn && mobileMenu) {
-        closeMenuBtn.addEventListener('click', function(e) {
-            e.preventDefault();
+
+    function closeMobileMenu() {
+        if (mobileMenu) {
             mobileMenu.classList.add('hidden');
-        });
+            mobileMenu.classList.remove('flex');
+            document.body.classList.remove('overflow-hidden');
+        }
     }
+
+    openMenuBtns.forEach(btn => btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openMobileMenu();
+    }));
+
+    closeMenuBtns.forEach(btn => btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeMobileMenu();
+    }));
 
     // --- Filter Drawer Accordion Panel ---
     const filterBtn = document.getElementById('openFilterBtn');

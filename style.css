@@ -18,7 +18,7 @@ Tags: e-commerce, woocommerce, luxury, sleepwear, tailwind, responsive-layout
   --color-primary: #a61d17;
   --color-primary-container: #c9372c;
   --color-terracotta-rich: #B3281E;
-  --color-sale-yellow: #FFDE21;
+  --color-sale-yellow: #F3CB0E;
   --color-blush-tint: #FDF3F0;
   --color-surface: #fff8f6;
   --color-surface-container: #f6ecea;
@@ -32,12 +32,46 @@ Tags: e-commerce, woocommerce, luxury, sleepwear, tailwind, responsive-layout
   --color-preorder-text: #1f1b1a;
   --color-winter-blue: #a61d17;
   --color-summer-mauve: #f9dcd6;
-  --color-luxury-gold: #FFDE21;
+  --color-luxury-gold: #F3CB0E;
 }
 
 /* Sharp Corners Override */
 .rounded-xl, .rounded-2xl, .rounded-lg, [class*='rounded-xl'], [class*='rounded-2xl'], [class*='rounded-lg'], .aspect-\[3\/4\], .aspect-\[4\/3\], img {
   border-radius: 0px !important;
+}
+
+/* 100% Opaque Solid Mobile Menu Drawer */
+#fluffMobileMenu {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  background-color: #FAF7F2 !important;
+  background: #FAF7F2 !important;
+  opacity: 1 !important;
+  z-index: 999999 !important;
+}
+
+#fluffMobileMenu a {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Top Bar Headings & Links in #F3CB0E */
+header.fixed aside span,
+header.fixed .font-headline-lg-mobile,
+header.fixed nav a,
+header.fixed button[aria-label="Open Menu"],
+header.fixed button[aria-label="Search"],
+header.fixed a[aria-label="User Account"],
+header.fixed button[aria-label="Shopping Bag"] {
+  color: #F3CB0E !important;
+}
+
+header.fixed .fluff-cart-count-badge {
+  background-color: #F3CB0E !important;
+  color: #1f1b1a !important;
 }
 
 @layer base {

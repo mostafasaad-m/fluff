@@ -183,54 +183,75 @@ $wa_url   = 'https://wa.me/' . preg_replace( '/[^0-9]/', '', $wa_phone );
     </div>
 </div>
 
-<!-- High Contrast Mobile Navigation Drawer -->
-<div id="fluffMobileMenu" class="fixed inset-0 z-50 bg-surface hidden flex flex-col justify-between p-6 text-on-surface overflow-y-auto">
-    <div class="flex items-center justify-between border-b border-surface-variant pb-4">
+<!-- High Contrast 100% Solid Mobile Navigation Drawer -->
+<div id="fluffMobileMenu" class="fixed inset-0 z-[999999] hidden flex flex-col justify-between p-6 overflow-y-auto" style="background-color: #FAF7F2 !important; background: #FAF7F2 !important; opacity: 1 !important; z-index: 999999 !important;">
+    <!-- Drawer Header Bar -->
+    <div class="flex items-center justify-between border-b pb-4 shrink-0" style="border-color: #e2beb9 !important; background-color: #FAF7F2 !important;">
         <div class="flex items-center gap-2">
-            <span class="font-headline-md text-headline-md text-primary font-extrabold text-2xl uppercase">FLUFF</span>
+            <span class="font-headline-md text-headline-md font-extrabold text-2xl uppercase tracking-tight" style="color: #a61d17 !important;">FLUFF</span>
         </div>
-        <button data-action="close-menu" class="w-10 h-10 bg-surface-container-lowest border border-outline-variant flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors">
-            <span class="material-symbols-outlined text-[22px]">close</span>
+        <button data-action="close-menu" class="w-10 h-10 flex items-center justify-center shadow-sm active:scale-95 transition-transform" style="background-color: #ffffff !important; border: 1px solid #e2beb9 !important; color: #1f1b1a !important;" aria-label="Close Menu">
+            <span class="material-symbols-outlined text-[22px]" style="color: #1f1b1a !important;">close</span>
         </button>
     </div>
 
-    <!-- Crisp Readability Navigation Links -->
-    <div class="flex flex-col gap-3 py-6">
-        <a href="<?php echo esc_url( home_url('/') ); ?>" class="p-3.5 bg-surface-container-lowest border border-outline-variant text-on-surface font-headline-sm text-headline-sm font-bold flex items-center justify-between hover:bg-primary/10 transition-all">
-            <span class="flex items-center gap-2.5">
-                <span class="material-symbols-outlined text-primary text-[20px]">home</span> Home
+    <!-- Crisp High-Contrast Navigation Link Cards -->
+    <div class="flex flex-col gap-3 py-6 my-auto">
+        <a href="<?php echo esc_url( home_url('/') ); ?>" class="p-3.5 shadow-sm font-headline-sm text-headline-sm font-bold flex items-center justify-between active:scale-[0.99] transition-transform" style="background-color: #ffffff !important; border: 1px solid #e2beb9 !important; color: #1f1b1a !important;">
+            <span class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-[22px]" style="color: #a61d17 !important;">home</span>
+                <span style="color: #1f1b1a !important; font-weight: 700;">Home</span>
             </span>
-            <span class="material-symbols-outlined text-[18px] text-secondary">arrow_forward_ios</span>
+            <span class="material-symbols-outlined text-[18px]" style="color: #8e706c !important;">arrow_forward_ios</span>
         </a>
-        <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>" class="p-3.5 bg-surface-container-lowest border border-outline-variant text-on-surface font-headline-sm text-headline-sm font-bold flex items-center justify-between hover:bg-primary/10 transition-all">
-            <span class="flex items-center gap-2.5">
-                <span class="material-symbols-outlined text-primary text-[20px]">grid_view</span> Shop All Catalog
+        <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>" class="p-3.5 shadow-sm font-headline-sm text-headline-sm font-bold flex items-center justify-between active:scale-[0.99] transition-transform" style="background-color: #ffffff !important; border: 1px solid #e2beb9 !important; color: #1f1b1a !important;">
+            <span class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-[22px]" style="color: #a61d17 !important;">grid_view</span>
+                <span style="color: #1f1b1a !important; font-weight: 700;">Shop All Catalog</span>
             </span>
-            <span class="material-symbols-outlined text-[18px] text-secondary">arrow_forward_ios</span>
+            <span class="material-symbols-outlined text-[18px]" style="color: #8e706c !important;">arrow_forward_ios</span>
         </a>
-        <a href="<?php echo esc_url( home_url('/category-special-collection/') ); ?>" class="p-3.5 bg-surface-container-lowest border border-outline-variant text-on-surface font-headline-sm text-headline-sm font-bold flex items-center justify-between hover:bg-primary/10 transition-all">
-            <span class="flex items-center gap-2.5">
-                <span class="material-symbols-outlined text-primary text-[20px]">ac_unit</span> Winter Special Edit
+        <a href="<?php echo esc_url( home_url('/#new-drops') ); ?>" class="p-3.5 shadow-sm font-headline-sm text-headline-sm font-bold flex items-center justify-between active:scale-[0.99] transition-transform" style="background-color: #ffffff !important; border: 1px solid #e2beb9 !important; color: #1f1b1a !important;">
+            <span class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-[22px]" style="color: #F3CB0E !important;">local_fire_department</span>
+                <span style="color: #1f1b1a !important; font-weight: 700;">New Arrivals</span>
             </span>
-            <span class="material-symbols-outlined text-[18px] text-secondary">arrow_forward_ios</span>
+            <span class="material-symbols-outlined text-[18px]" style="color: #8e706c !important;">arrow_forward_ios</span>
         </a>
-        <a href="<?php echo esc_url( home_url('/sizing-fit-advisor/') ); ?>" class="p-3.5 bg-surface-container-lowest border border-outline-variant text-on-surface font-headline-sm text-headline-sm font-bold flex items-center justify-between hover:bg-primary/10 transition-all">
-            <span class="flex items-center gap-2.5">
-                <span class="material-symbols-outlined text-primary text-[20px]">straighten</span> Sizing &amp; Fit Advisor
+        <a href="<?php echo esc_url( home_url('/#satin-section') ); ?>" class="p-3.5 shadow-sm font-headline-sm text-headline-sm font-bold flex items-center justify-between active:scale-[0.99] transition-transform" style="background-color: #ffffff !important; border: 1px solid #e2beb9 !important; color: #1f1b1a !important;">
+            <span class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-[22px]" style="color: #a61d17 !important;">bedtime</span>
+                <span style="color: #1f1b1a !important; font-weight: 700;">Satin Shorts</span>
             </span>
-            <span class="material-symbols-outlined text-[18px] text-secondary">arrow_forward_ios</span>
+            <span class="material-symbols-outlined text-[18px]" style="color: #8e706c !important;">arrow_forward_ios</span>
         </a>
-        <a href="<?php echo esc_url( home_url('/shipping-packaging/') ); ?>" class="p-3.5 bg-surface-container-lowest border border-outline-variant text-on-surface font-headline-sm text-headline-sm font-bold flex items-center justify-between hover:bg-primary/10 transition-all">
-            <span class="flex items-center gap-2.5">
-                <span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span> Shipping &amp; Gift Box
+        <a href="<?php echo esc_url( home_url('/category-special-collection/') ); ?>" class="p-3.5 shadow-sm font-headline-sm text-headline-sm font-bold flex items-center justify-between active:scale-[0.99] transition-transform" style="background-color: #ffffff !important; border: 1px solid #e2beb9 !important; color: #1f1b1a !important;">
+            <span class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-[22px]" style="color: #a61d17 !important;">ac_unit</span>
+                <span style="color: #1f1b1a !important; font-weight: 700;">Winter Special Edit</span>
             </span>
-            <span class="material-symbols-outlined text-[18px] text-secondary">arrow_forward_ios</span>
+            <span class="material-symbols-outlined text-[18px]" style="color: #8e706c !important;">arrow_forward_ios</span>
+        </a>
+        <a href="<?php echo esc_url( home_url('/sizing-fit-advisor/') ); ?>" class="p-3.5 shadow-sm font-headline-sm text-headline-sm font-bold flex items-center justify-between active:scale-[0.99] transition-transform" style="background-color: #ffffff !important; border: 1px solid #e2beb9 !important; color: #1f1b1a !important;">
+            <span class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-[22px]" style="color: #a61d17 !important;">straighten</span>
+                <span style="color: #1f1b1a !important; font-weight: 700;">Sizing &amp; Fit Advisor</span>
+            </span>
+            <span class="material-symbols-outlined text-[18px]" style="color: #8e706c !important;">arrow_forward_ios</span>
+        </a>
+        <a href="<?php echo esc_url( home_url('/shipping-packaging/') ); ?>" class="p-3.5 shadow-sm font-headline-sm text-headline-sm font-bold flex items-center justify-between active:scale-[0.99] transition-transform" style="background-color: #ffffff !important; border: 1px solid #e2beb9 !important; color: #1f1b1a !important;">
+            <span class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-[22px]" style="color: #a61d17 !important;">local_shipping</span>
+                <span style="color: #1f1b1a !important; font-weight: 700;">Shipping &amp; Gift Box</span>
+            </span>
+            <span class="material-symbols-outlined text-[18px]" style="color: #8e706c !important;">arrow_forward_ios</span>
         </a>
     </div>
 
-    <div class="pt-4 border-t border-surface-variant text-xs text-secondary font-medium flex items-center justify-between">
+    <!-- Drawer Footer -->
+    <div class="pt-4 border-t text-xs font-medium flex items-center justify-between shrink-0" style="border-color: #e2beb9 !important; color: #57504D !important; background-color: #FAF7F2 !important;">
         <span>Crafted by Mostafa Saad</span>
-        <span class="text-primary font-bold">vitaldc.com</span>
+        <span class="font-bold" style="color: #a61d17 !important;">vitaldc.com</span>
     </div>
 </div>
 
