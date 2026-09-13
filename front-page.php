@@ -57,47 +57,6 @@ get_header();
             </div>
         </div>
     </section>
-
-    <!-- Horizontal Category / Story Navigation Pills -->
-    <section class="py-5 border-b" style="background-color: #F8F6EF; border-color: #B7C7D9;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between mb-3">
-                <span class="font-label-badge text-label-badge uppercase font-extrabold tracking-wider" style="color: #1F2F4F;">CURATED STYLES</span>
-                <span class="font-label-badge text-label-badge font-bold" style="color: #647A96;">7 EXCLUSIVE CAPSULES</span>
-            </div>
-            <div class="flex gap-2.5 overflow-x-auto no-scrollbar pb-1 md:flex-wrap">
-                <a href="#new-drops" class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md font-bold shrink-0 shadow-sm active:scale-95 transition-all" style="background-color: #1F2F4F; color: #FFFFFF;">
-                    <span class="material-symbols-outlined text-[18px]" style="color: #D4B586;">local_fire_department</span>
-                    New Drops
-                </a>
-                <a href="#satin-section" class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md font-bold shrink-0 active:scale-95 transition-all" style="background-color: #FFFFFF; color: #1F2F4F; border: 1px solid #B7C7D9;">
-                    <span class="material-symbols-outlined text-[18px]" style="color: #1F2F4F;">bedtime</span>
-                    Satin Shorts
-                </a>
-                <a href="#patterned-section" class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md font-bold shrink-0 active:scale-95 transition-all" style="background-color: #FFFFFF; color: #1F2F4F; border: 1px solid #B7C7D9;">
-                    <span class="material-symbols-outlined text-[18px]" style="color: #1F2F4F;">pattern</span>
-                    Everyday &amp; Patterned
-                </a>
-                <a href="#isdal-section" class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md font-bold shrink-0 active:scale-95 transition-all" style="background-color: #FFFFFF; color: #1F2F4F; border: 1px solid #B7C7D9;">
-                    <span class="material-symbols-outlined text-[18px]" style="color: #1F2F4F;">spa</span>
-                    Isdal Family
-                </a>
-                <a href="<?php echo esc_url( home_url('/category-special-collection/') ); ?>" class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md font-bold shrink-0 active:scale-95 transition-all" style="background-color: #FFFFFF; color: #1F2F4F; border: 1px solid #B7C7D9;">
-                    <span class="material-symbols-outlined text-[18px]" style="color: #647A96;">ac_unit</span>
-                    Winter Special Edit
-                </a>
-                <a href="<?php echo esc_url( home_url('/sizing-fit-advisor/') ); ?>" class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md font-bold shrink-0 active:scale-95 transition-all" style="background-color: #FFFFFF; color: #1F2F4F; border: 1px solid #B7C7D9;">
-                    <span class="material-symbols-outlined text-[18px]" style="color: #1F2F4F;">straighten</span>
-                    Sizing &amp; Fit
-                </a>
-                <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/') ); ?>" class="flex items-center gap-2 px-4 py-2 font-label-md text-label-md font-bold shrink-0 active:scale-95 transition-all" style="background-color: #FFFFFF; color: #1F2F4F; border: 1px solid #1F2F4F;">
-                    <span class="material-symbols-outlined text-[18px]" style="color: #D4B586;">grid_view</span>
-                    All Sleepwear
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Featured New Drops Section (Responsive Mobile Grid / PC 4-Column Enhanced) -->
     <section class="py-8 md:py-12 bg-surface" id="new-drops">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
