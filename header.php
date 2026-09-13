@@ -107,4 +107,4 @@
 </header>
 
 <!-- Main Container -->
-<main class="flex flex-col relative w-full pt-28 pb-28 lg:pb-12 bg-surface min-h-screen" style="background-color: #F8F6EF;">
+<main class="flex flex-col relative w-full pt-[89px] sm:pt-[91px] pb-28 lg:pb-12 bg-surface min-h-screen" style="background-color: #F8F6EF;">

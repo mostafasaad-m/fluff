@@ -248,3 +248,36 @@ header .custom-logo {
 .heading-midnight {
   color: #1F2F4F !important;
 }
+
+/* Moving News Bar / Ticker Marquee Effect */
+@keyframes fluffMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.fluff-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: fluffMarquee 24s linear infinite;
+  will-change: transform;
+}
+
+.fluff-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* 1-Row Horizontal Product Cards (Border-free, Off-white Background) */
+.product-card-offwhite {
+  background-color: #F0EDE4 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 2px 10px rgba(31, 47, 79, 0.04) !important;
+}
+
+.product-card-offwhite:hover {
+  box-shadow: 0 8px 24px rgba(31, 47, 79, 0.08) !important;
+}

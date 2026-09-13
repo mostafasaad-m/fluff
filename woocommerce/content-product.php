@@ -18,10 +18,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 $origin = fluff_get_product_origin( $product );
 $is_preorder = ( $origin === 'preorder' );
 ?>
-<li <?php wc_product_class( 'group relative bg-white p-3.5 shadow-sm border transition-all hover:shadow-md flex flex-col justify-between list-none', $product ); ?> style="border-color: #B7C7D9; background-color: #FFFFFF;">
+<li <?php wc_product_class( 'group relative product-card-offwhite p-3.5 shadow-sm transition-all hover:shadow-md flex flex-col justify-between list-none', $product ); ?> style="border: none !important; background-color: #F0EDE4 !important;">
     <div class="space-y-3">
         <!-- Thumbnail & Badges -->
-        <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#F0EDE4]">
+        <div class="relative w-full aspect-[4/5] overflow-hidden bg-[#EAE6DB]">
             <a href="<?php the_permalink(); ?>" class="block w-full h-full">
                 <?php
                 if ( has_post_thumbnail() ) {
@@ -59,14 +59,13 @@ $is_preorder = ( $origin === 'preorder' );
 
         <!-- Product Title & Info -->
         <div class="space-y-1">
-            <div class="flex items-center justify-between text-xs font-label-badge uppercase font-extrabold" style="color: #647A96;">
-                <span><?php echo wp_kses_post( wc_get_product_category_list( $product->get_id(), ', ', '', '' ) ?: 'FLUFF Sleepwear' ); ?></span>
-                <?php if ( $rating_html = wc_get_rating_html( $product->get_average_rating() ) ) : ?>
-                    <div class="flex items-center gap-0.5" style="color: #D4B586;">
-                        <span class="material-symbols-outlined text-[14px]">star</span>
-                        <span class="font-bold text-[10px]" style="color: #1F2F4F;"><?php echo esc_html( number_format( $product->get_average_rating(), 1 ) ); ?></span>
-                    </div>
-                <?php endif; ?>
+            <div class="flex items-center justify-between text-xs text-[#647A96]">
+                <span class="font-label-badge text-[10px] uppercase tracking-wider">
+                    <?php echo ( $is_preorder ) ? 'Turkey Import' : 'Cairo Hub'; ?>
+                </span>
+                <span class="flex items-center gap-0.5 font-bold" style="color: #D4B586;">
+                    <span class="material-symbols-outlined text-[14px]">star</span> 4.9
+                </span>
             </div>
 
             <h3 class="font-headline-sm text-headline-sm font-semibold truncate leading-snug" style="color: #1F2F4F;">
@@ -86,7 +85,7 @@ $is_preorder = ( $origin === 'preorder' );
     <div class="pt-3">
         <?php
         woocommerce_template_loop_add_to_cart( array(
-            'class' => 'w-full py-2.5 px-3 font-label-md text-label-md text-center transition-all flex items-center justify-center gap-1 shadow-sm font-bold bg-[#F0EDE4] text-[#1F2F4F] hover:bg-[#1F2F4F] hover:text-white border border-[#B7C7D9]'
+            'class' => 'w-full py-2.5 px-3 font-label-md text-label-md text-center transition-all flex items-center justify-center gap-1 shadow-sm font-bold bg-[#1F2F4F] text-white hover:bg-[#D4B586] hover:text-[#1F2F4F]'
         ) );
         ?>
     </div>
