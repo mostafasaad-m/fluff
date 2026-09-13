@@ -12,8 +12,8 @@ Tags: e-commerce, woocommerce, luxury, sleepwear, tailwind, responsive-layout
 */
 
 :root {
-  --color-header-bg: #F8F6EF;
-  --color-header-text: #1F2F4F;
+  --color-header-bg: #1F2F4F;
+  --color-header-text: #D4B586;
   --color-heading-text: #1F2F4F;
   --color-normal-text: rgba(31, 47, 79, 0.82);
   --color-primary: #1F2F4F;
@@ -61,19 +61,19 @@ Tags: e-commerce, woocommerce, luxury, sleepwear, tailwind, responsive-layout
   opacity: 1 !important;
 }
 
-/* Top Bar Headings & Header Controls in #F8F6EF bg + #1F2F4F text */
+/* Top Bar Headings & Header Controls in #1F2F4F bg + #D4B586 text (EDITORIAL LOOKBOOK styling) */
 header.fixed {
-  background-color: #F8F6EF !important;
-  border-bottom: 1px solid #B7C7D9 !important;
+  background-color: #1F2F4F !important;
+  border-bottom: 1px solid rgba(212, 181, 134, 0.25) !important;
 }
 
 header.fixed aside {
-  background-color: #F0EDE4 !important;
-  border-bottom: 1px solid #B7C7D9 !important;
+  background-color: #16233B !important;
+  border-bottom: 1px solid rgba(212, 181, 134, 0.2) !important;
 }
 
 header.fixed aside span {
-  color: #1F2F4F !important;
+  color: #D4B586 !important;
 }
 
 header.fixed .font-headline-lg-mobile,
@@ -83,13 +83,13 @@ header.fixed button[aria-label="Search"],
 header.fixed a[aria-label="User Account"],
 header.fixed button[aria-label="Shopping Bag"],
 header.fixed svg {
-  color: #1F2F4F !important;
+  color: #D4B586 !important;
 }
 
 header.fixed nav a:hover,
 header.fixed button:hover,
 header.fixed a:hover {
-  color: #D4B586 !important;
+  color: #F8F6EF !important;
 }
 
 header.fixed .fluff-cart-count-badge {
