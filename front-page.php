@@ -88,59 +88,7 @@ $fluff_used_ids = array();
     </section>
 
     <!-- Editorial Feature - 'The Art of Everyday Elegance' (Enhanced PC Split Layout) -->
-    <section class="py-8 md:py-16 text-on-primary" style="background-color: #1F2F4F; color: #F8F6EF;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
-                <!-- Text Narrative -->
-                <div class="flex flex-col justify-center">
-                    <span class="font-label-badge text-label-badge uppercase tracking-widest font-extrabold block mb-2" style="color: #D4B586;">
-                        EDITORIAL LOOKBOOK
-                    </span>
-                    <h2 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-4xl lg:text-5xl font-extrabold tracking-tight uppercase leading-tight" style="color: #FFFFFF;">
-                        The Art of Everyday Elegance
-                    </h2>
-                    <p class="font-body-md md:font-body-lg text-body-md md:text-lg mt-4 leading-relaxed" style="color: rgba(248, 246, 239, 0.85);">
-                        Softness you can genuinely feel. Crafted with pride using organic cottons and whisper-light satin finishes, tailored for lazy weekend mornings and sun-drenched balconies.
-                    </p>
-                    <div class="mt-6 flex flex-wrap gap-4">
-                        <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-[20px]" style="color: #D4B586;">check_circle</span>
-                            <span class="font-label-md text-label-md font-bold" style="color: #FFFFFF;">100% Breathable Weave</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-[20px]" style="color: #D4B586;">check_circle</span>
-                            <span class="font-label-md text-label-md font-bold" style="color: #FFFFFF;">Non-Pilling Satin</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-[20px]" style="color: #D4B586;">check_circle</span>
-                            <span class="font-label-md text-label-md font-bold" style="color: #FFFFFF;">Cairo &amp; Istanbul Craft</span>
-                        </div>
-                    </div>
-                    <div class="mt-8">
-                        <a class="inline-flex items-center gap-2 px-6 py-3 font-label-lg text-label-lg font-bold shadow active:scale-95 transition-all" style="background-color: #D4B586; color: #1F2F4F;" href="#satin-section">
-                            EXPLORE CAPSULE <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Editorial Visual Imagery -->
-                <div class="relative w-full aspect-[4/3] md:aspect-[5/4] overflow-hidden shadow-2xl border" style="border-color: #B7C7D9;">
-                    <img alt="Editorial Loungewear Setting" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB809kO4ZJAOqb63h11rKiXdwFeidxMKkxEv9KhLh-3Cdu5c5AnHyRQsPUBdLjrGmzBQPyIUw0D6DXxlu-hY-zaS4zgUpE5CpWpFME1eeMSqVxIqnMF45cH06uX_pwxIsEBabTOMYGh3yhSTbDyghYTUVu0QgndqHwKx-WnXv53OrxjKAfg3v3GKI8PgdC7nW_FNOL5dChTUlW69ghVOa6XeQBFz0jkfxH1cGxw_9rAyaUEIkkM0wbTrIg1HjG02yzdb2Q" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#1F2F4F]/90 via-transparent to-transparent flex items-end p-5 md:p-8">
-                        <div class="flex items-center justify-between w-full">
-                            <div>
-                                <span class="font-label-badge text-label-badge uppercase font-extrabold tracking-wider" style="color: #D4B586;">Featured Capsule</span>
-                                <p class="font-headline-sm md:font-headline-md text-headline-sm md:text-2xl font-bold text-white">Heavenly Stripe &amp; Satin</p>
-                            </div>
-                            <span class="bg-white/90 backdrop-blur-sm px-4 py-2 font-label-md text-label-md font-extrabold shadow hidden sm:inline-block" style="color: #1F2F4F;">
-                                LE 1,249 FLAT
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Satin Shorts Spotlight (Responsive Desktop Grid) -->
     <section class="py-8 md:py-12" id="satin-section" style="background-color: #F8F6EF;">
