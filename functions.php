@@ -317,9 +317,23 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'fluff_woocommerce_cart_count_f
  */
 function fluff_get_product_origin( $product ) {
     if ( ! $product ) return 'ready';
-    $meta = get_post_meta( $product->get_id(), '_fluff_stock_type', true );
+    $product_id = 0;
+    if ( is_object( $product ) && method_exists( $product, 'get_id' ) ) {
+        $product_id = $product->get_id();
+    } elseif ( is_numeric( $product ) ) {
+        $product_id = (int) $product;
+    }
+    if ( ! $product_id ) return 'ready';
+    $meta = get_post_meta( $product_id, '_fluff_stock_type', true );
     if ( $meta ) return $meta;
-    return ( $product->get_id() % 2 === 0 ) ? 'ready' : 'preorder';
+    return ( $product_id % 2 === 0 ) ? 'ready' : 'preorder';
+}
+
+/**
+ * Stock Type Alias Helper (Guarantees backward compatibility)
+ */
+function fluff_get_product_stock_type( $product ) {
+    return fluff_get_product_origin( $product );
 }
 
 /**
@@ -578,6 +592,27 @@ function fluff_get_sample_products() {
 }
 
 /**
+ * Safe Helper to extract numeric product ID from WC_Product, WP_Post, array, or scalar ID.
+ */
+function fluff_extract_product_id( $item ) {
+    if ( is_object( $item ) ) {
+        if ( method_exists( $item, 'get_id' ) ) {
+            return (int) $item->get_id();
+        }
+        if ( isset( $item->ID ) ) {
+            return (int) $item->ID;
+        }
+    }
+    if ( is_numeric( $item ) ) {
+        return (int) $item;
+    }
+    if ( is_array( $item ) && isset( $item['id'] ) ) {
+        return (int) $item['id'];
+    }
+    return 0;
+}
+
+/**
  * Get products for a front-page section with deduplication.
  *
  * @param string $section   Section identifier ('featured', 'satin', 'patterned', 'winter').
@@ -585,139 +620,148 @@ function fluff_get_sample_products() {
  * @param int    $limit     Maximum number of products to return.
  * @return array Array of WC_Product objects or fallback product arrays.
  */
-function fluff_get_section_products( $section, &$used_ids = array(), $limit = 6 ) {
+function fluff_get_section_products( $section = 'featured', &$used_ids = array(), $limit = 6 ) {
+    if ( ! is_array( $used_ids ) ) {
+        $used_ids = array();
+    }
+
     $products = array();
 
     if ( function_exists( 'wc_get_products' ) ) {
-        $base_exclude = is_array( $used_ids ) ? $used_ids : array();
+        $base_exclude = $used_ids;
 
-        switch ( $section ) {
-            case 'featured':
-            case 'new-drops':
-                $args = array(
-                    'status'   => 'publish',
-                    'limit'    => $limit,
-                    'featured' => true,
-                    'exclude'  => $base_exclude,
-                    'orderby'  => 'date',
-                    'order'    => 'DESC',
-                );
-                $found = wc_get_products( $args );
-                if ( ! empty( $found ) ) {
-                    $products = $found;
-                }
-
-                // If not enough featured products, backfill with newest published products
-                if ( count( $products ) < $limit ) {
-                    $current_ids = array_map( function( $p ) { return $p->get_id(); }, $products );
-                    $exclude = array_unique( array_merge( $base_exclude, $current_ids ) );
-                    $needed = $limit - count( $products );
-                    $backfill = wc_get_products( array(
-                        'status'  => 'publish',
-                        'limit'   => $needed,
-                        'exclude' => $exclude,
-                        'orderby' => 'date',
-                        'order'   => 'DESC',
-                    ) );
-                    if ( ! empty( $backfill ) ) {
-                        $products = array_merge( $products, $backfill );
+        try {
+            switch ( $section ) {
+                case 'featured':
+                case 'new-drops':
+                    $args = array(
+                        'status'   => 'publish',
+                        'limit'    => $limit,
+                        'featured' => true,
+                        'exclude'  => $base_exclude,
+                        'orderby'  => 'date',
+                        'order'    => 'DESC',
+                    );
+                    $found = wc_get_products( $args );
+                    if ( ! empty( $found ) && is_array( $found ) ) {
+                        $products = $found;
                     }
-                }
-                break;
 
-            case 'satin':
-                $args = array(
-                    'status'   => 'publish',
-                    'limit'    => $limit,
-                    'category' => array( 'satin', 'satin-shorts', 'silk', 'silk-satin', 'satin-pyjamas' ),
-                    'exclude'  => $base_exclude,
-                );
-                $found = wc_get_products( $args );
-                if ( ! empty( $found ) ) {
-                    $products = $found;
-                }
-
-                if ( count( $products ) < $limit ) {
-                    $current_ids = array_map( function( $p ) { return $p->get_id(); }, $products );
-                    $exclude = array_unique( array_merge( $base_exclude, $current_ids ) );
-                    $needed = $limit - count( $products );
-                    $backfill = wc_get_products( array(
-                        'status'  => 'publish',
-                        'limit'   => $needed,
-                        'exclude' => $exclude,
-                        'orderby' => 'popularity',
-                    ) );
-                    if ( ! empty( $backfill ) ) {
-                        $products = array_merge( $products, $backfill );
+                    // If fewer than requested, backfill with newest published products
+                    if ( count( $products ) < $limit ) {
+                        $current_ids = array_filter( array_map( 'fluff_extract_product_id', $products ) );
+                        $exclude     = array_unique( array_merge( $base_exclude, $current_ids ) );
+                        $needed      = $limit - count( $products );
+                        $backfill    = wc_get_products( array(
+                            'status'  => 'publish',
+                            'limit'   => $needed,
+                            'exclude' => $exclude,
+                            'orderby' => 'date',
+                            'order'   => 'DESC',
+                        ) );
+                        if ( ! empty( $backfill ) && is_array( $backfill ) ) {
+                            $products = array_merge( $products, $backfill );
+                        }
                     }
-                }
-                break;
+                    break;
 
-            case 'patterned':
-            case 'everyday':
-                $args = array(
-                    'status'   => 'publish',
-                    'limit'    => $limit,
-                    'category' => array( 'everyday', 'patterned', 'cotton', 'summer-cotton', 'pyjamas' ),
-                    'exclude'  => $base_exclude,
-                );
-                $found = wc_get_products( $args );
-                if ( ! empty( $found ) ) {
-                    $products = $found;
-                }
-
-                if ( count( $products ) < $limit ) {
-                    $current_ids = array_map( function( $p ) { return $p->get_id(); }, $products );
-                    $exclude = array_unique( array_merge( $base_exclude, $current_ids ) );
-                    $needed = $limit - count( $products );
-                    $backfill = wc_get_products( array(
-                        'status'  => 'publish',
-                        'limit'   => $needed,
-                        'exclude' => $exclude,
-                        'orderby' => 'rating',
-                    ) );
-                    if ( ! empty( $backfill ) ) {
-                        $products = array_merge( $products, $backfill );
+                case 'satin':
+                    $args = array(
+                        'status'   => 'publish',
+                        'limit'    => $limit,
+                        'category' => array( 'satin', 'satin-shorts', 'silk', 'silk-satin', 'satin-pyjamas' ),
+                        'exclude'  => $base_exclude,
+                    );
+                    $found = wc_get_products( $args );
+                    if ( ! empty( $found ) && is_array( $found ) ) {
+                        $products = $found;
                     }
-                }
-                break;
 
-            case 'winter':
-            case 'cozy':
-            default:
-                $args = array(
-                    'status'   => 'publish',
-                    'limit'    => $limit,
-                    'category' => array( 'winter', 'winter-ribbed', 'robes', 'loungewear', 'isdal' ),
-                    'exclude'  => $base_exclude,
-                );
-                $found = wc_get_products( $args );
-                if ( ! empty( $found ) ) {
-                    $products = $found;
-                }
-
-                if ( count( $products ) < $limit ) {
-                    $current_ids = array_map( function( $p ) { return $p->get_id(); }, $products );
-                    $exclude = array_unique( array_merge( $base_exclude, $current_ids ) );
-                    $needed = $limit - count( $products );
-                    $backfill = wc_get_products( array(
-                        'status'  => 'publish',
-                        'limit'   => $needed,
-                        'exclude' => $exclude,
-                        'orderby' => 'menu_order',
-                    ) );
-                    if ( ! empty( $backfill ) ) {
-                        $products = array_merge( $products, $backfill );
+                    if ( count( $products ) < $limit ) {
+                        $current_ids = array_filter( array_map( 'fluff_extract_product_id', $products ) );
+                        $exclude     = array_unique( array_merge( $base_exclude, $current_ids ) );
+                        $needed      = $limit - count( $products );
+                        $backfill    = wc_get_products( array(
+                            'status'  => 'publish',
+                            'limit'   => $needed,
+                            'exclude' => $exclude,
+                            'orderby' => 'popularity',
+                        ) );
+                        if ( ! empty( $backfill ) && is_array( $backfill ) ) {
+                            $products = array_merge( $products, $backfill );
+                        }
                     }
-                }
-                break;
+                    break;
+
+                case 'patterned':
+                case 'everyday':
+                    $args = array(
+                        'status'   => 'publish',
+                        'limit'    => $limit,
+                        'category' => array( 'everyday', 'patterned', 'cotton', 'summer-cotton', 'pyjamas' ),
+                        'exclude'  => $base_exclude,
+                    );
+                    $found = wc_get_products( $args );
+                    if ( ! empty( $found ) && is_array( $found ) ) {
+                        $products = $found;
+                    }
+
+                    if ( count( $products ) < $limit ) {
+                        $current_ids = array_filter( array_map( 'fluff_extract_product_id', $products ) );
+                        $exclude     = array_unique( array_merge( $base_exclude, $current_ids ) );
+                        $needed      = $limit - count( $products );
+                        $backfill    = wc_get_products( array(
+                            'status'  => 'publish',
+                            'limit'   => $needed,
+                            'exclude' => $exclude,
+                            'orderby' => 'rating',
+                        ) );
+                        if ( ! empty( $backfill ) && is_array( $backfill ) ) {
+                            $products = array_merge( $products, $backfill );
+                        }
+                    }
+                    break;
+
+                case 'winter':
+                case 'cozy':
+                default:
+                    $args = array(
+                        'status'   => 'publish',
+                        'limit'    => $limit,
+                        'category' => array( 'winter', 'winter-ribbed', 'robes', 'loungewear', 'isdal' ),
+                        'exclude'  => $base_exclude,
+                    );
+                    $found = wc_get_products( $args );
+                    if ( ! empty( $found ) && is_array( $found ) ) {
+                        $products = $found;
+                    }
+
+                    if ( count( $products ) < $limit ) {
+                        $current_ids = array_filter( array_map( 'fluff_extract_product_id', $products ) );
+                        $exclude     = array_unique( array_merge( $base_exclude, $current_ids ) );
+                        $needed      = $limit - count( $products );
+                        $backfill    = wc_get_products( array(
+                            'status'  => 'publish',
+                            'limit'   => $needed,
+                            'exclude' => $exclude,
+                            'orderby' => 'menu_order',
+                        ) );
+                        if ( ! empty( $backfill ) && is_array( $backfill ) ) {
+                            $products = array_merge( $products, $backfill );
+                        }
+                    }
+                    break;
+            }
+        } catch ( Exception $e ) {
+            $products = array();
         }
 
         // Record used product IDs to guarantee zero repetition across sections
         if ( ! empty( $products ) ) {
             foreach ( $products as $prod ) {
-                if ( is_object( $prod ) && method_exists( $prod, 'get_id' ) ) {
-                    $used_ids[] = $prod->get_id();
+                $p_id = fluff_extract_product_id( $prod );
+                if ( $p_id ) {
+                    $used_ids[] = $p_id;
                 }
             }
             return $products;
@@ -738,8 +782,9 @@ function fluff_get_section_products( $section, &$used_ids = array(), $limit = 6 
     $offset = isset( $offset_map[ $section ] ) ? $offset_map[ $section ] : 0;
     $slice = array_slice( $all_samples, $offset, $limit );
     foreach ( $slice as $item ) {
-        if ( isset( $item['id'] ) ) {
-            $used_ids[] = $item['id'];
+        $p_id = fluff_extract_product_id( $item );
+        if ( $p_id ) {
+            $used_ids[] = $p_id;
         }
     }
     return $slice;
@@ -749,23 +794,41 @@ function fluff_get_section_products( $section, &$used_ids = array(), $limit = 6 
  * Render single product card matching FLUFF slow-luxury design system.
  * 1-row horizontally scrolling carousel item, borderless, off-white card.
  *
- * @param WC_Product|array $product WooCommerce Product object or sample array.
+ * @param WC_Product|WP_Post|array|int $product WooCommerce Product, Post, or sample array.
  */
 function fluff_render_product_card( $product ) {
+    if ( ! $product ) {
+        return;
+    }
+
+    // Convert post or numeric ID to WC_Product if WooCommerce is available
+    if ( ( is_numeric( $product ) || ( is_object( $product ) && ! method_exists( $product, 'get_id' ) ) ) && function_exists( 'wc_get_product' ) ) {
+        $wc_prod = wc_get_product( $product );
+        if ( $wc_prod ) {
+            $product = $wc_prod;
+        }
+    }
+
     if ( is_object( $product ) && method_exists( $product, 'get_id' ) ) {
         $id          = $product->get_id();
-        $name        = $product->get_name();
+        $name        = method_exists( $product, 'get_name' ) ? $product->get_name() : get_the_title( $id );
         $link        = get_permalink( $id );
-        $image_id    = $product->get_image_id();
+        $image_id    = method_exists( $product, 'get_image_id' ) ? $product->get_image_id() : 0;
         $image_url   = $image_id ? wp_get_attachment_image_url( $image_id, 'medium_large' ) : ( function_exists('wc_placeholder_img_src') ? wc_placeholder_img_src('medium_large') : '' );
-        $cats        = strip_tags( wc_get_product_category_list( $id, ', ' ) );
+        if ( empty( $image_url ) ) {
+            $image_url = 'https://lh3.googleusercontent.com/aida/AEtjO1VwCeG0fQNpeA4O0djAQOvl7HREfBTeW5_LuJmMdi8G3DNl0G5cgsBzeoP5vE2ubOk5fJ2NiE9BvK-GWiUQ9hiUXjffnzvv3sF4gxMR2jq7oIMp3jHd_AdjcKRzHgMZMBw2CHhp-8zgbcwbTSsSTheLindjCQjB5SqTjlU9JUOIKxoWgye8WEGZ8kmfW2jzROuxRBT5_KnmEgb4-7ScHRSrYv_sVIUPY2014OmI3_LFiVsmlUksZNZ0OD2h';
+        }
+        $cats        = function_exists( 'wc_get_product_category_list' ) ? strip_tags( wc_get_product_category_list( $id, ', ' ) ) : '';
         $category    = ! empty( $cats ) ? $cats : 'FLUFF Sleepwear';
-        $stock_type  = fluff_get_product_stock_type( $product );
+        $stock_type  = function_exists( 'fluff_get_product_origin' ) ? fluff_get_product_origin( $product ) : 'ready';
 
-        if ( $product->is_featured() ) {
+        $is_featured = method_exists( $product, 'is_featured' ) ? $product->is_featured() : false;
+        $is_on_sale  = method_exists( $product, 'is_on_sale' ) ? $product->is_on_sale() : false;
+
+        if ( $is_featured ) {
             $badge_text  = 'HOT RELEASE';
             $badge_style = 'background-color: #D4B586; color: #1F2F4F;';
-        } elseif ( $product->is_on_sale() ) {
+        } elseif ( $is_on_sale ) {
             $badge_text  = '50% OFF 2ND';
             $badge_style = 'background-color: #D4B586; color: #1F2F4F;';
         } elseif ( $stock_type === 'ready' ) {
@@ -776,11 +839,10 @@ function fluff_render_product_card( $product ) {
             $badge_style = 'background-color: #D8B4C1; color: #1F2F4F;';
         }
 
-        $price         = $product->get_price();
-        $regular_price = $product->get_regular_price();
-        $is_on_sale    = $product->is_on_sale();
-        $price_display = wc_price( $price );
-        $regular_price_display = ( $is_on_sale && $regular_price ) ? wc_price( $regular_price ) : '';
+        $price         = method_exists( $product, 'get_price' ) ? $product->get_price() : 0;
+        $regular_price = method_exists( $product, 'get_regular_price' ) ? $product->get_regular_price() : 0;
+        $price_display = function_exists( 'wc_price' ) ? wc_price( $price ) : 'LE ' . number_format( (float) $price, 2 );
+        $regular_price_display = ( $is_on_sale && $regular_price && function_exists( 'wc_price' ) ) ? wc_price( $regular_price ) : '';
     } else {
         $id          = isset( $product['id'] ) ? $product['id'] : 0;
         $name        = isset( $product['name'] ) ? $product['name'] : 'FLUFF Set';
@@ -800,8 +862,8 @@ function fluff_render_product_card( $product ) {
         $price         = isset( $product['price'] ) ? $product['price'] : 1249;
         $regular_price = isset( $product['regular_price'] ) ? $product['regular_price'] : 0;
         $is_on_sale    = ( $regular_price > $price );
-        $price_display = 'LE ' . number_format( $price, 2 );
-        $regular_price_display = $is_on_sale ? 'LE ' . number_format( $regular_price, 2 ) : '';
+        $price_display = 'LE ' . number_format( (float) $price, 2 );
+        $regular_price_display = $is_on_sale ? 'LE ' . number_format( (float) $regular_price, 2 ) : '';
     }
     ?>
     <div class="group flex flex-col product-card-offwhite w-[250px] sm:w-[270px] md:w-[290px] shrink-0 snap-start overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background-color: #F0EDE4; border: none !important;">
