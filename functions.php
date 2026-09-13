@@ -323,13 +323,200 @@ function fluff_get_product_origin( $product ) {
 }
 
 /**
- * Fallback Sample Products Data Helper
+ * Fallback Sample Products Data Helper (16 distinct products for 4 front-page sections)
  */
 function fluff_get_sample_products() {
     return array(
+        // Section 1: Featured & Hot Releases (101-104)
         array(
             'id'           => 101,
-            'name'         => 'S01 Istanbul Blossom Set',
+            'name'         => 'Heavenly Stripes Set (Ladies) - Olive',
+            'arabic_name'  => 'طقم البيجامة المقلمة الفاخر - زيتوني',
+            'price'        => 1499,
+            'regular_price'=> 1999,
+            'stock_type'   => 'ready',
+            'badge'        => '50% OFF 2ND',
+            'delivery'     => fluff_get_option('fluff_cairo_delivery', '2-4 Days Cairo Express'),
+            'rating'       => '5.0',
+            'reviews_count'=> 34,
+            'category'     => "Women's Loungewear",
+            'fabric'       => 'Organic Breathable Cotton',
+            'image'        => 'https://lh3.googleusercontent.com/aida/AEtjO1VwCeG0fQNpeA4O0djAQOvl7HREfBTeW5_LuJmMdi8G3DNl0G5cgsBzeoP5vE2ubOk5fJ2NiE9BvK-GWiUQ9hiUXjffnzvv3sF4gxMR2jq7oIMp3jHd_AdjcKRzHgMZMBw2CHhp-8zgbcwbTSsSTheLindjCQjB5SqTjlU9JUOIKxoWgye8WEGZ8kmfW2jzROuxRBT5_KnmEgb4-7ScHRSrYv_sVIUPY2014OmI3_LFiVsmlUksZNZ0OD2h',
+        ),
+        array(
+            'id'           => 102,
+            'name'         => 'Heavenly Stripe Set (Men) - Baby Blue',
+            'arabic_name'  => 'طقم البيجامة المقلمة الرجالي المريح - أزرق سماوي',
+            'price'        => 1499,
+            'regular_price'=> 1850,
+            'stock_type'   => 'ready',
+            'badge'        => 'COUPLES PAIR',
+            'delivery'     => fluff_get_option('fluff_cairo_delivery', '2-4 Days Cairo Express'),
+            'rating'       => '4.95',
+            'reviews_count'=> 28,
+            'category'     => "Men's Relaxed Fit",
+            'fabric'       => 'Soft Turkish Cotton',
+            'image'        => 'https://lh3.googleusercontent.com/aida/AEtjO1Xt8iTmQBIsTUqH1cH3QjUba-6evLhtfSDtZs3w0Zkt0POrAOyQX_HfhB5hNnQKK5aqlvcNKZSGdBMNBh2IHmCWdIw0C3V3oc--d00G9H5jhozsouPTtTHPaUmGuOovWAiKJEImb1OchbROMwEyMnq7x5xRqWVVg4Pmgp5XN-D-C2LoTvAy_PeTIf28HYrkiGVzzRdWrtUVnPf0v2BgVqjQdYIIFni-rz05-L8NsCWxbjXDbEBp2ljtTQI',
+        ),
+        array(
+            'id'           => 103,
+            'name'         => 'Serenity Stripe Short Set Blue',
+            'arabic_name'  => 'طقم شورت بيجامة قطن ناعم مقلم - أزرق',
+            'price'        => 1299,
+            'regular_price'=> 1599,
+            'stock_type'   => 'preorder',
+            'badge'        => 'BESTSELLER',
+            'delivery'     => fluff_get_option('fluff_istanbul_delivery', '10-12 Days from Istanbul'),
+            'rating'       => '4.92',
+            'reviews_count'=> 41,
+            'category'     => 'Cotton Short Set',
+            'fabric'       => 'Combed Cotton Rib',
+            'image'        => 'https://lh3.googleusercontent.com/aida/AEtjO1WsztWbC7LnZvHfwf9yG0LjwCHnYp8zr3memxfq3YFqj0alRImyzYhB-l8-VEHRpmCIQQyd9gsOQfmVHesPDnzUULcavi_Pkm3BUbxrvB6d-Ecqi1aBwniv3dKsB60rswMJ1gT4QXQSy9iqao17423I60MbYVkKzeNuVGYsch3HLvaW0-tsK5xy1ZybIlu-BiDwSXWwURg_OXYJ6T1C_0wZ2ObgR4E2ra5LDw_PNy6GnFtyrFfVax4AIYWx',
+        ),
+        array(
+            'id'           => 104,
+            'name'         => 'Dots PJ 3 Pieces Set',
+            'arabic_name'  => 'طقم نوم 3 قطع بنقشة منقطة هادئة',
+            'price'        => 1549,
+            'regular_price'=> 1899,
+            'stock_type'   => 'ready',
+            'badge'        => '3-PIECE VALUE',
+            'delivery'     => fluff_get_option('fluff_cairo_delivery', '2-4 Days Cairo Express'),
+            'rating'       => '4.98',
+            'reviews_count'=> 53,
+            'category'     => 'Full Loungewear Trio',
+            'fabric'       => 'Premium Cotton Modal',
+            'image'        => 'https://lh3.googleusercontent.com/aida/AEtjO1WPXewYZN1Zq8Yg0wyounPitnYkQPlfs7Gq15JjGg3Sd3SCXtfRxRtjYlp95CJEt3-T9CVBWm3nZzhadYyPz6BlhydxNlPl_Zh5smhHVnicLMFci5zyh4ogEIyUfEUBhrkAzGbFNHT2SckxP-St6syOhhk_TMzgENyjPZiOPSbkknbbNdzGpKgDYRjhuiqaYILjZP_nXP1VFnPXyaWsOgVFSxsiMWiDfykQb3Tah4Lx7J9lsrrqgqPaGCeT',
+        ),
+
+        // Section 2: Satin Shorts & Glossy Silks (105-108)
+        array(
+            'id'           => 105,
+            'name'         => 'Bows Satin Pyjama Short Set',
+            'arabic_name'  => 'طقم شورت ستان ناعم بفيونكات أنيقة',
+            'price'        => 1249,
+            'regular_price'=> 1500,
+            'stock_type'   => 'ready',
+            'badge'        => 'TRENDING',
+            'delivery'     => fluff_get_option('fluff_cairo_delivery', '2-4 Days Cairo Express'),
+            'rating'       => '4.89',
+            'reviews_count'=> 38,
+            'category'     => 'Satin Shorts',
+            'fabric'       => 'Non-Pilling Mulberry Silk Touch',
+            'image'        => 'https://lh3.googleusercontent.com/aida/AEtjO1WPPZkBI_R2AAGWi3YWayPjm9ZspL2ac17jUmVbpFqCdrIkGmtU5SxRiuX-f5-UGiu_BvBjU_pTTm87_miz_bzfrUkZ-okjeFkCRLX7rtRMp_9sDBFFaDCXphaGjnD0Xd99--r0JX-j6UQDdsaSZIZYckU3LimGxcBSYFNiTfUgLKV-aRsC5ROf7GMJE-JekKgNYuHYM3N_pcx6sCViMv1JW3p5JQrhfYNwqYUOM1lFFfvGz8iE1qtiLvqF',
+        ),
+        array(
+            'id'           => 106,
+            'name'         => 'Zebra Satin Pyjama Short Set',
+            'arabic_name'  => 'طقم شورت ستان بنقشة الزيبرا الحريرية',
+            'price'        => 1249,
+            'regular_price'=> 1500,
+            'stock_type'   => 'preorder',
+            'badge'        => 'WILD SILK',
+            'delivery'     => fluff_get_option('fluff_istanbul_delivery', '10-12 Days from Istanbul'),
+            'rating'       => '4.91',
+            'reviews_count'=> 27,
+            'category'     => 'Satin Shorts',
+            'fabric'       => 'Smooth Luster Satin',
+            'image'        => 'https://lh3.googleusercontent.com/aida/AEtjO1X1kO5qIrnleN2sbhJ_-wglyBgzXbIeep--lxuWX8wajBQJSGTWIWqA4GSwwYR-gHjXIAKB_oAmdJbyqDsHPlyo-A9NIIbWNlX0uOsmO7wQaXXSCVFtWBB-LPRgTLAAjS6GNwNLe7p8tz3dAbMhkX0kz91lHZ4MDtQvjN3LX_kmaSFdL_6YXq9qsjy5Mgnqfze-gKCJ_jIGvhUTtHSQ5SwLLVZ62-ETKblTp44_KhHPKUNmbcaxM6Rg8_OK',
+        ),
+        array(
+            'id'           => 107,
+            'name'         => 'Red Hearts Satin Pyjama Short Set',
+            'arabic_name'  => 'طقم شورت ستان قلوب حمراء رومانسي',
+            'price'        => 1249,
+            'regular_price'=> 1500,
+            'stock_type'   => 'ready',
+            'badge'        => 'LOVER EDIT',
+            'delivery'     => fluff_get_option('fluff_cairo_delivery', '2-4 Days Cairo Express'),
+            'rating'       => '5.0',
+            'reviews_count'=> 62,
+            'category'     => 'Satin Shorts',
+            'fabric'       => 'Featherlight Satin Drape',
+            'image'        => 'https://lh3.googleusercontent.com/aida/AEtjO1V2YvKFWDhfpJAa8_Qcck_cMhcUmPE9PoCqoxoeeKSVSsGS0aewrIIab7Edcl5Q1sdMxbIVFRpBe8-IK3PiywuQ0jXT5OwPV0QMYnmM0Ri_AsSH2KeuSobuxuI1aPrgWszV6oqjHbA408MH_WfFX1kjrQ6toebduM-tWTUZHMaAQkifrit6kIiYPEZ1nFkLlkfupZTiiKiwvGKluHZMDu58DKTtNmwvpwRXSBLyW-3VtEVw1VF4EzgYQGc',
+        ),
+        array(
+            'id'           => 108,
+            'name'         => 'Champagne Silk Lace Cami Set',
+            'arabic_name'  => 'طقم كامي ستان دانتيل بلون الشمبانيا الفاخر',
+            'price'        => 1350,
+            'regular_price'=> 1600,
+            'stock_type'   => 'preorder',
+            'badge'        => 'SLOW LUXURY',
+            'delivery'     => fluff_get_option('fluff_istanbul_delivery', '10-12 Days from Istanbul'),
+            'rating'       => '4.96',
+            'reviews_count'=> 19,
+            'category'     => 'Silk & Satin',
+            'fabric'       => 'Mulberry Silk & French Lace',
+            'image'        => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCuwfI3EExIhQr-dG-9Dkn2xafcNeRJKorDBABE-77YXDX7HSFYYyQxgo1uBPTMzDCQ26o4knS-8D_kNHxsaBsijVRuJbKPyJ8A2X1y5k0ynaKmQSjPAInpGcE3hpypDQC4CIz2lF88xFmm6VOzjG-z1EyWd90tTgC9sCM8ypGKcsT0IBLilQMDRTzxeyq6suPGIXJBBEshUubURbgugFg4M5VAiNa8my9_Eaa8U8y5yl9BUPnVhkOpJQ',
+        ),
+
+        // Section 3: Everyday & Patterned (109-112)
+        array(
+            'id'           => 109,
+            'name'         => 'Everyday Check Set Red',
+            'arabic_name'  => 'طقم بيجامة كروهات يومية قطن ناعم - أحمر',
+            'price'        => 1349,
+            'regular_price'=> 1600,
+            'stock_type'   => 'ready',
+            'badge'        => 'CLASSIC CHECK',
+            'delivery'     => fluff_get_option('fluff_cairo_delivery', '2-4 Days Cairo Express'),
+            'rating'       => '4.87',
+            'reviews_count'=> 45,
+            'category'     => 'Patterned Cotton',
+            'fabric'       => '100% Breathable Cotton',
+            'image'        => 'https://lh3.googleusercontent.com/aida/AEtjO1UV79PZn6ChU5aSYe_e1oeSy8_917VS3XsEuLF1KZQaN3ZSZJS5LbhacDetMSZ_E4Gn3RBVHlqc5gJruY32C4EV8uXa3OT1wYjhj1zn3wD_kny1pD83-itXwag3uH2I9gXImiFdoh1rfnDCjPnM4pSiJ_6gVfj7nZJyRHAWXOHpyb1NI3rxBbEh2qvY-qsnd85x_UH7jk_n3FcKMWaTOd1GPtI0Sm5K08eUb66gGaWKEMAUVXzxAsI1Ykzp',
+        ),
+        array(
+            'id'           => 110,
+            'name'         => 'Pillow Talk PJ Lavender',
+            'arabic_name'  => 'طقم الاسترخاء الليلي بلون اللافندر الهادئ',
+            'price'        => 1349,
+            'regular_price'=> 1600,
+            'stock_type'   => 'preorder',
+            'badge'        => 'COZY MODAL',
+            'delivery'     => fluff_get_option('fluff_istanbul_delivery', '10-12 Days from Istanbul'),
+            'rating'       => '4.93',
+            'reviews_count'=> 31,
+            'category'     => 'Modal Loungewear',
+            'fabric'       => 'Micro-Modal Touch Knit',
+            'image'        => 'https://lh3.googleusercontent.com/aida/AEtjO1WbpwaU9rpcQI6q4LdI9xASfcKjKfGcbteE2z100BQuWDVBIrSM6EC-CS-Hn0sxEE5IKCjHaY3LpqVdMDk2KztjkKynAFiZSs5Ow0SURx08roHAF0TO13ddL8caRJc7QoMHoFktlkv0rEaGBn0ecxJvQ9eQ2ryc6xNsG4HkORX-tIS_2HgkOWagVeZiSrFTYm5JyO6pRJH49_L05IGR6Wm9nwTXcbq7yzIn65wEJdqoTqPX_6gFYxv5zMPl',
+        ),
+        array(
+            'id'           => 111,
+            'name'         => 'Stars PJ 3 Pieces Set Navy',
+            'arabic_name'  => 'طقم النجوم 3 قطع كحلي مع روب فاخر',
+            'price'        => 1549,
+            'regular_price'=> 1800,
+            'stock_type'   => 'ready',
+            'badge'        => 'TRIO SET',
+            'delivery'     => fluff_get_option('fluff_cairo_delivery', '2-4 Days Cairo Express'),
+            'rating'       => '4.97',
+            'reviews_count'=> 58,
+            'category'     => 'Trio Collection',
+            'fabric'       => 'Brushed Turkish Cotton',
+            'image'        => 'https://lh3.googleusercontent.com/aida/AEtjO1WqdMVkKM8AnKJoSM14TGIX5rIi1_gW7_ku2tN12mohAqgq-PnRgE4bdOdfBVbssZEMhTNkaljxsbCR1UmC-pQXK1dp9gaFzD_ZaOiye_L-nveYTxv4NHrAuaqF7nc-0HCRTl3_oVvoCErzZiiG2WFvAhxil8RMzRr8gGk32JG70hIZb3MM3COa4tLOxcwc4yTOM4m0hMKFtcvAcBcTnPbBuTeiY_Ch6HnDUkfgO2yU8Mcip447I3kMkF14',
+        ),
+        array(
+            'id'           => 112,
+            'name'         => 'Pastel Whisper Cotton Short Set',
+            'arabic_name'  => 'طقم شورت صيفي باستيل خفيف الوزن',
+            'price'        => 1150,
+            'regular_price'=> 1390,
+            'stock_type'   => 'ready',
+            'badge'        => 'PURE COTTON',
+            'delivery'     => fluff_get_option('fluff_cairo_delivery', '2-4 Days Cairo Express'),
+            'rating'       => '4.85',
+            'reviews_count'=> 22,
+            'category'     => 'Summer Cotton',
+            'fabric'       => '100% Breathable Cotton',
+            'image'        => 'https://lh3.googleusercontent.com/aida-public/AB6AXuD3wn6bHyBbqJ1a8J3kTP7N5efe-ZaHSyLzj8lb45Dw1iA9sVThBHYeh96lDMY0gnFTFpR_VpBQ5p96LzySzbRXxdJeO9fNg3YKKWH2K5-YAv9SVF-f1ynKJ0-IuvK3SqHOBAY_WHRUEyVi1uG0nGn4XRG70lRH6v5A3dVD8D0xMPIdWHUY690QuEuokadkBuX0y0HLN9LKFdIyuibS9r4pXU986s1zfLA4Rad63FMrZsmwJk1fS_pZAg',
+        ),
+
+        // Section 4: Winter Ribbed & Curated Sleepwear (113-116)
+        array(
+            'id'           => 113,
+            'name'         => 'Istanbul Blossom Ribbed Set',
             'arabic_name'  => 'طقم بيجامة قطن تركي مضلع فاخر بتطريز الكرز الوردي',
             'price'        => 1350,
             'regular_price'=> 1650,
@@ -341,11 +528,10 @@ function fluff_get_sample_products() {
             'category'     => 'Winter Ribbed',
             'fabric'       => '100% Turkish Ribbed Cotton',
             'image'        => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCuwfI3EExIhQr-dG-9Dkn2xafcNeRJKorDBABE-77YXDX7HSFYYyQxgo1uBPTMzDCQ26o4knS-8D_kNHxsaBsijVRuJbKPyJ8A2X1y5k0ynaKmQSjPAInpGcE3hpypDQC4CIz2lF88xFmm6VOzjG-z1EyWd90tTgC9sCM8ypGKcsT0IBLilQMDRTzxeyq6suPGIXJBBEshUubURbgugFg4M5VAiNa8my9_Eaa8U8y5yl9BUPnVhkOpJQ',
-            'fabric_thumb' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuABYr5oGJKTfjmStIIief-QWqVSNZAItQWof64WAc68f0MSE-t8yFzO2QNYQyyaUkXrjBIkkbTHbTbBjDgGb3P28FXfw8jZ_Vl8FxyQoJ-SR6JrY_lfNkIMCGW9Y0fuNLVDHDEQj7GuXzsxUcTuZIO7KOBz95EL725icBGnWX_l93YvklQGhZVdk30Vaakqacdx1smKNf8xNUAbVgqjoZ-BEZrPPy4HGJzuLP1pqXeMuzwrU-CdXfdPlA'
         ),
         array(
-            'id'           => 102,
-            'name'         => 'S02 Cairo Velvet Lounge Set',
+            'id'           => 114,
+            'name'         => 'Cairo Velvet Lounge Set',
             'arabic_name'  => 'طقم المخمل الفاخر متوفر بالمخزون بالقاهرة',
             'price'        => 1480,
             'regular_price'=> 1750,
@@ -357,11 +543,10 @@ function fluff_get_sample_products() {
             'category'     => 'Ready Stock',
             'fabric'       => 'Plush Velvet Knit',
             'image'        => 'https://lh3.googleusercontent.com/aida-public/AB6AXuD3wn6bHyBbqJ1a8J3kTP7N5efe-ZaHSyLzj8lb45Dw1iA9sVThBHYeh96lDMY0gnFTFpR_VpBQ5p96LzySzbRXxdJeO9fNg3YKKWH2K5-YAv9SVF-f1ynKJ0-IuvK3SqHOBAY_WHRUEyVi1uG0nGn4XRG70lRH6v5A3dVD8D0xMPIdWHUY690QuEuokadkBuX0y0HLN9LKFdIyuibS9r4pXU986s1zfLA4Rad63FMrZsmwJk1fS_pZAg',
-            'fabric_thumb' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuABYr5oGJKTfjmStIIief-QWqVSNZAItQWof64WAc68f0MSE-t8yFzO2QNYQyyaUkXrjBIkkbTHbTbBjDgGb3P28FXfw8jZ_Vl8FxyQoJ-SR6JrY_lfNkIMCGW9Y0fuNLVDHDEQj7GuXzsxUcTuZIO7KOBz95EL725icBGnWX_l93YvklQGhZVdk30Vaakqacdx1smKNf8xNUAbVgqjoZ-BEZrPPy4HGJzuLP1pqXeMuzwrU-CdXfdPlA'
         ),
         array(
-            'id'           => 103,
-            'name'         => 'S03 Bosphorus Silk Kimono Robe',
+            'id'           => 115,
+            'name'         => 'Bosphorus Silk Kimono Robe',
             'arabic_name'  => 'روب الحرير التركي بتطريز القمر الذهبي',
             'price'        => 1950,
             'regular_price'=> 2300,
@@ -373,11 +558,10 @@ function fluff_get_sample_products() {
             'category'     => 'Silk & Satin',
             'fabric'       => 'Pure Mulberry Silk Touch',
             'image'        => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCuwfI3EExIhQr-dG-9Dkn2xafcNeRJKorDBABE-77YXDX7HSFYYyQxgo1uBPTMzDCQ26o4knS-8D_kNHxsaBsijVRuJbKPyJ8A2X1y5k0ynaKmQSjPAInpGcE3hpypDQC4CIz2lF88xFmm6VOzjG-z1EyWd90tTgC9sCM8ypGKcsT0IBLilQMDRTzxeyq6suPGIXJBBEshUubURbgugFg4M5VAiNa8my9_Eaa8U8y5yl9BUPnVhkOpJQ',
-            'fabric_thumb' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuABYr5oGJKTfjmStIIief-QWqVSNZAItQWof64WAc68f0MSE-t8yFzO2QNYQyyaUkXrjBIkkbTHbTbBjDgGb3P28FXfw8jZ_Vl8FxyQoJ-SR6JrY_lfNkIMCGW9Y0fuNLVDHDEQj7GuXzsxUcTuZIO7KOBz95EL725icBGnWX_l93YvklQGhZVdk30Vaakqacdx1smKNf8xNUAbVgqjoZ-BEZrPPy4HGJzuLP1pqXeMuzwrU-CdXfdPlA'
         ),
         array(
-            'id'           => 104,
-            'name'         => 'S04 Moonlight Ribbed Sleep Set',
+            'id'           => 116,
+            'name'         => 'Moonlight Ribbed Sleep Set',
             'arabic_name'  => 'طقم النوم المضلع خفيف الوزن - شحن فورى',
             'price'        => 1200,
             'regular_price'=> 1400,
@@ -389,7 +573,275 @@ function fluff_get_sample_products() {
             'category'     => 'Summer Cotton',
             'fabric'       => 'Organic Breathable Cotton',
             'image'        => 'https://lh3.googleusercontent.com/aida-public/AB6AXuD3wn6bHyBbqJ1a8J3kTP7N5efe-ZaHSyLzj8lb45Dw1iA9sVThBHYeh96lDMY0gnFTFpR_VpBQ5p96LzySzbRXxdJeO9fNg3YKKWH2K5-YAv9SVF-f1ynKJ0-IuvK3SqHOBAY_WHRUEyVi1uG0nGn4XRG70lRH6v5A3dVD8D0xMPIdWHUY690QuEuokadkBuX0y0HLN9LKFdIyuibS9r4pXU986s1zfLA4Rad63FMrZsmwJk1fS_pZAg',
-            'fabric_thumb' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuABYr5oGJKTfjmStIIief-QWqVSNZAItQWof64WAc68f0MSE-t8yFzO2QNYQyyaUkXrjBIkkbTHbTbBjDgGb3P28FXfw8jZ_Vl8FxyQoJ-SR6JrY_lfNkIMCGW9Y0fuNLVDHDEQj7GuXzsxUcTuZIO7KOBz95EL725icBGnWX_l93YvklQGhZVdk30Vaakqacdx1smKNf8xNUAbVgqjoZ-BEZrPPy4HGJzuLP1pqXeMuzwrU-CdXfdPlA'
         ),
     );
 }
+
+/**
+ * Get products for a front-page section with deduplication.
+ *
+ * @param string $section   Section identifier ('featured', 'satin', 'patterned', 'winter').
+ * @param array  &$used_ids Reference to array of already displayed product IDs across sections.
+ * @param int    $limit     Maximum number of products to return.
+ * @return array Array of WC_Product objects or fallback product arrays.
+ */
+function fluff_get_section_products( $section, &$used_ids = array(), $limit = 6 ) {
+    $products = array();
+
+    if ( function_exists( 'wc_get_products' ) ) {
+        $base_exclude = is_array( $used_ids ) ? $used_ids : array();
+
+        switch ( $section ) {
+            case 'featured':
+            case 'new-drops':
+                $args = array(
+                    'status'   => 'publish',
+                    'limit'    => $limit,
+                    'featured' => true,
+                    'exclude'  => $base_exclude,
+                    'orderby'  => 'date',
+                    'order'    => 'DESC',
+                );
+                $found = wc_get_products( $args );
+                if ( ! empty( $found ) ) {
+                    $products = $found;
+                }
+
+                // If not enough featured products, backfill with newest published products
+                if ( count( $products ) < $limit ) {
+                    $current_ids = array_map( function( $p ) { return $p->get_id(); }, $products );
+                    $exclude = array_unique( array_merge( $base_exclude, $current_ids ) );
+                    $needed = $limit - count( $products );
+                    $backfill = wc_get_products( array(
+                        'status'  => 'publish',
+                        'limit'   => $needed,
+                        'exclude' => $exclude,
+                        'orderby' => 'date',
+                        'order'   => 'DESC',
+                    ) );
+                    if ( ! empty( $backfill ) ) {
+                        $products = array_merge( $products, $backfill );
+                    }
+                }
+                break;
+
+            case 'satin':
+                $args = array(
+                    'status'   => 'publish',
+                    'limit'    => $limit,
+                    'category' => array( 'satin', 'satin-shorts', 'silk', 'silk-satin', 'satin-pyjamas' ),
+                    'exclude'  => $base_exclude,
+                );
+                $found = wc_get_products( $args );
+                if ( ! empty( $found ) ) {
+                    $products = $found;
+                }
+
+                if ( count( $products ) < $limit ) {
+                    $current_ids = array_map( function( $p ) { return $p->get_id(); }, $products );
+                    $exclude = array_unique( array_merge( $base_exclude, $current_ids ) );
+                    $needed = $limit - count( $products );
+                    $backfill = wc_get_products( array(
+                        'status'  => 'publish',
+                        'limit'   => $needed,
+                        'exclude' => $exclude,
+                        'orderby' => 'popularity',
+                    ) );
+                    if ( ! empty( $backfill ) ) {
+                        $products = array_merge( $products, $backfill );
+                    }
+                }
+                break;
+
+            case 'patterned':
+            case 'everyday':
+                $args = array(
+                    'status'   => 'publish',
+                    'limit'    => $limit,
+                    'category' => array( 'everyday', 'patterned', 'cotton', 'summer-cotton', 'pyjamas' ),
+                    'exclude'  => $base_exclude,
+                );
+                $found = wc_get_products( $args );
+                if ( ! empty( $found ) ) {
+                    $products = $found;
+                }
+
+                if ( count( $products ) < $limit ) {
+                    $current_ids = array_map( function( $p ) { return $p->get_id(); }, $products );
+                    $exclude = array_unique( array_merge( $base_exclude, $current_ids ) );
+                    $needed = $limit - count( $products );
+                    $backfill = wc_get_products( array(
+                        'status'  => 'publish',
+                        'limit'   => $needed,
+                        'exclude' => $exclude,
+                        'orderby' => 'rating',
+                    ) );
+                    if ( ! empty( $backfill ) ) {
+                        $products = array_merge( $products, $backfill );
+                    }
+                }
+                break;
+
+            case 'winter':
+            case 'cozy':
+            default:
+                $args = array(
+                    'status'   => 'publish',
+                    'limit'    => $limit,
+                    'category' => array( 'winter', 'winter-ribbed', 'robes', 'loungewear', 'isdal' ),
+                    'exclude'  => $base_exclude,
+                );
+                $found = wc_get_products( $args );
+                if ( ! empty( $found ) ) {
+                    $products = $found;
+                }
+
+                if ( count( $products ) < $limit ) {
+                    $current_ids = array_map( function( $p ) { return $p->get_id(); }, $products );
+                    $exclude = array_unique( array_merge( $base_exclude, $current_ids ) );
+                    $needed = $limit - count( $products );
+                    $backfill = wc_get_products( array(
+                        'status'  => 'publish',
+                        'limit'   => $needed,
+                        'exclude' => $exclude,
+                        'orderby' => 'menu_order',
+                    ) );
+                    if ( ! empty( $backfill ) ) {
+                        $products = array_merge( $products, $backfill );
+                    }
+                }
+                break;
+        }
+
+        // Record used product IDs to guarantee zero repetition across sections
+        if ( ! empty( $products ) ) {
+            foreach ( $products as $prod ) {
+                if ( is_object( $prod ) && method_exists( $prod, 'get_id' ) ) {
+                    $used_ids[] = $prod->get_id();
+                }
+            }
+            return $products;
+        }
+    }
+
+    // Fallback sample products if WooCommerce returns no items
+    $all_samples = fluff_get_sample_products();
+    $offset_map = array(
+        'featured'  => 0,
+        'new-drops' => 0,
+        'satin'     => 4,
+        'patterned' => 8,
+        'everyday'  => 8,
+        'winter'    => 12,
+        'cozy'      => 12,
+    );
+    $offset = isset( $offset_map[ $section ] ) ? $offset_map[ $section ] : 0;
+    $slice = array_slice( $all_samples, $offset, $limit );
+    foreach ( $slice as $item ) {
+        if ( isset( $item['id'] ) ) {
+            $used_ids[] = $item['id'];
+        }
+    }
+    return $slice;
+}
+
+/**
+ * Render single product card matching FLUFF slow-luxury design system.
+ * 1-row horizontally scrolling carousel item, borderless, off-white card.
+ *
+ * @param WC_Product|array $product WooCommerce Product object or sample array.
+ */
+function fluff_render_product_card( $product ) {
+    if ( is_object( $product ) && method_exists( $product, 'get_id' ) ) {
+        $id          = $product->get_id();
+        $name        = $product->get_name();
+        $link        = get_permalink( $id );
+        $image_id    = $product->get_image_id();
+        $image_url   = $image_id ? wp_get_attachment_image_url( $image_id, 'medium_large' ) : ( function_exists('wc_placeholder_img_src') ? wc_placeholder_img_src('medium_large') : '' );
+        $cats        = strip_tags( wc_get_product_category_list( $id, ', ' ) );
+        $category    = ! empty( $cats ) ? $cats : 'FLUFF Sleepwear';
+        $stock_type  = fluff_get_product_stock_type( $product );
+
+        if ( $product->is_featured() ) {
+            $badge_text  = 'HOT RELEASE';
+            $badge_style = 'background-color: #D4B586; color: #1F2F4F;';
+        } elseif ( $product->is_on_sale() ) {
+            $badge_text  = '50% OFF 2ND';
+            $badge_style = 'background-color: #D4B586; color: #1F2F4F;';
+        } elseif ( $stock_type === 'ready' ) {
+            $badge_text  = 'READY STOCK';
+            $badge_style = 'background-color: #647A96; color: #ffffff;';
+        } else {
+            $badge_text  = 'PRE-ORDER';
+            $badge_style = 'background-color: #D8B4C1; color: #1F2F4F;';
+        }
+
+        $price         = $product->get_price();
+        $regular_price = $product->get_regular_price();
+        $is_on_sale    = $product->is_on_sale();
+        $price_display = wc_price( $price );
+        $regular_price_display = ( $is_on_sale && $regular_price ) ? wc_price( $regular_price ) : '';
+    } else {
+        $id          = isset( $product['id'] ) ? $product['id'] : 0;
+        $name        = isset( $product['name'] ) ? $product['name'] : 'FLUFF Set';
+        $link        = '#';
+        $image_url   = isset( $product['image'] ) ? $product['image'] : '';
+        $category    = isset( $product['category'] ) ? $product['category'] : 'Sleepwear';
+        $badge_text  = isset( $product['badge'] ) ? $product['badge'] : 'Ready Stock';
+
+        if ( strpos( strtolower( $badge_text ), 'pre-order' ) !== false || ( isset( $product['stock_type'] ) && $product['stock_type'] === 'preorder' ) ) {
+            $badge_style = 'background-color: #D8B4C1; color: #1F2F4F;';
+        } elseif ( strpos( strtolower( $badge_text ), '50%' ) !== false || strpos( strtolower( $badge_text ), 'hot' ) !== false || strpos( strtolower( $badge_text ), 'bestseller' ) !== false || strpos( strtolower( $badge_text ), 'trending' ) !== false || strpos( strtolower( $badge_text ), 'special' ) !== false ) {
+            $badge_style = 'background-color: #D4B586; color: #1F2F4F;';
+        } else {
+            $badge_style = 'background-color: #647A96; color: #ffffff;';
+        }
+
+        $price         = isset( $product['price'] ) ? $product['price'] : 1249;
+        $regular_price = isset( $product['regular_price'] ) ? $product['regular_price'] : 0;
+        $is_on_sale    = ( $regular_price > $price );
+        $price_display = 'LE ' . number_format( $price, 2 );
+        $regular_price_display = $is_on_sale ? 'LE ' . number_format( $regular_price, 2 ) : '';
+    }
+    ?>
+    <div class="group flex flex-col product-card-offwhite w-[250px] sm:w-[270px] md:w-[290px] shrink-0 snap-start overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background-color: #F0EDE4; border: none !important;">
+        <div class="relative aspect-[3/4] w-full bg-[#EAE6DB] overflow-hidden">
+            <a href="<?php echo esc_url( $link ); ?>" class="block w-full h-full">
+                <img alt="<?php echo esc_attr( $name ); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="<?php echo esc_url( $image_url ); ?>" loading="lazy" />
+            </a>
+            <span class="absolute top-2 left-2 font-label-badge text-label-badge px-2 py-0.5 font-extrabold shadow-sm uppercase tracking-wider" style="<?php echo esc_attr( $badge_style ); ?>">
+                <?php echo esc_html( $badge_text ); ?>
+            </span>
+            <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#53627A] shadow active:scale-90 hover:text-[#1F2F4F] transition-transform cursor-pointer" onclick="toggleWishlist(this, '<?php echo esc_js( $name ); ?>')">
+                <span class="material-symbols-outlined text-[18px]">favorite_border</span>
+            </button>
+        </div>
+        <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
+            <div>
+                <span class="font-body-sm text-body-sm block truncate" style="color: #647A96;"><?php echo esc_html( $category ); ?></span>
+                <h3 class="font-body-md text-body-md font-bold line-clamp-1 mt-0.5" style="color: #1F2F4F;">
+                    <a href="<?php echo esc_url( $link ); ?>" class="hover:text-[#D4B586] transition-colors">
+                        <?php echo esc_html( $name ); ?>
+                    </a>
+                </h3>
+            </div>
+            <div class="mt-3">
+                <div class="flex items-baseline gap-2">
+                    <span class="font-label-lg text-label-lg font-extrabold" style="color: #1F2F4F;">
+                        <?php echo $price_display; ?>
+                    </span>
+                    <?php if ( $is_on_sale && ! empty( $regular_price_display ) ) : ?>
+                        <span class="font-body-sm text-body-sm line-through" style="color: #647A96;">
+                            <?php echo $regular_price_display; ?>
+                        </span>
+                    <?php endif; ?>
+                </div>
+                <button class="mt-2.5 w-full py-2.5 bg-[#1F2F4F] text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 hover:bg-[#D4B586] hover:text-[#1F2F4F] transition-colors shadow-sm cursor-pointer" style="border: none !important;" onclick="addToCart('<?php echo esc_js( $name ); ?>')">
+                    <span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add to Bag
+                </button>
+            </div>
+        </div>
+    </div>
+    <?php
+}
+

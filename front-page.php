@@ -8,6 +8,8 @@
  */
 
 get_header();
+// Global product ID deduplicator to guarantee zero repeats across sections
+$fluff_used_ids = array();
 ?>
 
 <div class="flex flex-col w-full">
@@ -58,13 +60,13 @@ get_header();
         </div>
     </section>
 
-    <!-- Featured New Drops Section (1 Row Horizontal Scroll) -->
+    <!-- Section 1: Featured New Drops (1 Row Horizontal Scroll) -->
     <section class="py-8 md:py-12 bg-surface" id="new-drops">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-end justify-between mb-6">
                 <div>
                     <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block" style="color: #647A96;">HOT RELEASES</span>
-                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold tracking-tight" style="color: #1F2F4F;">New Arrivals</h2>
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold tracking-tight" style="color: #1F2F4F;">New Arrivals &amp; Featured</h2>
                 </div>
                 <a class="font-label-md text-label-md font-bold flex items-center gap-1 hover:text-[#D4B586] transition-colors" style="color: #1F2F4F;" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>">
                     View all <span class="material-symbols-outlined text-[16px]">chevron_right</span>
@@ -73,109 +75,14 @@ get_header();
 
             <!-- 1-Row Horizontally Scrolling Product Cards (No borders, Off-white background) -->
             <div class="flex overflow-x-auto no-scrollbar gap-4 sm:gap-6 pb-4 pt-1 snap-x scroll-smooth">
-                <!-- Product 1 -->
-                <div class="group flex flex-col product-card-offwhite w-[250px] sm:w-[270px] md:w-[290px] shrink-0 snap-start overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background-color: #F0EDE4; border: none;">
-                    <div class="relative aspect-[3/4] w-full bg-[#EAE6DB] overflow-hidden">
-                        <img alt="Heavenly Stripes Set Ladies - Olive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1VwCeG0fQNpeA4O0djAQOvl7HREfBTeW5_LuJmMdi8G3DNl0G5cgsBzeoP5vE2ubOk5fJ2NiE9BvK-GWiUQ9hiUXjffnzvv3sF4gxMR2jq7oIMp3jHd_AdjcKRzHgMZMBw2CHhp-8zgbcwbTSsSTheLindjCQjB5SqTjlU9JUOIKxoWgye8WEGZ8kmfW2jzROuxRBT5_KnmEgb4-7ScHRSrYv_sVIUPY2014OmI3_LFiVsmlUksZNZ0OD2h" />
-                        <span class="absolute top-2 left-2 font-label-badge text-label-badge px-2 py-0.5 font-extrabold shadow-sm" style="background-color: #D4B586; color: #1F2F4F;">50% OFF 2ND</span>
-                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#53627A] shadow active:scale-90 hover:text-[#1F2F4F] transition-transform" onclick="toggleWishlist(this, 'Heavenly Stripes Set (Ladies)')">
-                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
-                        </button>
-                    </div>
-                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
-                        <div>
-                            <span class="font-body-sm text-body-sm block" style="color: #647A96;">Women's Loungewear</span>
-                            <h3 class="font-body-md text-body-md font-bold line-clamp-1 mt-0.5" style="color: #1F2F4F;">Heavenly Stripes Set (Ladies)- Olive</h3>
-                        </div>
-                        <div class="mt-3">
-                            <div class="flex items-baseline gap-2">
-                                <span class="font-label-lg text-label-lg font-extrabold" style="color: #1F2F4F;">LE 1,499.00</span>
-                                <span class="font-body-sm text-body-sm line-through" style="color: #647A96;">LE 949.00</span>
-                            </div>
-                            <button class="mt-2.5 w-full py-2.5 bg-[#1F2F4F] text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 hover:bg-[#D4B586] hover:text-[#1F2F4F] transition-colors shadow-sm" style="border: none;" onclick="addToCart('Heavenly Stripes Set (Ladies)- Olive')">
-                                <span class="material-symbols-outlined text-[16px]">shopping_bag</span>Add to Bag
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="group flex flex-col product-card-offwhite w-[250px] sm:w-[270px] md:w-[290px] shrink-0 snap-start overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background-color: #F0EDE4; border: none;">
-                    <div class="relative aspect-[3/4] w-full bg-[#EAE6DB] overflow-hidden">
-                        <img alt="Heavenly Stripe Set Men - Baby Blue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1Xt8iTmQBIsTUqH1cH3QjUba-6evLhtfSDtZs3w0Zkt0POrAOyQX_HfhB5hNnQKK5aqlvcNKZSGdBMNBh2IHmCWdIw0C3V3oc--d00G9H5jhozsouPTtTHPaUmGuOovWAiKJEImb1OchbROMwEyMnq7x5xRqWVVg4Pmgp5XN-D-C2LoTvAy_PeTIf28HYrkiGVzzRdWrtUVnPf0v2BgVqjQdYIIFni-rz05-L8NsCWxbjXDbEBp2ljtTQI" />
-                        <span class="absolute top-2 left-2 font-label-badge text-label-badge px-2 py-0.5 font-extrabold shadow-sm" style="background-color: #647A96; color: #ffffff;">COUPLES PAIR</span>
-                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#53627A] shadow active:scale-90 hover:text-[#1F2F4F] transition-transform" onclick="toggleWishlist(this, 'Heavenly Stripe Set (Men)')">
-                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
-                        </button>
-                    </div>
-                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
-                        <div>
-                            <span class="font-body-sm text-body-sm block" style="color: #647A96;">Men's Relaxed Fit</span>
-                            <h3 class="font-body-md text-body-md font-bold line-clamp-1 mt-0.5" style="color: #1F2F4F;">Heavenly Stripe Set (Men)- Baby Blue</h3>
-                        </div>
-                        <div class="mt-3">
-                            <div class="flex items-baseline gap-2">
-                                <span class="font-label-lg text-label-lg font-extrabold" style="color: #1F2F4F;">LE 1,499.00</span>
-                                <span class="font-body-sm text-body-sm line-through" style="color: #647A96;">LE 949.00</span>
-                            </div>
-                            <button class="mt-2.5 w-full py-2.5 bg-[#1F2F4F] text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 hover:bg-[#D4B586] hover:text-[#1F2F4F] transition-colors shadow-sm" style="border: none;" onclick="addToCart('Heavenly Stripe Set (Men)- Baby Blue')">
-                                <span class="material-symbols-outlined text-[16px]">shopping_bag</span>Add to Bag
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="group flex flex-col product-card-offwhite w-[250px] sm:w-[270px] md:w-[290px] shrink-0 snap-start overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background-color: #F0EDE4; border: none;">
-                    <div class="relative aspect-[3/4] w-full bg-[#EAE6DB] overflow-hidden">
-                        <img alt="Serenity Stripe Short Set Blue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1WsztWbC7LnZvHfwf9yG0LjwCHnYp8zr3memxfq3YFqj0alRImyzYhB-l8-VEHRpmCIQQyd9gsOQfmVHesPDnzUULcavi_Pkm3BUbxrvB6d-Ecqi1aBwniv3dKsB60rswMJ1gT4QXQSy9iqao17423I60MbYVkKzeNuVGYsch3HLvaW0-tsK5xy1ZybIlu-BiDwSXWwURg_OXYJ6T1C_0wZ2ObgR4E2ra5LDw_PNy6GnFtyrFfVax4AIYWx" />
-                        <span class="absolute top-2 left-2 font-label-badge text-label-badge px-2 py-0.5 font-extrabold shadow-sm" style="background-color: #D4B586; color: #1F2F4F;">BESTSELLER</span>
-                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#53627A] shadow active:scale-90 hover:text-[#1F2F4F] transition-transform" onclick="toggleWishlist(this, 'Serenity Stripe Short Set')">
-                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
-                        </button>
-                    </div>
-                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
-                        <div>
-                            <span class="font-body-sm text-body-sm block" style="color: #647A96;">Cotton Short Set</span>
-                            <h3 class="font-body-md text-body-md font-bold line-clamp-1 mt-0.5" style="color: #1F2F4F;">Serenity Stripe Short Set Blue</h3>
-                        </div>
-                        <div class="mt-3">
-                            <div class="flex items-baseline gap-2">
-                                <span class="font-label-lg text-label-lg font-extrabold" style="color: #1F2F4F;">LE 1,299.00</span>
-                                <span class="font-body-sm text-body-sm line-through" style="color: #647A96;">LE 899.00</span>
-                            </div>
-                            <button class="mt-2.5 w-full py-2.5 bg-[#1F2F4F] text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 hover:bg-[#D4B586] hover:text-[#1F2F4F] transition-colors shadow-sm" style="border: none;" onclick="addToCart('Serenity Stripe Short Set Blue')">
-                                <span class="material-symbols-outlined text-[16px]">shopping_bag</span>Add to Bag
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="group flex flex-col product-card-offwhite w-[250px] sm:w-[270px] md:w-[290px] shrink-0 snap-start overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background-color: #F0EDE4; border: none;">
-                    <div class="relative aspect-[3/4] w-full bg-[#EAE6DB] overflow-hidden">
-                        <img alt="Dots PJ 3 Pieces Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1WPXewYZN1Zq8Yg0wyounPitnYkQPlfs7Gq15JjGg3Sd3SCXtfRxRtjYlp95CJEt3-T9CVBWm3nZzhadYyPz6BlhydxNlPl_Zh5smhHVnicLMFci5zyh4ogEIyUfEUBhrkAzGbFNHT2SckxP-St6syOhhk_TMzgENyjPZiOPSbkknbbNdzGpKgDYRjhuiqaYILjZP_nXP1VFnPXyaWsOgVFSxsiMWiDfykQb3Tah4Lx7J9lsrrqgqPaGCeT" />
-                        <span class="absolute top-2 left-2 font-label-badge text-label-badge px-2 py-0.5 font-extrabold shadow-sm" style="background-color: #647A96; color: #ffffff;">3-PIECE VALUE</span>
-                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#53627A] shadow active:scale-90 hover:text-[#1F2F4F] transition-transform" onclick="toggleWishlist(this, 'Dots PJ 3 Pieces Set')">
-                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
-                        </button>
-                    </div>
-                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
-                        <div>
-                            <span class="font-body-sm text-body-sm block" style="color: #647A96;">Full Loungewear Trio</span>
-                            <h3 class="font-body-md text-body-md font-bold line-clamp-1 mt-0.5" style="color: #1F2F4F;">Dots PJ 3 Pieces Set</h3>
-                        </div>
-                        <div class="mt-3">
-                            <div class="flex items-baseline gap-2">
-                                <span class="font-label-lg text-label-lg font-extrabold" style="color: #1F2F4F;">LE 1,549.00</span>
-                                <span class="font-body-sm text-body-sm line-through" style="color: #647A96;">LE 1,199.00</span>
-                            </div>
-                            <button class="mt-2.5 w-full py-2.5 bg-[#1F2F4F] text-white font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 hover:bg-[#D4B586] hover:text-[#1F2F4F] transition-colors shadow-sm" style="border: none;" onclick="addToCart('Dots PJ 3 Pieces Set')">
-                                <span class="material-symbols-outlined text-[16px]">shopping_bag</span>Add to Bag
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                $featured_products = fluff_get_section_products( 'featured', $fluff_used_ids, 6 );
+                if ( ! empty( $featured_products ) ) {
+                    foreach ( $featured_products as $product ) {
+                        fluff_render_product_card( $product );
+                    }
+                }
+                ?>
             </div>
         </div>
     </section>
@@ -250,80 +157,19 @@ get_header();
 
             <!-- 1-Row Horizontally Scrolling Satin Cards (No borders, Off-white background) -->
             <div class="flex overflow-x-auto no-scrollbar gap-4 sm:gap-6 pb-4 pt-1 snap-x scroll-smooth">
-                <!-- Satin 1 -->
-                <div class="group flex flex-col product-card-offwhite w-[250px] sm:w-[270px] md:w-[290px] shrink-0 snap-start overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background-color: #F0EDE4; border: none;">
-                    <div class="relative aspect-[3/4] w-full bg-[#EAE6DB] overflow-hidden">
-                        <img alt="Bows Satin Pyjama Short Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1WPPZkBI_R2AAGWi3YWayPjm9ZspL2ac17jUmVbpFqCdrIkGmtU5SxRiuX-f5-UGiu_BvBjU_pTTm87_miz_bzfrUkZ-okjeFkCRLX7rtRMp_9sDBFFaDCXphaGjnD0Xd99--r0JX-j6UQDdsaSZIZYckU3LimGxcBSYFNiTfUgLKV-aRsC5ROf7GMJE-JekKgNYuHYM3N_pcx6sCViMv1JW3p5JQrhfYNwqYUOM1lFFfvGz8iE1qtiLvqF" />
-                        <span class="absolute top-2 left-2 font-label-badge text-label-badge px-2 py-0.5 font-extrabold shadow-sm" style="background-color: #D4B586; color: #1F2F4F;">TRENDING</span>
-                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#53627A] shadow active:scale-90 hover:text-[#1F2F4F] transition-transform" onclick="toggleWishlist(this, 'Bows Satin Pyjama Set')">
-                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
-                        </button>
-                    </div>
-                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
-                        <h4 class="font-body-md text-body-md font-bold line-clamp-1" style="color: #1F2F4F;">Bows Satin Pyjama Short Set</h4>
-                        <div class="mt-2">
-                            <div class="flex items-baseline gap-1.5">
-                                <span class="font-label-lg text-label-lg font-bold" style="color: #1F2F4F;">LE 1,249.00</span>
-                                <span class="font-body-sm text-body-sm line-through" style="color: #647A96;">LE 949.00</span>
-                            </div>
-                            <button class="mt-2.5 w-full py-2.5 bg-[#1F2F4F] text-white font-label-badge text-label-badge uppercase font-bold hover:bg-[#D4B586] hover:text-[#1F2F4F] transition-colors flex items-center justify-center gap-1 shadow-sm" style="border: none;" onclick="addToCart('Bows Satin Pyjama Short Set')">
-                                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span> Quick Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Satin 2 -->
-                <div class="group flex flex-col product-card-offwhite w-[250px] sm:w-[270px] md:w-[290px] shrink-0 snap-start overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background-color: #F0EDE4; border: none;">
-                    <div class="relative aspect-[3/4] w-full bg-[#EAE6DB] overflow-hidden">
-                        <img alt="Zebra Satin Pyjama Short Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1X1kO5qIrnleN2sbhJ_-wglyBgzXbIeep--lxuWX8wajBQJSGTWIWqA4GSwwYR-gHjXIAKB_oAmdJbyqDsHPlyo-A9NIIbWNlX0uOsmO7wQaXXSCVFtWBB-LPRgTLAAjS6GNwNLe7p8tz3dAbMhkX0kz91lHZ4MDtQvjN3LX_kmaSFdL_6YXq9qsjy5Mgnqfze-gKCJ_jIGvhUTtHSQ5SwLLVZ62-ETKblTp44_KhHPKUNmbcaxM6Rg8_OK" />
-                        <span class="absolute top-2 left-2 font-label-badge text-label-badge px-2 py-0.5 font-extrabold shadow-sm" style="background-color: #647A96; color: #ffffff;">WILD SILK</span>
-                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#53627A] shadow active:scale-90 hover:text-[#1F2F4F] transition-transform" onclick="toggleWishlist(this, 'Zebra Satin Pyjama Set')">
-                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
-                        </button>
-                    </div>
-                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
-                        <h4 class="font-body-md text-body-md font-bold line-clamp-1" style="color: #1F2F4F;">Zebra Satin Pyjama Short Set</h4>
-                        <div class="mt-2">
-                            <div class="flex items-baseline gap-1.5">
-                                <span class="font-label-lg text-label-lg font-bold" style="color: #1F2F4F;">LE 1,249.00</span>
-                                <span class="font-body-sm text-body-sm line-through" style="color: #647A96;">LE 949.00</span>
-                            </div>
-                            <button class="mt-2.5 w-full py-2.5 bg-[#1F2F4F] text-white font-label-badge text-label-badge uppercase font-bold hover:bg-[#D4B586] hover:text-[#1F2F4F] transition-colors flex items-center justify-center gap-1 shadow-sm" style="border: none;" onclick="addToCart('Zebra Satin Pyjama Short Set')">
-                                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span> Quick Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Satin 3 -->
-                <div class="group flex flex-col product-card-offwhite w-[250px] sm:w-[270px] md:w-[290px] shrink-0 snap-start overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background-color: #F0EDE4; border: none;">
-                    <div class="relative aspect-[3/4] w-full bg-[#EAE6DB] overflow-hidden">
-                        <img alt="Red Hearts Satin Pyjama Short Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1V2YvKFWDhfpJAa8_Qcck_cMhcUmPE9PoCqoxoeeKSVSsGS0aewrIIab7Edcl5Q1sdMxbIVFRpBe8-IK3PiywuQ0jXT5OwPV0QMYnmM0Ri_AsSH2KeuSobuxuI1aPrgWszV6oqjHbA408MH_WfFX1kjrQ6toebduM-tWTUZHMaAQkifrit6kIiYPEZ1nFkLlkfupZTiiKiwvGKluHZMDu58DKTtNmwvpwRXSBLyW-3VtEVw1VF4EzgYQGc" />
-                        <span class="absolute top-2 left-2 font-label-badge text-label-badge px-2 py-0.5 font-extrabold shadow-sm" style="background-color: #D8B4C1; color: #1F2F4F;">LOVER EDIT</span>
-                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#53627A] shadow active:scale-90 hover:text-[#1F2F4F] transition-transform" onclick="toggleWishlist(this, 'Red Hearts Satin Pyjama Set')">
-                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
-                        </button>
-                    </div>
-                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
-                        <h4 class="font-body-md text-body-md font-bold line-clamp-1" style="color: #1F2F4F;">Red Hearts Satin Pyjama Short Set</h4>
-                        <div class="mt-2">
-                            <div class="flex items-baseline gap-1.5">
-                                <span class="font-label-lg text-label-lg font-bold" style="color: #1F2F4F;">LE 1,249.00</span>
-                                <span class="font-body-sm text-body-sm line-through" style="color: #647A96;">LE 949.00</span>
-                            </div>
-                            <button class="mt-2.5 w-full py-2.5 bg-[#1F2F4F] text-white font-label-badge text-label-badge uppercase font-bold hover:bg-[#D4B586] hover:text-[#1F2F4F] transition-colors flex items-center justify-center gap-1 shadow-sm" style="border: none;" onclick="addToCart('Red Hearts Satin Pyjama Short Set')">
-                                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span> Quick Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                $satin_products = fluff_get_section_products( 'satin', $fluff_used_ids, 6 );
+                if ( ! empty( $satin_products ) ) {
+                    foreach ( $satin_products as $product ) {
+                        fluff_render_product_card( $product );
+                    }
+                }
+                ?>
             </div>
         </div>
     </section>
 
-    <!-- Best Selling Patterned & Everyday Pyjamas -->
-    <!-- Best Selling Patterned & Everyday Pyjamas -->
+    <!-- Section 3: Best Selling Patterned & Everyday Pyjamas -->
     <section class="py-8 md:py-12" id="patterned-section" style="background-color: #F8F6EF;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-end justify-between mb-6">
@@ -338,77 +184,41 @@ get_header();
 
             <!-- 1-Row Horizontally Scrolling Patterned Cards (No borders, Off-white background) -->
             <div class="flex overflow-x-auto no-scrollbar gap-4 sm:gap-6 pb-4 pt-1 snap-x scroll-smooth">
-                <!-- Card 1 -->
-                <div class="group flex flex-col product-card-offwhite w-[250px] sm:w-[270px] md:w-[290px] shrink-0 snap-start overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background-color: #F0EDE4; border: none;">
-                    <div class="relative aspect-[3/4] w-full bg-[#EAE6DB] overflow-hidden">
-                        <img alt="Everyday Check Set Red" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1UV79PZn6ChU5aSYe_e1oeSy8_917VS3XsEuLF1KZQaN3ZSZJS5LbhacDetMSZ_E4Gn3RBVHlqc5gJruY32C4EV8uXa3OT1wYjhj1zn3wD_kny1pD83-itXwag3uH2I9gXImiFdoh1rfnDCjPnM4pSiJ_6gVfj7nZJyRHAWXOHpyb1NI3rxBbEh2qvY-qsnd85x_UH7jk_n3FcKMWaTOd1GPtI0Sm5K08eUb66gGaWKEMAUVXzxAsI1Ykzp" />
-                        <span class="absolute top-2 left-2 font-label-badge text-label-badge px-2 py-0.5 font-extrabold shadow-sm" style="background-color: #647A96; color: #ffffff;">CLASSIC CHECK</span>
-                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#53627A] shadow active:scale-90 hover:text-[#1F2F4F] transition-transform" onclick="toggleWishlist(this, 'Everyday Check Set Red')">
-                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
-                        </button>
-                    </div>
-                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
-                        <h3 class="font-body-md text-body-md font-bold line-clamp-1" style="color: #1F2F4F;">Everyday Check Set Red</h3>
-                        <div class="mt-3">
-                            <div class="flex items-baseline gap-1.5">
-                                <span class="font-label-lg text-label-lg font-extrabold" style="color: #1F2F4F;">LE 1,349.00</span>
-                                <span class="font-body-sm text-body-sm line-through" style="color: #647A96;">LE 999.00</span>
-                            </div>
-                            <button class="mt-2.5 w-full py-2.5 bg-[#1F2F4F] text-white font-label-md text-label-md font-bold hover:bg-[#D4B586] hover:text-[#1F2F4F] transition-colors flex items-center justify-center gap-1.5 shadow-sm" style="border: none;" onclick="addToCart('Everyday Check Set Red')">
-                                <span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add to Bag
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                $patterned_products = fluff_get_section_products( 'patterned', $fluff_used_ids, 6 );
+                if ( ! empty( $patterned_products ) ) {
+                    foreach ( $patterned_products as $product ) {
+                        fluff_render_product_card( $product );
+                    }
+                }
+                ?>
+            </div>
+        </div>
+    </section>
 
-                <!-- Card 2 -->
-                <div class="group flex flex-col product-card-offwhite w-[250px] sm:w-[270px] md:w-[290px] shrink-0 snap-start overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background-color: #F0EDE4; border: none;">
-                    <div class="relative aspect-[3/4] w-full bg-[#EAE6DB] overflow-hidden">
-                        <img alt="Pillow Talk Pj Lavender" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1WbpwaU9rpcQI6q4LdI9xASfcKjKfGcbteE2z100BQuWDVBIrSM6EC-CS-Hn0sxEE5IKCjHaY3LpqVdMDk2KztjkKynAFiZSs5Ow0SURx08roHAF0TO13ddL8caRJc7QoMHoFktlkv0rEaGBn0ecxJvQ9eQ2ryc6xNsG4HkORX-tIS_2HgkOWagVeZiSrFTYm5JyO6pRJH49_L05IGR6Wm9nwTXcbq7yzIn65wEJdqoTqPX_6gFYxv5zMPl" />
-                        <span class="absolute top-2 left-2 font-label-badge text-label-badge px-2 py-0.5 font-bold shadow-sm" style="background-color: #D8B4C1; color: #1F2F4F;">COZY MODAL</span>
-                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#53627A] shadow active:scale-90 hover:text-[#1F2F4F] transition-transform" onclick="toggleWishlist(this, 'Pillow Talk Pj Lavender')">
-                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
-                        </button>
-                    </div>
-                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
-                        <h3 class="font-body-md text-body-md font-bold line-clamp-1" style="color: #1F2F4F;">Pillow Talk Pj Lavender</h3>
-                        <div class="mt-3">
-                            <div class="flex items-baseline gap-1.5">
-                                <span class="font-label-lg text-label-lg font-extrabold" style="color: #1F2F4F;">LE 1,349.00</span>
-                                <span class="font-body-sm text-body-sm line-through" style="color: #647A96;">LE 999.00</span>
-                            </div>
-                            <button class="mt-2.5 w-full py-2.5 bg-[#1F2F4F] text-white font-label-md text-label-md font-bold hover:bg-[#D4B586] hover:text-[#1F2F4F] transition-colors flex items-center justify-center gap-1.5 shadow-sm" style="border: none;" onclick="addToCart('Pillow Talk Pj Lavender')">
-                                <span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add to Bag
-                            </button>
-                        </div>
-                    </div>
+    <!-- Section 4: Winter & Curated Ribbed Loungewear (1 Row Horizontal Scroll) -->
+    <section class="py-8 md:py-12" id="winter-section" style="background-color: #F8F6EF;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-end justify-between mb-6">
+                <div>
+                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block" style="color: #647A96;">COZY LUXURY &amp; WARMTH</span>
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold tracking-tight" style="color: #1F2F4F;">Winter Ribbed &amp; Robes</h2>
                 </div>
+                <a class="font-label-md text-label-md font-bold flex items-center gap-1 hover:text-[#D4B586] transition-colors" style="color: #1F2F4F;" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>">
+                    View all <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </a>
+            </div>
 
-                <!-- Card 3 (Trio Set Feature) -->
-                <div class="group flex flex-col product-card-offwhite w-[250px] sm:w-[270px] md:w-[290px] shrink-0 snap-start overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background-color: #F0EDE4; border: none;">
-                    <div class="relative aspect-[3/4] w-full bg-[#EAE6DB] overflow-hidden">
-                        <img alt="Stars PJ 3 Pieces Set Navy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1WqdMVkKM8AnKJoSM14TGIX5rIi1_gW7_ku2tN12mohAqgq-PnRgE4bdOdfBVbssZEMhTNkaljxsbCR1UmC-pQXK1dp9gaFzD_ZaOiye_L-nveYTxv4NHrAuaqF7nc-0HCRTl3_oVvoCErzZiiG2WFvAhxil8RMzRr8gGk32JG70hIZb3MM3COa4tLOxcwc4yTOM4m0hMKFtcvAcBcTnPbBuTeiY_Ch6HnDUkfgO2yU8Mcip447I3kMkF14" />
-                        <span class="absolute top-2 left-2 font-label-badge text-label-badge px-2 py-0.5 font-extrabold shadow-sm" style="background-color: #647A96; color: #ffffff;">TRIO SET</span>
-                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center text-[#53627A] shadow active:scale-90 hover:text-[#1F2F4F] transition-transform" onclick="toggleWishlist(this, 'Stars PJ 3 Pieces Set Navy')">
-                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
-                        </button>
-                    </div>
-                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
-                        <div>
-                            <span class="font-label-badge text-label-badge uppercase font-bold" style="color: #647A96;">Includes Robe, Tank &amp; Pants</span>
-                            <h3 class="font-body-md text-body-md font-bold line-clamp-1 mt-0.5" style="color: #1F2F4F;">Stars PJ 3 Pieces Set Navy</h3>
-                        </div>
-                        <div class="mt-3">
-                            <div class="flex items-baseline gap-2 mb-2">
-                                <span class="font-label-lg text-label-lg font-extrabold" style="color: #1F2F4F;">LE 1,549.00</span>
-                                <span class="font-body-sm text-body-sm line-through" style="color: #647A96;">LE 1,199.00</span>
-                            </div>
-                            <button class="w-full py-2.5 font-label-md text-label-md font-bold active:scale-95 transition-all flex items-center justify-center gap-1.5 shadow-sm" style="background-color: #1F2F4F; color: #FFFFFF; border: none;" onclick="addToCart('Stars PJ 3 Pieces Set Navy')">
-                                <span class="material-symbols-outlined text-[18px]">shopping_bag</span> Claim 50% On 2nd
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <!-- 1-Row Horizontally Scrolling Winter Cards (No borders, Off-white background) -->
+            <div class="flex overflow-x-auto no-scrollbar gap-4 sm:gap-6 pb-4 pt-1 snap-x scroll-smooth">
+                <?php
+                $winter_products = fluff_get_section_products( 'winter', $fluff_used_ids, 6 );
+                if ( ! empty( $winter_products ) ) {
+                    foreach ( $winter_products as $product ) {
+                        fluff_render_product_card( $product );
+                    }
+                }
+                ?>
             </div>
         </div>
     </section>
