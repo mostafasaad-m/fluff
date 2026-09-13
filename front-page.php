@@ -17,7 +17,7 @@ get_header();
         <div class="relative w-full h-[480px] sm:h-[520px] md:h-[560px] lg:h-[600px]">
             <img alt="50% Off Clearance Promotion" class="absolute inset-0 w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB809kO4ZJAOqb63h11rKiXdwFeidxMKkxEv9KhLh-3Cdu5c5AnHyRQsPUBdLjrGmzBQPyIUw0D6DXxlu-hY-zaS4zgUpE5CpWpFME1eeMSqVxIqnMF45cH06uX_pwxIsEBabTOMYGh3yhSTbDyghYTUVu0QgndqHwKx-WnXv53OrxjKAfg3v3GKI8PgdC7nW_FNOL5dChTUlW69ghVOa6XeQBFz0jkfxH1cGxw_9rAyaUEIkkM0wbTrIg1HjG02yzdb2Q" />
             <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/95 via-inverse-surface/50 to-transparent flex flex-col justify-end p-5 sm:p-8 md:p-12 lg:p-16">
-                <div class="max-w-3xl">
+                <!-- <div class="max-w-3xl">
                     <div class="flex items-center gap-2 mb-2">
                         <span class="bg-sale-yellow text-on-background px-3 py-1 font-label-badge text-label-badge uppercase tracking-wider font-extrabold shadow-sm">
                             LIMITED CLEARANCE
@@ -40,7 +40,7 @@ get_header();
                             Browse Satin
                         </a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
