@@ -12,27 +12,28 @@ Tags: e-commerce, woocommerce, luxury, sleepwear, tailwind, responsive-layout
 */
 
 :root {
-  --color-header-bg: #d62828;
-  --color-heading-text: #1f1b1a;
-  --color-normal-text: #5a413d;
-  --color-primary: #a61d17;
-  --color-primary-container: #c9372c;
-  --color-terracotta-rich: #B3281E;
-  --color-sale-yellow: #F3CB0E;
-  --color-blush-tint: #FDF3F0;
-  --color-surface: #fff8f6;
-  --color-surface-container: #f6ecea;
-  --color-surface-low: #fcf1ef;
-  --color-charcoal-muted: #57504D;
-  --color-border-card: #e2beb9;
-  --color-border-alt: #8e706c;
-  --color-ready-stock-bg: #6e5a55;
+  --color-header-bg: #F8F6EF;
+  --color-header-text: #1F2F4F;
+  --color-heading-text: #1F2F4F;
+  --color-normal-text: rgba(31, 47, 79, 0.82);
+  --color-primary: #1F2F4F;
+  --color-primary-container: #2D4671;
+  --color-terracotta-rich: #1F2F4F;
+  --color-sale-yellow: #D4B586;
+  --color-blush-tint: #F8F6EF;
+  --color-surface: #F8F6EF;
+  --color-surface-container: #F0EDE4;
+  --color-surface-low: #F5F3EB;
+  --color-charcoal-muted: #53627A;
+  --color-border-card: #B7C7D9;
+  --color-border-alt: #AA9B8C;
+  --color-ready-stock-bg: #647A96;
   --color-ready-stock-text: #ffffff;
-  --color-preorder-bg: #f9dcd6;
-  --color-preorder-text: #1f1b1a;
-  --color-winter-blue: #a61d17;
-  --color-summer-mauve: #f9dcd6;
-  --color-luxury-gold: #F3CB0E;
+  --color-preorder-bg: #D8B4C1;
+  --color-preorder-text: #1F2F4F;
+  --color-winter-blue: #1F2F4F;
+  --color-summer-mauve: #D8B4C1;
+  --color-luxury-gold: #D4B586;
 }
 
 /* Sharp Corners Override */
@@ -47,31 +48,75 @@ Tags: e-commerce, woocommerce, luxury, sleepwear, tailwind, responsive-layout
   width: 100vw !important;
   height: 100vh !important;
   height: 100dvh !important;
-  background-color: #FAF7F2 !important;
-  background: #FAF7F2 !important;
+  background-color: #F8F6EF !important;
+  background: #F8F6EF !important;
   opacity: 1 !important;
   z-index: 999999 !important;
 }
 
 #fluffMobileMenu a {
   background-color: #ffffff !important;
+  border-color: #B7C7D9 !important;
+  color: #1F2F4F !important;
   opacity: 1 !important;
 }
 
-/* Top Bar Headings & Links in #F3CB0E */
-header.fixed aside span,
+/* Top Bar Headings & Header Controls in #F8F6EF bg + #1F2F4F text */
+header.fixed {
+  background-color: #F8F6EF !important;
+  border-bottom: 1px solid #B7C7D9 !important;
+}
+
+header.fixed aside {
+  background-color: #F0EDE4 !important;
+  border-bottom: 1px solid #B7C7D9 !important;
+}
+
+header.fixed aside span {
+  color: #1F2F4F !important;
+}
+
 header.fixed .font-headline-lg-mobile,
 header.fixed nav a,
 header.fixed button[aria-label="Open Menu"],
 header.fixed button[aria-label="Search"],
 header.fixed a[aria-label="User Account"],
-header.fixed button[aria-label="Shopping Bag"] {
-  color: #F3CB0E !important;
+header.fixed button[aria-label="Shopping Bag"],
+header.fixed svg {
+  color: #1F2F4F !important;
+}
+
+header.fixed nav a:hover,
+header.fixed button:hover,
+header.fixed a:hover {
+  color: #D4B586 !important;
 }
 
 header.fixed .fluff-cart-count-badge {
-  background-color: #F3CB0E !important;
-  color: #1f1b1a !important;
+  background-color: #D4B586 !important;
+  color: #1F2F4F !important;
+}
+
+/* Responsive Desktop / Mobile Breakpoint Rules (1024px / lg) */
+@media (max-width: 1023.98px) {
+  .desktop-only-nav {
+    display: none !important;
+  }
+  .mobile-only-control {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-only-control {
+    display: none !important;
+  }
+  .desktop-only-nav {
+    display: flex !important;
+  }
+  header.fixed nav {
+    display: flex !important;
+  }
 }
 
 @layer base {
@@ -83,6 +128,7 @@ header.fixed .fluff-cart-count-badge {
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
+    background-color: #F8F6EF;
   }
   body {
     width: 100%;
@@ -91,13 +137,16 @@ header.fixed .fluff-cart-count-badge {
     padding: 0;
     overflow-x: hidden;
     font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif;
-    background-color: #fff8f6;
-    color: #1f1b1a;
+    background-color: #F8F6EF;
+    color: rgba(31, 47, 79, 0.85);
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    color: #1f1b1a;
+    color: #1F2F4F !important;
     font-weight: 700;
+  }
+  p {
+    color: rgba(31, 47, 79, 0.82);
   }
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -132,22 +181,22 @@ header .custom-logo {
 
 /* High Contrast Title Vision & Typography */
 .text-high-contrast {
-  color: #1f1b1a !important;
+  color: #1F2F4F !important;
   font-weight: 700 !important;
 }
 
 .hero-text-shadow {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .header-title-badge {
   background-color: rgba(255, 255, 255, 0.95);
-  color: #1f1b1a;
-  border: 1px solid rgba(226, 190, 185, 0.6);
+  color: #1F2F4F;
+  border: 1px solid #B7C7D9;
   padding: 0.25rem 0.85rem;
   border-radius: 9999px;
   font-weight: 700;
-  box-shadow: 0 1px 4px rgba(31, 27, 26, 0.06);
+  box-shadow: 0 1px 4px rgba(31, 47, 79, 0.06);
 }
 
 /* Modern, Elegant Desktop Scrollbar */
@@ -156,14 +205,14 @@ header .custom-logo {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f6ecea;
+  background: #F0EDE4;
 }
 ::-webkit-scrollbar-thumb {
-  background: #dbc1bb;
+  background: #B7C7D9;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #a61d17;
+  background: #1F2F4F;
 }
 
 /* Utility to explicitly hide scrollbars for horizontal carousel touch strips */
@@ -175,25 +224,27 @@ header .custom-logo {
   scrollbar-width: none;
 }
 
-/* Custom Brand Utility Classes */
-.bg-header-surface {
-  background-color: #fff8f6;
-  color: #1f1b1a;
-}
+/* Custom Brand Utility Classes for Slow Luxury Palette */
 .badge-ready-stock {
-  background-color: #6e5a55;
-  color: #ffffff;
+  background-color: #647A96 !important;
+  color: #ffffff !important;
 }
 .badge-preorder {
-  background-color: #f9dcd6;
-  color: #1f1b1a;
+  background-color: #D8B4C1 !important;
+  color: #1F2F4F !important;
 }
 .border-theme-card {
-  border-color: #e2beb9;
+  border-color: #B7C7D9 !important;
 }
 .text-luxury-gold {
-  color: #D4B586;
+  color: #D4B586 !important;
 }
 .bg-luxury-gold {
-  background-color: #D4B586;
+  background-color: #D4B586 !important;
+}
+.text-normal-muted {
+  color: rgba(31, 47, 79, 0.82) !important;
+}
+.heading-midnight {
+  color: #1F2F4F !important;
 }
