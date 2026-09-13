@@ -13,35 +13,16 @@ get_header();
 <div class="flex flex-col w-full">
 
     <!-- Hero Promotional Campaign Section -->
-    <section class="relative w-full overflow-hidden bg-primary-container text-on-primary">
-        <div class="relative w-full h-[480px] sm:h-[520px] md:h-[560px] lg:h-[600px]">
-            <img alt="50% Off Clearance Promotion" class="absolute inset-0 w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB809kO4ZJAOqb63h11rKiXdwFeidxMKkxEv9KhLh-3Cdu5c5AnHyRQsPUBdLjrGmzBQPyIUw0D6DXxlu-hY-zaS4zgUpE5CpWpFME1eeMSqVxIqnMF45cH06uX_pwxIsEBabTOMYGh3yhSTbDyghYTUVu0QgndqHwKx-WnXv53OrxjKAfg3v3GKI8PgdC7nW_FNOL5dChTUlW69ghVOa6XeQBFz0jkfxH1cGxw_9rAyaUEIkkM0wbTrIg1HjG02yzdb2Q" />
-            <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/95 via-inverse-surface/50 to-transparent flex flex-col justify-end p-5 sm:p-8 md:p-12 lg:p-16">
-                <!-- <div class="max-w-3xl">
-                    <div class="flex items-center gap-2 mb-2">
-                        <span class="bg-sale-yellow text-on-background px-3 py-1 font-label-badge text-label-badge uppercase tracking-wider font-extrabold shadow-sm">
-                            LIMITED CLEARANCE
-                        </span>
-                        <span class="font-label-badge text-label-badge text-warm-white uppercase tracking-wider font-bold">
-                            Summer &amp; Satin Drops
-                        </span>
-                    </div>
-                    <h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-5xl lg:text-6xl font-extrabold text-warm-white tracking-tight leading-tight mb-3 uppercase">
-                        50% OFF ON 2ND ITEM
-                    </h1>
-                    <p class="font-body-md md:font-body-lg text-body-md md:text-lg text-warm-white/95 mb-6 max-w-xl leading-relaxed">
-                        Or Buy 2 Get 1 Free on all breathable Egyptian cotton &amp; silky loungewear crafted for everyday luxury.
-                    </p>
-                    <div class="flex flex-wrap sm:flex-nowrap gap-3 max-w-md">
-                        <a class="flex-1 text-center bg-sale-yellow text-on-background py-3 px-6 font-label-lg text-label-lg font-bold active:scale-95 hover:bg-yellow-400 transition-all shadow-md" href="#new-drops">
-                            Shop New Drops
-                        </a>
-                        <a class="flex-1 text-center bg-surface-container-lowest/90 backdrop-blur-sm text-primary py-3 px-6 font-label-lg text-label-lg font-bold active:scale-95 hover:bg-white transition-all shadow-md" href="#satin-section">
-                            Browse Satin
-                        </a>
-                    </div>
-                </div> -->
-            </div>
+    <section class="relative w-full overflow-hidden bg-[#1F2F4F] text-on-primary">
+        <div class="relative w-full">
+            <a href="#new-drops" class="block w-full cursor-pointer">
+                <picture class="w-full block">
+                    <!-- Desktop Viewport: Wide Hero Image (min-width: 768px) -->
+                    <source media="(min-width: 768px)" srcset="<?php echo esc_url( home_url( '/wp-content/uploads/2026/09/photo_2026-09-13_19-02-41-1.jpg' ) ); ?>" />
+                    <!-- Mobile Viewport: Vertical Hero Image (< 768px) -->
+                    <img alt="FLUFF Clearance Campaign" class="w-full h-auto object-cover block" src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/09/ChatGPT-Image-Sep-13-2026-07_19_04-PM-1-1.png' ) ); ?>" />
+                </picture>
+            </a>
         </div>
 
         <!-- Clearance Urgent Moving News Ticker Bar -->

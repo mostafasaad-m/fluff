@@ -12,31 +12,14 @@
 <!-- Hero Promotional Section -->
 <section class="relative w-full overflow-hidden bg-primary-container text-on-primary">
 <div class="relative w-full">
-<img alt="50% Off Clearance Promotion" class="w-full h-auto object-cover block" src="https://lh3.googleusercontent.com/aida/AEtjO1Xu3_Vs2TNGnwY4xwVI3D-9gFqWYlgP0UDTqcms2JlW3Zpvemgt-wTQ6pCAOrVr2sS4_rjhztkyHf6BKCcSoIOdEibxyEtqTo5uCCE-vF7_tFJuMwfqLOlxRZ_25jCPrsQKfE5EVKNYoRWhB4NsQcInQ1DhQ7dgsIQzAgyA1d9EjT8Aep984e-4o2W4-3ECwAety0rFtlZ9y4mDt0rYSssjU0ylYmNJUby8LD1xnEdub8iFvEbx8EgffBAB"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/30 to-transparent flex flex-col justify-end p-4">
-<div class="flex items-center gap-2 mb-1">
-<span class="bg-sale-yellow text-on-background px-2 py-0.5 rounded font-label-badge text-label-badge uppercase tracking-wider">
-            LIMITED PROMO
-          </span>
-<span class="font-label-badge text-label-badge text-on-primary uppercase tracking-wider">
-            Clearance Drops
-          </span>
-</div>
-<h2 class="font-display-hero-mobile text-display-hero-mobile font-extrabold text-warm-white tracking-tight leading-none mb-1">
-          50% OFF ON 2ND
-        </h2>
-<p class="font-body-sm text-body-sm text-primary-fixed mb-3">
-          Or Buy 2 Get 1 Free on all breathable Egyptian cotton &amp; silky loungewear.
-        </p>
-<div class="flex gap-2">
-<a class="flex-1 text-center bg-sale-yellow text-on-background py-2.5 px-3 rounded-lg font-label-lg text-label-lg font-bold active:scale-95 transition-transform shadow-md" href="#new-drops">
-            Shop Drops
-          </a>
-<a class="flex-1 text-center bg-surface-container-lowest/90 backdrop-blur-sm text-primary py-2.5 px-3 rounded-lg font-label-lg text-label-lg font-bold active:scale-95 transition-transform shadow-md" href="#satin-section">
-            Browse Satin
-          </a>
-</div>
-</div>
+<a href="#new-drops" class="block w-full cursor-pointer">
+<picture class="w-full block">
+    <!-- Desktop Viewport: Wide Hero Image (min-width: 768px) -->
+    <source media="(min-width: 768px)" srcset="<?php echo esc_url( home_url( '/wp-content/uploads/2026/09/photo_2026-09-13_19-02-41-1.jpg' ) ); ?>" />
+    <!-- Mobile Viewport: Vertical Hero Image (< 768px) -->
+    <img alt="FLUFF Clearance Campaign" class="w-full h-auto object-cover block" src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/09/ChatGPT-Image-Sep-13-2026-07_19_04-PM-1-1.png' ) ); ?>" />
+</picture>
+</a>
 </div>
 <!-- Urgent Ticker Bar -->
 <div class="bg-sale-yellow text-on-background py-2 px-4 flex items-center justify-between overflow-x-auto whitespace-nowrap">
