@@ -153,3 +153,57 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }));
 });
+
+// --- Global Client-Side Micro-Interactions & Notifications ---
+function showToast(message) {
+    const toast = document.getElementById('toastNotification');
+    const text = document.getElementById('toastMessage');
+    if (!toast) return;
+    if (text) text.innerText = message;
+    toast.classList.remove('-translate-y-12', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('-translate-y-12', 'opacity-0');
+    }, 2400);
+}
+
+function toggleWishlist(btn, productName) {
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (!icon) return;
+    const isFilled = icon.innerText.trim() === 'favorite';
+    if (isFilled) {
+        icon.innerText = 'favorite_border';
+        btn.classList.remove('text-primary');
+        btn.classList.add('text-charcoal-muted');
+        showToast('Removed ' + productName);
+    } else {
+        icon.innerText = 'favorite';
+        icon.style.fontVariationSettings = "'FILL' 1";
+        btn.classList.remove('text-charcoal-muted');
+        btn.classList.add('text-primary');
+        showToast('Saved ' + productName + ' to Wishlist');
+    }
+}
+
+function addToCart(productName) {
+    showToast('Added ' + productName + ' to Bag');
+    // Bump badge count if present
+    const badges = document.querySelectorAll('.fluff-cart-count-badge');
+    badges.forEach(b => {
+        let count = parseInt(b.innerText.trim(), 10);
+        if (!isNaN(count)) {
+            b.innerText = count + 1;
+        }
+    });
+}
+
+function handleNewsletter(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    const input = document.getElementById('emailInput');
+    if (input && input.value) {
+        showToast('Welcome to Chummy / FLUFF Club!');
+        input.value = '';
+    }
+}
+

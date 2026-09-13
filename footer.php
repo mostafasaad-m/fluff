@@ -236,6 +236,36 @@ $wa_url   = 'https://wa.me/' . preg_replace( '/[^0-9]/', '', $wa_phone );
     </div>
 </div>
 
+<!-- Dynamic Notification Toast (Micro-interaction) -->
+<div class="fixed top-24 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 transform -translate-y-12 opacity-0 pointer-events-none" id="toastNotification">
+    <div class="bg-inverse-surface text-inverse-on-surface px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+        <span class="material-symbols-outlined text-sale-yellow text-[18px]">favorite</span>
+        <span class="font-label-md text-label-md" id="toastMessage">Added to wishlist</span>
+    </div>
+</div>
+
+<!-- Mobile Bottom Navigation Bar (Hidden on PC/Desktop) -->
+<nav class="fixed bottom-0 w-full z-40 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(43,38,37,0.06)] border-t border-surface-variant md:hidden" data-active-classes="text-primary font-label-md">
+    <div class="flex justify-around items-center h-16 px-2">
+        <a aria-current="page" class="flex flex-col items-center justify-center min-w-[64px] h-12 transition-colors gap-1 text-primary font-label-md" data-path="home" href="<?php echo esc_url( home_url('/') ); ?>">
+            <span class="material-symbols-outlined text-[22px]">home</span>
+            <span class="font-label-md text-label-md">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-1" data-path="collections" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/') ); ?>">
+            <span class="material-symbols-outlined text-[22px]">grid_view</span>
+            <span class="font-label-md text-label-md">Catalog</span>
+        </a>
+        <a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-1" data-path="wishlist" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>">
+            <span class="material-symbols-outlined text-[22px]">favorite_border</span>
+            <span class="font-label-md text-label-md">Wishlist</span>
+        </a>
+        <a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-1" data-path="account" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : '#' ); ?>">
+            <span class="material-symbols-outlined text-[22px]">person</span>
+            <span class="font-label-md text-label-md">Account</span>
+        </a>
+    </div>
+</nav>
+
 <?php wp_footer(); ?>
 </body>
 </html>

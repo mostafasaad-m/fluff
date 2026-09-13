@@ -1,208 +1,580 @@
-<!DOCTYPE html><html lang="en" style="width: 711px; height: 5515px; overflow: hidden; position: relative;"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><title>Chummyts</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-surface-variant": "#5a413d", "on-error": "#ffffff", "inverse-primary": "#ffb4aa", "tertiary-container": "#c5aa00", "surface": "#fff8f6", "primary-container": "#c9372c", "on-error-container": "#93000a", "on-background": "#1f1b1a", "surface-container-highest": "#eae0de", "cream-canvas": "#FAF7F2", "surface-container-low": "#fcf1ef", "surface-container-lowest": "#ffffff", "on-surface": "#1f1b1a", "secondary": "#6e5a55", "on-tertiary-fixed-variant": "#524600", "surface-bright": "#fff8f6", "inverse-surface": "#352f2e", "sale-yellow": "#FFDE21", "blush-tint": "#FDF3F0", "surface-container": "#f6ecea", "on-secondary": "#ffffff", "charcoal-muted": "#57504D", "primary": "#a61d17", "primary-fixed-dim": "#ffb4aa", "on-primary-container": "#ffecea", "surface-dim": "#e2d8d6", "error-container": "#ffdad6", "on-tertiary-fixed": "#211b00", "secondary-container": "#f9dcd6", "outline": "#8e706c", "on-primary-fixed-variant": "#910909", "error": "#ba1a1a", "tertiary": "#6d5e00", "on-primary-fixed": "#410001", "on-secondary-fixed-variant": "#55423e", "on-tertiary-container": "#4a3f00", "secondary-fixed-dim": "#dbc1bb", "surface-variant": "#eae0de", "terracotta-rich": "#B3281E", "surface-tint": "#b4271f", "primary-fixed": "#ffdad5", "outline-variant": "#e2beb9", "soft-sand": "EFE9DF", "secondary-fixed": "#f9dcd6", "on-secondary-fixed": "#271815", "on-primary": "#ffffff", "background": "#fff8f6", "surface-container-high": "#f0e6e4", "on-secondary-container": "#75605b", "on-tertiary": "#ffffff", "tertiary-fixed": "#ffe251", "inverse-on-surface": "#f9eeec", "tertiary-fixed-dim": "#e4c600", "warm-white": "#FFFFFF" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-tablet": "2rem", "space-2xl": "4rem", "gutter-desktop": "1.5rem", "space-md": "1rem", "space-lg": "1.5rem", "margin": "1rem", "space-xl": "2.5rem", "margin-desktop": "3.5rem", "gutter": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem" }, "fontFamily": { "label-badge": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "title-editorial": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"] }, "fontSize": { "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "800" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "display-hero-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }], "title-editorial": ["16px", { "lineHeight": "20px", "letterSpacing": "0.08em", "fontWeight": "800" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style id="sharp-corners-override">.rounded-xl, .rounded-2xl, .rounded-lg, [class*='rounded-xl'], [class*='rounded-2xl'], [class*='rounded-lg'], .aspect-\[3\/4\], .aspect-\[4\/3\], img { border-radius: 0px !important; }</style></head><body class="bg-surface text-on-surface font-body-md flex flex-col antialiased"><header class="top-0 w-full z-50 pt-safe bg-primary shadow-md" style="background-color: rgb(214, 40, 40);"><aside class="bg-primary-container text-sale-yellow py-1 px-4 flex items-center justify-center overflow-hidden" style="background-color: rgb(214, 40, 40); border-bottom: 1px solid rgb(255, 255, 255);"><span class="font-label-badge text-label-badge uppercase tracking-wider text-center truncate">50% OFF ON SECOND ITEM // CLEARANCE SALE</span></aside><div class="w-full px-4 py-3 flex items-center justify-between relative"><div class="flex items-center gap-3 z-10"><button aria-label="Open Menu" class="w-10 h-10 flex items-center justify-center text-warm-white hover:text-sale-yellow transition-colors"><svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path></svg></button><button aria-label="Search" class="w-10 h-10 flex items-center justify-center text-warm-white hover:text-sale-yellow transition-colors"><svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path></svg></button></div><div class="absolute left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-auto"><a href="#" class="flex items-center justify-center"><span class="font-extrabold text-[24px] tracking-tight text-warm-white hover:text-sale-yellow transition-colors font-headline-lg-mobile">Fluff</span></a></div><div class="flex items-center gap-3 z-10"><button aria-label="User Account" class="w-10 h-10 flex items-center justify-center text-warm-white hover:text-sale-yellow transition-colors"><svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"></path></svg></button><button aria-label="Shopping Bag" class="relative w-10 h-10 flex items-center justify-center text-warm-white hover:text-sale-yellow transition-colors"><svg class="w-5 h-5 stroke-current" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25c-.669 0-1.189-.578-1.119-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"></path></svg><span class="absolute top-1.5 right-1.5 flex items-center justify-center w-4 h-4 bg-sale-yellow text-on-background font-label-badge text-[9px] rounded-full font-bold">1</span></button></div></div></header><main class="flex flex-col relative w-full pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
-<!-- Dynamic Notification Bar (Delight Micro-interaction) -->
-<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 transform -translate-y-12 opacity-0 pointer-events-none" id="toastNotification">
-<div class="bg-inverse-surface text-inverse-on-surface px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">favorite</span>
-<span class="font-label-md text-label-md" id="toastMessage">Added to wishlist</span>
-</div>
-</div>
-<!-- Hero Promotional Section -->
+<?php
+/**
+ * Front Page Template - Premium WordPress Edition
+ *
+ * Designed & Developed for FLUFF Sleepwear
+ * 
+ * @package FLUFF
+ */
 
-<!-- Horizontal Story / Category Pills -->
+get_header();
+?>
 
-<!-- Featured New Drops (2-Column Grid) -->
-<section class="relative w-full overflow-hidden bg-primary-container text-on-primary"><div class="relative w-full h-[520px]"><img alt="50% Off Clearance Promotion" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB809kO4ZJAOqb63h11rKiXdwFeidxMKkxEv9KhLh-3Cdu5c5AnHyRQsPUBdLjrGmzBQPyIUw0D6DXxlu-hY-zaS4zgUpE5CpWpFME1eeMSqVxIqnMF45cH06uX_pwxIsEBabTOMYGh3yhSTbDyghYTUVu0QgndqHwKx-WnXv53OrxjKAfg3v3GKI8PgdC7nW_FNOL5dChTUlW69ghVOa6XeQBFz0jkfxH1cGxw_9rAyaUEIkkM0wbTrIg1HjG02yzdb2Q"><div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/40 to-transparent flex flex-col justify-end p-5 pb-6"><h2 class="font-display-hero-mobile text-display-hero-mobile font-extrabold text-warm-white tracking-tight leading-none mb-2">50% OFF ON 2ND</h2><p class="font-body-md text-body-md text-warm-white/90 mb-4">Or Buy 2 Get 1 Free on all breathable Egyptian cotton &amp; silky loungewear.</p><div class="flex gap-2"><a class="flex-1 text-center bg-sale-yellow text-on-background py-2.5 px-3 rounded-lg font-label-lg text-label-lg font-bold active:scale-95 transition-transform shadow-md" href="#new-drops">Shop Drops</a><a class="flex-1 text-center bg-surface-container-lowest/90 backdrop-blur-sm text-primary py-2.5 px-3 rounded-lg font-label-lg text-label-lg font-bold active:scale-95 transition-transform shadow-md" href="#satin-section">Browse Satin</a></div></div></div><div class="bg-sale-yellow text-on-background py-2 px-4 flex items-center justify-between overflow-x-auto whitespace-nowrap"><div class="flex items-center gap-3 font-label-badge text-label-badge uppercase tracking-wider font-extrabold text-center w-full justify-center"><span class="">50% OFF ON 2ND</span><span class="text-terracotta-rich font-black">//</span><span class="">BUY 2 GET 1 FREE</span><span class="text-terracotta-rich font-black">//</span><span class="">LIMITED QUANTITIES</span></div></div></section><section class="px-4 py-6 bg-surface" id="new-drops">
-<div class="flex items-end justify-between mb-4">
-<div>
-<span class="font-label-badge text-label-badge text-terracotta-rich uppercase tracking-wider font-extrabold block">HOT RELEASES</span>
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-on-surface tracking-tight">New Arrival</h2>
-</div>
-<a class="font-label-md text-label-md text-primary font-bold flex items-center gap-0.5" href="#">
-        View all <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-</a>
-</div>
-<div class="flex gap-3 overflow-x-auto no-scrollbar pb-2 -mx-4 px-4"><div class="w-44 shrink-0 flex flex-col bg-surface-container-lowest rounded-none overflow-hidden shadow-sm"><div class="relative aspect-[3/4] w-full bg-surface-container rounded-none"><img alt="Heavenly Stripes Set Ladies - Olive" class="w-full h-full object-cover rounded-none" src="https://lh3.googleusercontent.com/aida/AEtjO1VwCeG0fQNpeA4O0djAQOvl7HREfBTeW5_LuJmMdi8G3DNl0G5cgsBzeoP5vE2ubOk5fJ2NiE9BvK-GWiUQ9hiUXjffnzvv3sF4gxMR2jq7oIMp3jHd_AdjcKRzHgMZMBw2CHhp-8zgbcwbTSsSTheLindjCQjB5SqTjlU9JUOIKxoWgye8WEGZ8kmfW2jzROuxRBT5_KnmEgb4-7ScHRSrYv_sVIUPY2014OmI3_LFiVsmlUksZNZ0OD2h"><span class="absolute top-2 left-2 bg-terracotta-rich text-on-primary font-label-badge text-label-badge px-1.5 py-0.5 rounded-none">50% OFF 2ND</span><button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 transition-transform" onclick="toggleWishlist(this, 'Heavenly Stripes Set (Ladies)')"><span class="material-symbols-outlined text-[18px]">favorite_border</span></button></div><div class="p-3 flex flex-col flex-1 justify-between"><div><span class="font-body-sm text-body-sm text-secondary block">Women's Loungewear</span><h3 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1 mt-0.5">Heavenly Stripes Set (Ladies)- Olive</h3></div><div class="mt-2 flex items-baseline gap-1.5"><span class="font-label-lg text-label-lg font-extrabold text-primary">LE 1,499.00</span><span class="font-body-sm text-body-sm text-secondary line-through">LE 949.00</span></div><button class="mt-2.5 w-full py-1.5 bg-surface-container text-on-surface font-label-md text-label-md font-bold rounded-none flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors" onclick="addToCart('Heavenly Stripes Set (Ladies)- Olive')"><span class="material-symbols-outlined text-[16px]">keyboard_double_arrow_left</span>Add to Bag</button></div></div><div class="w-44 shrink-0 flex flex-col bg-surface-container-lowest rounded-none overflow-hidden shadow-sm"><div class="relative aspect-[3/4] w-full bg-surface-container rounded-none"><img alt="Heavenly Stripe Set Men - Baby Blue" class="w-full h-full object-cover rounded-none" src="https://lh3.googleusercontent.com/aida/AEtjO1Xt8iTmQBIsTUqH1cH3QjUba-6evLhtfSDtZs3w0Zkt0POrAOyQX_HfhB5hNnQKK5aqlvcNKZSGdBMNBh2IHmCWdIw0C3V3oc--d00G9H5jhozsouPTtTHPaUmGuOovWAiKJEImb1OchbROMwEyMnq7x5xRqWVVg4Pmgp5XN-D-C2LoTvAy_PeTIf28HYrkiGVzzRdWrtUVnPf0v2BgVqjQdYIIFni-rz05-L8NsCWxbjXDbEBp2ljtTQI"><span class="absolute top-2 left-2 bg-inverse-surface text-inverse-on-surface font-label-badge text-label-badge px-1.5 py-0.5 rounded-none">COUPLES PAIR</span><button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 transition-transform" onclick="toggleWishlist(this, 'Heavenly Stripe Set (Men)')"><span class="material-symbols-outlined text-[18px]">favorite_border</span></button></div><div class="p-3 flex flex-col flex-1 justify-between"><div><span class="font-body-sm text-body-sm text-secondary block">Men's Relaxed Fit</span><h3 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1 mt-0.5">Heavenly Stripe Set (Men)- Baby Blue</h3></div><div class="mt-2 flex items-baseline gap-1.5"><span class="font-label-lg text-label-lg font-extrabold text-primary">LE 1,499.00</span><span class="font-body-sm text-body-sm text-secondary line-through">LE 949.00</span></div><button class="mt-2.5 w-full py-1.5 bg-surface-container text-on-surface font-label-md text-label-md font-bold rounded-none flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors" onclick="addToCart('Heavenly Stripe Set (Men)- Baby Blue')"><span class="material-symbols-outlined text-[16px]">keyboard_double_arrow_left</span>Add to Bag</button></div></div><div class="w-44 shrink-0 flex flex-col bg-surface-container-lowest rounded-none overflow-hidden shadow-sm"><div class="relative aspect-[3/4] w-full bg-surface-container rounded-none"><img alt="Serenity Stripe Short Set Blue" class="w-full h-full object-cover rounded-none" src="https://lh3.googleusercontent.com/aida/AEtjO1WsztWbC7LnZvHfwf9yG0LjwCHnYp8zr3memxfq3YFqj0alRImyzYhB-l8-VEHRpmCIQQyd9gsOQfmVHesPDnzUULcavi_Pkm3BUbxrvB6d-Ecqi1aBwniv3dKsB60rswMJ1gT4QXQSy9iqao17423I60MbYVkKzeNuVGYsch3HLvaW0-tsK5xy1ZybIlu-BiDwSXWwURg_OXYJ6T1C_0wZ2ObgR4E2ra5LDw_PNy6GnFtyrFfVax4AIYWx"><span class="absolute top-2 left-2 bg-sale-yellow text-on-background font-label-badge text-label-badge px-1.5 py-0.5 rounded-none font-extrabold">BESTSELLER</span><button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 transition-transform" onclick="toggleWishlist(this, 'Serenity Stripe Short Set')"><span class="material-symbols-outlined text-[18px]">favorite_border</span></button></div><div class="p-3 flex flex-col flex-1 justify-between"><div><span class="font-body-sm text-body-sm text-secondary block">Cotton Short Set</span><h3 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1 mt-0.5">Serenity Stripe Short Set Blue</h3></div><div class="mt-2 flex items-baseline gap-1.5"><span class="font-label-lg text-label-lg font-extrabold text-primary">LE 1,299.00</span><span class="font-body-sm text-body-sm text-secondary line-through">LE 899.00</span></div><button class="mt-2.5 w-full py-1.5 bg-surface-container text-on-surface font-label-md text-label-md font-bold rounded-none flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors" onclick="addToCart('Serenity Stripe Short Set Blue')"><span class="material-symbols-outlined text-[16px]">keyboard_double_arrow_left</span>Add to Bag</button></div></div><div class="w-44 shrink-0 flex flex-col bg-surface-container-lowest rounded-none overflow-hidden shadow-sm"><div class="relative aspect-[3/4] w-full bg-surface-container rounded-none"><img alt="Dots PJ 3 Pieces Set" class="w-full h-full object-cover rounded-none" src="https://lh3.googleusercontent.com/aida/AEtjO1WPXewYZN1Zq8Yg0wyounPitnYkQPlfs7Gq15JjGg3Sd3SCXtfRxRtjYlp95CJEt3-T9CVBWm3nZzhadYyPz6BlhydxNlPl_Zh5smhHVnicLMFci5zyh4ogEIyUfEUBhrkAzGbFNHT2SckxP-St6syOhhk_TMzgENyjPZiOPSbkknbbNdzGpKgDYRjhuiqaYILjZP_nXP1VFnPXyaWsOgVFSxsiMWiDfykQb3Tah4Lx7J9lsrrqgqPaGCeT"><span class="absolute top-2 left-2 bg-primary text-on-primary font-label-badge text-label-badge px-1.5 py-0.5 rounded-none">3-PIECE VALUE</span><button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 transition-transform" onclick="toggleWishlist(this, 'Dots PJ 3 Pieces Set')"><span class="material-symbols-outlined text-[18px]">favorite_border</span></button></div><div class="p-3 flex flex-col flex-1 justify-between"><div><span class="font-body-sm text-body-sm text-secondary block">Full Loungewear Trio</span><h3 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1 mt-0.5">Dots PJ 3 Pieces Set</h3></div><div class="mt-2 flex items-baseline gap-1.5"><span class="font-label-lg text-label-lg font-extrabold text-primary">LE 1,549.00</span><span class="font-body-sm text-body-sm text-secondary line-through">LE 1,199.00</span></div><button class="mt-2.5 w-full py-1.5 bg-surface-container text-on-surface font-label-md text-label-md font-bold rounded-none flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors" onclick="addToCart('Dots PJ 3 Pieces Set')"><span class="material-symbols-outlined text-[16px]">keyboard_double_arrow_left</span>Add to Bag</button></div></div></div>
-</section>
-<!-- Editorial Feature - 'The Art of Everyday Elegance' -->
-<section class="relative my-4 overflow-hidden bg-primary-container text-on-primary">
-<div class="px-5 pt-6 pb-4">
-<span class="font-label-badge text-label-badge text-sale-yellow uppercase tracking-widest font-extrabold block mb-1">
-        EDITORIAL LOOKBOOK
-      </span>
-<h2 class="font-display-hero-mobile text-display-hero-mobile font-black text-warm-white tracking-tight uppercase leading-none">
-        The Art of Everyday Elegance
-      </h2>
-<p class="font-body-md text-body-md text-on-primary-container mt-2">
-        Softness You Can Feel. Made for Cozy Days &amp; Sun-drenched Balconies.
-      </p>
-</div>
-<!-- Editorial Image -->
-<div class="relative px-4 pb-4">
-<div class="relative w-full rounded-none overflow-hidden shadow-lg aspect-[4/3]"><img alt="Editorial Loungewear Setting" class="w-full h-full object-cover rounded-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB809kO4ZJAOqb63h11rKiXdwFeidxMKkxEv9KhLh-3Cdu5c5AnHyRQsPUBdLjrGmzBQPyIUw0D6DXxlu-hY-zaS4zgUpE5CpWpFME1eeMSqVxIqnMF45cH06uX_pwxIsEBabTOMYGh3yhSTbDyghYTUVu0QgndqHwKx-WnXv53OrxjKAfg3v3GKI8PgdC7nW_FNOL5dChTUlW69ghVOa6XeQBFz0jkfxH1cGxw_9rAyaUEIkkM0wbTrIg1HjG02yzdb2Q"><div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-4 pb-6"><div class="flex items-center justify-between w-full"><div><span class="font-label-badge text-label-badge text-sale-yellow uppercase">Featured Capsule</span><p class="font-headline-sm text-headline-sm font-bold text-warm-white">Heavenly Stripe &amp; Satin</p></div><a class="bg-warm-white text-on-surface px-4 py-2 rounded-none font-label-md text-label-md font-extrabold shadow active:scale-95 transition-transform" href="#satin-section">EXPLORE</a></div></div></div>
-</div>
-</section>
-<!-- Satin Shorts Spotlight -->
-<section class="px-4 py-6 bg-surface-container-low" id="satin-section">
-<div class="flex items-end justify-between mb-4">
-<div>
-<span class="font-label-badge text-label-badge text-primary uppercase tracking-wider font-extrabold block">GLOSSY SILK TOUCH</span>
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-on-surface tracking-tight">Satin Shorts</h2>
-</div>
-<span class="bg-blush-tint text-primary px-2.5 py-1 rounded-full font-label-badge text-label-badge font-bold">
-        LE 1,249 FLAT
-      </span>
-</div>
-<div class="flex gap-3 overflow-x-auto no-scrollbar pb-2"><div class="w-44 shrink-0 flex flex-col bg-surface-container-lowest rounded-none overflow-hidden shadow-sm"><div class="relative aspect-[3/4] w-full bg-surface-container rounded-none"><img alt="Bows Satin Pyjama Short Set" class="w-full h-full object-cover rounded-none" src="https://lh3.googleusercontent.com/aida/AEtjO1WPPZkBI_R2AAGWi3YWayPjm9ZspL2ac17jUmVbpFqCdrIkGmtU5SxRiuX-f5-UGiu_BvBjU_pTTm87_miz_bzfrUkZ-okjeFkCRLX7rtRMp_9sDBFFaDCXphaGjnD0Xd99--r0JX-j6UQDdsaSZIZYckU3LimGxcBSYFNiTfUgLKV-aRsC5ROf7GMJE-JekKgNYuHYM3N_pcx6sCViMv1JW3p5JQrhfYNwqYUOM1lFFfvGz8iE1qtiLvqF"><span class="absolute top-2 left-2 bg-sale-yellow text-on-background font-label-badge text-label-badge px-1.5 py-0.5 rounded-none font-extrabold">TRENDING</span><button aria-label="Add to wishlist" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow" onclick="toggleWishlist(this, 'Bows Satin Pyjama Set')"><span class="material-symbols-outlined text-[16px]">favorite_border</span></button></div><div class="p-2.5 flex flex-col flex-1 justify-between"><h4 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1">Bows Satin Pyjama Short Set</h4><div class="mt-1 flex items-baseline gap-1"><span class="font-label-lg text-label-lg font-bold text-primary">LE 1,249.00</span><span class="font-body-sm text-body-sm text-secondary line-through">LE 949.00</span></div><button class="mt-2 w-full py-1 bg-surface-container text-on-surface font-label-badge text-label-badge uppercase font-bold rounded-none active:bg-primary active:text-on-primary transition-colors" onclick="addToCart('Bows Satin Pyjama Short Set')">Quick Add</button></div></div><div class="w-44 shrink-0 flex flex-col bg-surface-container-lowest rounded-none overflow-hidden shadow-sm"><div class="relative aspect-[3/4] w-full bg-surface-container rounded-none"><img alt="Zebra Satin Pyjama Short Set" class="w-full h-full object-cover rounded-none" src="https://lh3.googleusercontent.com/aida/AEtjO1X1kO5qIrnleN2sbhJ_-wglyBgzXbIeep--lxuWX8wajBQJSGTWIWqA4GSwwYR-gHjXIAKB_oAmdJbyqDsHPlyo-A9NIIbWNlX0uOsmO7wQaXXSCVFtWBB-LPRgTLAAjS6GNwNLe7p8tz3dAbMhkX0kz91lHZ4MDtQvjN3LX_kmaSFdL_6YXq9qsjy5Mgnqfze-gKCJ_jIGvhUTtHSQ5SwLLVZ62-ETKblTp44_KhHPKUNmbcaxM6Rg8_OK"><span class="absolute top-2 left-2 bg-inverse-surface text-inverse-on-surface font-label-badge text-label-badge px-1.5 py-0.5 rounded-none">WILD SILK</span><button aria-label="Add to wishlist" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow" onclick="toggleWishlist(this, 'Zebra Satin Pyjama Set')"><span class="material-symbols-outlined text-[16px]">favorite_border</span></button></div><div class="p-2.5 flex flex-col flex-1 justify-between"><h4 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1">Zebra Satin Pyjama Short Set</h4><div class="mt-1 flex items-baseline gap-1"><span class="font-label-lg text-label-lg font-bold text-primary">LE 1,249.00</span><span class="font-body-sm text-body-sm text-secondary line-through">LE 949.00</span></div><button class="mt-2 w-full py-1 bg-surface-container text-on-surface font-label-badge text-label-badge uppercase font-bold rounded-none active:bg-primary active:text-on-primary transition-colors" onclick="addToCart('Zebra Satin Pyjama Short Set')">Quick Add</button></div></div><div class="w-44 shrink-0 flex flex-col bg-surface-container-lowest rounded-none overflow-hidden shadow-sm"><div class="relative aspect-[3/4] w-full bg-surface-container rounded-none"><img alt="Red Hearts Satin Pyjama Short Set" class="w-full h-full object-cover rounded-none" src="https://lh3.googleusercontent.com/aida/AEtjO1V2YvKFWDhfpJAa8_Qcck_cMhcUmPE9PoCqoxoeeKSVSsGS0aewrIIab7Edcl5Q1sdMxbIVFRpBe8-IK3PiywuQ0jXT5OwPV0QMYnmM0Ri_AsSH2KeuSobuxuI1aPrgWszV6oqjHbA408MH_WfFX1kjrQ6toebduM-tWTUZHMaAQkifrit6kIiYPEZ1nFkLlkfupZTiiKiwvGKluHZMDu58DKTtNmwvpwRXSBLyW-3VtEVw1VF4EzgYQGc"><span class="absolute top-2 left-2 bg-terracotta-rich text-on-primary font-label-badge text-label-badge px-1.5 py-0.5 rounded-none font-extrabold">LOVER EDIT</span><button aria-label="Add to wishlist" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow" onclick="toggleWishlist(this, 'Red Hearts Satin Pyjama Set')"><span class="material-symbols-outlined text-[16px]">favorite_border</span></button></div><div class="p-2.5 flex flex-col flex-1 justify-between"><h4 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1">Red Hearts Satin Pyjama Short Set</h4><div class="mt-1 flex items-baseline gap-1"><span class="font-label-lg text-label-lg font-bold text-primary">LE 1,249.00</span><span class="font-body-sm text-body-sm text-secondary line-through">LE 949.00</span></div><button class="mt-2 w-full py-1 bg-surface-container text-on-surface font-label-badge text-label-badge uppercase font-bold rounded-none active:bg-primary active:text-on-primary transition-colors" onclick="addToCart('Red Hearts Satin Pyjama Short Set')">Quick Add</button></div></div></div>
-</section>
-<!-- Best Selling Patterned & Everyday Pyjamas -->
-<section class="px-4 py-6 bg-surface">
-<div class="flex items-end justify-between mb-4">
-<div>
-<span class="font-label-badge text-label-badge text-terracotta-rich uppercase tracking-wider font-extrabold block">SUMMER FAVORITES</span>
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-on-surface tracking-tight">Everyday &amp; Patterned</h2>
-</div>
-<a class="font-label-md text-label-md text-primary font-bold flex items-center gap-0.5" href="#">
-        See 24+ <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-</a>
-</div>
-<div class="grid grid-cols-2 gap-3"><div class="flex flex-col bg-surface-container-lowest rounded-none overflow-hidden shadow-sm"><div class="relative aspect-[3/4] w-full bg-surface-container rounded-none"><img alt="Everyday Check Set Red" class="w-full h-full object-cover rounded-none" src="https://lh3.googleusercontent.com/aida/AEtjO1UV79PZn6ChU5aSYe_e1oeSy8_917VS3XsEuLF1KZQaN3ZSZJS5LbhacDetMSZ_E4Gn3RBVHlqc5gJruY32C4EV8uXa3OT1wYjhj1zn3wD_kny1pD83-itXwag3uH2I9gXImiFdoh1rfnDCjPnM4pSiJ_6gVfj7nZJyRHAWXOHpyb1NI3rxBbEh2qvY-qsnd85x_UH7jk_n3FcKMWaTOd1GPtI0Sm5K08eUb66gGaWKEMAUVXzxAsI1Ykzp"><span class="absolute top-2 left-2 bg-sale-yellow text-on-background font-label-badge text-label-badge px-1.5 py-0.5 rounded-none font-extrabold">CLASSIC CHECK</span><button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 transition-transform" onclick="toggleWishlist(this, 'Everyday Check Set Red')"><span class="material-symbols-outlined text-[18px]">favorite_border</span></button></div><div class="p-3 flex flex-col flex-1 justify-between"><h3 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1">Everyday Check Set Red</h3><div class="mt-1 flex items-baseline gap-1.5"><span class="font-label-lg text-label-lg font-extrabold text-primary">LE 1,349.00</span><span class="font-body-sm text-body-sm text-secondary line-through">LE 999.00</span></div><button class="mt-2.5 w-full py-1.5 bg-surface-container text-on-surface font-label-md text-label-md font-bold rounded-none active:bg-primary active:text-on-primary transition-colors" onclick="addToCart('Everyday Check Set Red')">Add to Bag</button></div></div><div class="flex flex-col bg-surface-container-lowest rounded-none overflow-hidden shadow-sm"><div class="relative aspect-[3/4] w-full bg-surface-container rounded-none"><img alt="Pillow Talk Pj Lavender" class="w-full h-full object-cover rounded-none" src="https://lh3.googleusercontent.com/aida/AEtjO1WbpwaU9rpcQI6q4LdI9xASfcKjKfGcbteE2z100BQuWDVBIrSM6EC-CS-Hn0sxEE5IKCjHaY3LpqVdMDk2KztjkKynAFiZSs5Ow0SURx08roHAF0TO13ddL8caRJc7QoMHoFktlkv0rEaGBn0ecxJvQ9eQ2ryc6xNsG4HkORX-tIS_2HgkOWagVeZiSrFTYm5JyO6pRJH49_L05IGR6Wm9nwTXcbq7yzIn65wEJdqoTqPX_6gFYxv5zMPl"><span class="absolute top-2 left-2 bg-blush-tint text-primary font-label-badge text-label-badge px-1.5 py-0.5 rounded-none font-bold">COZY MODAL</span><button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 transition-transform" onclick="toggleWishlist(this, 'Pillow Talk Pj Lavender')"><span class="material-symbols-outlined text-[18px]">favorite_border</span></button></div><div class="p-3 flex flex-col flex-1 justify-between"><h3 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1">Pillow Talk Pj Lavender</h3><div class="mt-1 flex items-baseline gap-1.5"><span class="font-label-lg text-label-lg font-extrabold text-primary">LE 1,349.00</span><span class="font-body-sm text-body-sm text-secondary line-through">LE 999.00</span></div><button class="mt-2.5 w-full py-1.5 bg-surface-container text-on-surface font-label-md text-label-md font-bold rounded-none active:bg-primary active:text-on-primary transition-colors" onclick="addToCart('Pillow Talk Pj Lavender')">Add to Bag</button></div></div><div class="col-span-2 flex bg-surface-container-lowest rounded-none overflow-hidden shadow-sm"><div class="relative w-2/5 aspect-[3/4] bg-surface-container shrink-0 rounded-none"><img alt="Stars PJ 3 Pieces Set Navy" class="w-full h-full object-cover rounded-none" src="https://lh3.googleusercontent.com/aida/AEtjO1WqdMVkKM8AnKJoSM14TGIX5rIi1_gW7_ku2tN12mohAqgq-PnRgE4bdOdfBVbssZEMhTNkaljxsbCR1UmC-pQXK1dp9gaFzD_ZaOiye_L-nveYTxv4NHrAuaqF7nc-0HCRTl3_oVvoCErzZiiG2WFvAhxil8RMzRr8gGk32JG70hIZb3MM3COa4tLOxcwc4yTOM4m0hMKFtcvAcBcTnPbBuTeiY_Ch6HnDUkfgO2yU8Mcip447I3kMkF14"><span class="absolute top-2 left-2 bg-terracotta-rich text-on-primary font-label-badge text-label-badge px-1.5 py-0.5 rounded-none">TRIO SET</span></div><div class="p-3.5 flex flex-col justify-between flex-1"><div><span class="font-label-badge text-label-badge text-secondary uppercase font-bold">3 Pieces Pyjamas</span><h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">Stars PJ 3 Pieces Set Navy</h3><p class="font-body-sm text-body-sm text-secondary mt-1">Includes robe-wrap, soft tank, and wide-leg trousers.</p></div><div class="mt-3"><div class="flex items-baseline gap-2 mb-2"><span class="font-headline-sm text-headline-sm font-extrabold text-primary">LE 1,549.00</span><span class="font-body-sm text-body-sm text-secondary line-through">LE 1,199.00</span></div><button class="w-full py-2 bg-primary text-on-primary font-label-md text-label-md font-bold rounded-none shadow-sm active:scale-95 transition-transform flex items-center justify-center gap-1.5" onclick="addToCart('Stars PJ 3 Pieces Set Navy')"><span class="material-symbols-outlined text-[18px]">shopping_bag</span>Claim 50% On 2nd</button></div></div></div></div>
-</section>
-<!-- Special Collection: 'Isdal Family' -->
-<section class="px-4 py-6 bg-surface-container">
-<div class="flex items-center justify-between mb-3">
-<div>
-<span class="font-label-badge text-label-badge text-terracotta-rich uppercase tracking-wider font-extrabold block">PRAYER &amp; MODEST SILKS</span>
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-on-surface tracking-tight">Isdal Family</h2>
-</div>
-<span class="font-label-badge text-label-badge bg-warm-white text-on-surface px-2.5 py-1 rounded-full font-bold shadow-sm">
-        MUMMY &amp; ME
-      </span>
-</div>
-<div class="bg-surface-container-lowest rounded-none p-4 shadow-sm"><div class="relative w-full aspect-[4/3] rounded-none overflow-hidden mb-3"><img alt="Kids Celestial Starry Satin Isdal Set" class="w-full h-full object-cover rounded-none" src="https://lh3.googleusercontent.com/aida/AEtjO1VNgKX7fZPp-dRz4BLC6A4O8njt8PY4X2nXEiwzyP5AzoHBBXA_rwdMJky7R_44cK8MB06coVeYeIbZFzV4hOUyQJsFdfzTuLgveeOx01b_OqWgfpitVMaIFwE1kHk7RTbMCuJR44VbdcN2VDtQtVd77z2PZTGXsvkO-20S5sJw9NIrXXTV3f62vfWuNMODVHF9z0hSeTZqN9ZQZ0DYZ5GRhOkGC_EvXRU6R5KC1wVu7PXtAnFETzYh95aP"><div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/75 via-transparent to-transparent flex items-end p-3"><span class="bg-sale-yellow text-on-background font-label-badge text-label-badge px-2 py-0.5 rounded-none font-extrabold">MATCHING MOTHER &amp; DAUGHTER</span></div></div><div class="flex items-center justify-between"><div><h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Kids Celestial Starry Satin Isdal Set</h3><p class="font-body-sm text-body-sm text-secondary">Crafted with breathable satin touch fabric for delicate comfort.</p></div></div><div class="mt-4 pt-3 flex items-center justify-between"><div><span class="font-body-sm text-body-sm text-secondary block">Special Price</span><span class="font-headline-sm text-headline-sm font-black text-primary">LE 900.00</span></div><button class="px-5 py-2.5 bg-primary text-on-primary font-label-md text-label-md font-bold rounded-none active:scale-95 transition-transform flex items-center gap-1.5 shadow-md" onclick="addToCart('Kids Celestial Starry Satin Isdal Set')"><span class="material-symbols-outlined text-[18px]">keyboard_double_arrow_left</span>Shop Isdal</button></div></div>
-</section>
-<!-- Trust Badges Bar -->
-<section class="px-4 py-5 bg-warm-white">
-<div class="grid grid-cols-3 gap-2 text-center">
-<div class="flex flex-col items-center p-2 rounded-lg bg-surface-container-low">
-<span class="material-symbols-outlined text-primary text-[24px]">local_shipping</span>
-<span class="font-label-badge text-label-badge font-bold text-on-surface mt-1 uppercase">Fast Delivery</span>
-<span class="font-body-sm text-[10px] text-secondary">Egypt Wide</span>
-</div>
-<div class="flex flex-col items-center p-2 rounded-lg bg-surface-container-low">
-<span class="material-symbols-outlined text-primary text-[24px]">payments</span>
-<span class="font-label-badge text-label-badge font-bold text-on-surface mt-1 uppercase">COD Ready</span>
-<span class="font-body-sm text-[10px] text-secondary">Pay at Door</span>
-</div>
-<div class="flex flex-col items-center p-2 rounded-lg bg-surface-container-low">
-<span class="material-symbols-outlined text-primary text-[24px]">sync_alt</span>
-<span class="font-label-badge text-label-badge font-bold text-on-surface mt-1 uppercase">14-Day Exchange</span>
-<span class="font-body-sm text-[10px] text-secondary">Easy Returns</span>
-</div>
-</div>
-</section>
-<!-- Newsletter & Community Perks -->
-<section class="px-4 py-8 bg-surface-container-highest">
-<div class="bg-surface-container-lowest p-5 rounded-2xl shadow-sm text-center">
-<div class="w-12 h-12 rounded-full bg-blush-tint text-primary flex items-center justify-center mx-auto mb-3">
-<span class="material-symbols-outlined text-[26px]">mark_email_unread</span>
-</div>
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-on-surface tracking-tight">Join the Chummy Club</h2>
-<p class="font-body-md text-body-md text-secondary mt-1.5 mb-4">
-        We make things that work better and last longer. Sign up for new arrivals, exclusive 50% discount codes, and cozy drops.
-      </p>
-<form class="flex flex-col gap-2" onsubmit="handleNewsletter(event)">
-<input class="w-full px-4 py-3 bg-surface-container text-on-surface rounded-xl font-body-md text-body-md placeholder-secondary focus:outline-none focus:bg-surface-container-low" id="emailInput" placeholder="Enter your email address" required="" type="email">
-<button class="w-full py-3 bg-primary text-on-primary font-label-lg text-label-lg font-bold rounded-xl shadow-md active:scale-98 transition-transform" type="submit">
-          SUBMIT &amp; GET 10% OFF
-        </button>
-</form>
-<!-- Social Channels -->
-<div class="mt-6 pt-5 flex flex-col items-center">
-<span class="font-label-badge text-label-badge text-secondary uppercase tracking-widest font-extrabold mb-3">
-          FOLLOW OUR STORY
-        </span>
-<div class="flex items-center gap-4">
-<a aria-label="Instagram" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors" href="https://www.instagram.com/chummy_ts/" rel="noopener noreferrer" target="_blank">
-<span class="font-label-badge text-label-badge font-bold">IG</span>
-</a>
-<a aria-label="TikTok" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors" href="https://tiktok.com/@chummy_ts/" rel="noopener noreferrer" target="_blank">
-<span class="font-label-badge text-label-badge font-bold">TT</span>
-</a>
-<a aria-label="Facebook" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors" href="https://www.facebook.com/Chummyts" rel="noopener noreferrer" target="_blank">
-<span class="font-label-badge text-label-badge font-bold">FB</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Micro Brand Footer -->
-<div class="mt-6 text-center text-secondary">
-<p class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant font-bold">
-        © 2026, CHUMMY POWERED BY CHAM.STD
-      </p>
-<p class="font-body-sm text-[11px] text-secondary mt-1">
-        Pure Egyptian Cotton &amp; Silky Satin Loungewear
-      </p>
-</div>
-</section>
-<!-- Client-side Micro-Interactions -->
-<script>
-    function showToast(message) {
-      const toast = document.getElementById('toastNotification');
-      const text = document.getElementById('toastMessage');
-      text.innerText = message;
-      toast.classList.remove('-translate-y-12', 'opacity-0');
-      toast.classList.add('translate-y-0', 'opacity-100');
-      setTimeout(() => {
-        toast.classList.remove('translate-y-0', 'opacity-100');
-        toast.classList.add('-translate-y-12', 'opacity-0');
-      }, 2400);
-    }
+<div class="flex flex-col w-full">
 
-    function toggleWishlist(btn, productName) {
-      const icon = btn.querySelector('.material-symbols-outlined');
-      const isFilled = icon.innerText === 'favorite';
-      if (isFilled) {
-        icon.innerText = 'favorite_border';
-        btn.classList.remove('text-primary');
-        btn.classList.add('text-charcoal-muted');
-        showToast('Removed ' + productName);
-      } else {
-        icon.innerText = 'favorite';
-        icon.style.fontVariationSettings = "'FILL' 1";
-        btn.classList.remove('text-charcoal-muted');
-        btn.classList.add('text-primary');
-        showToast('Saved ' + productName + ' to Wishlist');
-      }
-    }
+    <!-- Hero Promotional Campaign Section -->
+    <section class="relative w-full overflow-hidden bg-primary-container text-on-primary">
+        <div class="relative w-full h-[480px] sm:h-[520px] md:h-[560px] lg:h-[600px]">
+            <img alt="50% Off Clearance Promotion" class="absolute inset-0 w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB809kO4ZJAOqb63h11rKiXdwFeidxMKkxEv9KhLh-3Cdu5c5AnHyRQsPUBdLjrGmzBQPyIUw0D6DXxlu-hY-zaS4zgUpE5CpWpFME1eeMSqVxIqnMF45cH06uX_pwxIsEBabTOMYGh3yhSTbDyghYTUVu0QgndqHwKx-WnXv53OrxjKAfg3v3GKI8PgdC7nW_FNOL5dChTUlW69ghVOa6XeQBFz0jkfxH1cGxw_9rAyaUEIkkM0wbTrIg1HjG02yzdb2Q" />
+            <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/95 via-inverse-surface/50 to-transparent flex flex-col justify-end p-5 sm:p-8 md:p-12 lg:p-16">
+                <div class="max-w-3xl">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-sale-yellow text-on-background px-3 py-1 font-label-badge text-label-badge uppercase tracking-wider font-extrabold shadow-sm">
+                            LIMITED CLEARANCE
+                        </span>
+                        <span class="font-label-badge text-label-badge text-warm-white uppercase tracking-wider font-bold">
+                            Summer &amp; Satin Drops
+                        </span>
+                    </div>
+                    <h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-5xl lg:text-6xl font-extrabold text-warm-white tracking-tight leading-tight mb-3 uppercase">
+                        50% OFF ON 2ND ITEM
+                    </h1>
+                    <p class="font-body-md md:font-body-lg text-body-md md:text-lg text-warm-white/95 mb-6 max-w-xl leading-relaxed">
+                        Or Buy 2 Get 1 Free on all breathable Egyptian cotton &amp; silky loungewear crafted for everyday luxury.
+                    </p>
+                    <div class="flex flex-wrap sm:flex-nowrap gap-3 max-w-md">
+                        <a class="flex-1 text-center bg-sale-yellow text-on-background py-3 px-6 font-label-lg text-label-lg font-bold active:scale-95 hover:bg-yellow-400 transition-all shadow-md" href="#new-drops">
+                            Shop New Drops
+                        </a>
+                        <a class="flex-1 text-center bg-surface-container-lowest/90 backdrop-blur-sm text-primary py-3 px-6 font-label-lg text-label-lg font-bold active:scale-95 hover:bg-white transition-all shadow-md" href="#satin-section">
+                            Browse Satin
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    function addToCart(productName) {
-      showToast('Added ' + productName + ' to Cart');
-    }
+        <!-- Clearance Urgent Ticker Bar -->
+        <div class="bg-sale-yellow text-on-background py-2.5 px-4 flex items-center justify-between overflow-x-auto whitespace-nowrap border-t border-b border-primary/20">
+            <div class="flex items-center gap-4 sm:gap-6 font-label-badge text-label-badge uppercase tracking-widest font-extrabold text-center w-full justify-center">
+                <span>50% OFF ON 2ND ITEM</span>
+                <span class="text-terracotta-rich font-black">//</span>
+                <span>BUY 2 GET 1 FREE</span>
+                <span class="text-terracotta-rich font-black">//</span>
+                <span>LIMITED QUANTITIES</span>
+                <span class="text-terracotta-rich font-black hidden sm:inline">//</span>
+                <span class="hidden sm:inline">EXPRESS DELIVERY EGYPT &amp; ISTANBUL</span>
+            </div>
+        </div>
+    </section>
 
-    function handleNewsletter(e) {
-      e.preventDefault();
-      const input = document.getElementById('emailInput');
-      if (input && input.value) {
-        showToast('Welcome to Chummy VIP Club!');
-        input.value = '';
-      }
-    }
-  </script>
-</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(43,38,37,0.06)]" data-active-classes="text-primary font-label-md"><div class="flex justify-around items-center h-16 px-2"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[64px] h-12 transition-colors gap-1 text-primary font-label-md" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-md text-label-md">Home</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-1" data-path="collections" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-md text-label-md">Collections</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-1" data-path="wishlist" href="#"><span class="material-symbols-outlined text-[22px]">favorite_border</span><span class="font-label-md text-label-md">Wishlist</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-1" data-path="account" href="#"><span class="material-symbols-outlined text-[22px]">person</span><span class="font-label-md text-label-md">Account</span></a></div></nav>
+    <!-- Horizontal Category / Story Navigation Pills -->
+    <section class="py-5 bg-surface-container-low border-b border-surface-variant">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-3">
+                <span class="font-label-badge text-label-badge text-primary uppercase font-extrabold tracking-wider">CURATED STYLES</span>
+                <span class="font-label-badge text-label-badge text-secondary font-bold">7 EXCLUSIVE CAPSULES</span>
+            </div>
+            <div class="flex gap-2.5 overflow-x-auto no-scrollbar pb-1 md:flex-wrap">
+                <a href="#new-drops" class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary font-label-md text-label-md font-bold shrink-0 shadow-sm hover:bg-terracotta-rich active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-[18px] text-sale-yellow">local_fire_department</span>
+                    New Drops
+                </a>
+                <a href="#satin-section" class="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest text-on-surface border border-outline-variant font-label-md text-label-md font-bold shrink-0 hover:bg-surface-container active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-[18px] text-primary">bedtime</span>
+                    Satin Shorts
+                </a>
+                <a href="#patterned-section" class="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest text-on-surface border border-outline-variant font-label-md text-label-md font-bold shrink-0 hover:bg-surface-container active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-[18px] text-primary">pattern</span>
+                    Everyday &amp; Patterned
+                </a>
+                <a href="#isdal-section" class="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest text-on-surface border border-outline-variant font-label-md text-label-md font-bold shrink-0 hover:bg-surface-container active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-[18px] text-primary">spa</span>
+                    Isdal Family
+                </a>
+                <a href="<?php echo esc_url( home_url('/category-special-collection/') ); ?>" class="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest text-on-surface border border-outline-variant font-label-md text-label-md font-bold shrink-0 hover:bg-surface-container active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-[18px] text-primary">ac_unit</span>
+                    Winter Special Edit
+                </a>
+                <a href="<?php echo esc_url( home_url('/sizing-fit-advisor/') ); ?>" class="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest text-on-surface border border-outline-variant font-label-md text-label-md font-bold shrink-0 hover:bg-surface-container active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-[18px] text-primary">straighten</span>
+                    Sizing &amp; Fit
+                </a>
+                <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/') ); ?>" class="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest text-primary border border-primary font-label-md text-label-md font-bold shrink-0 hover:bg-primary hover:text-on-primary active:scale-95 transition-all">
+                    <span class="material-symbols-outlined text-[18px]">grid_view</span>
+                    All Sleepwear
+                </a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Featured New Drops Section (Responsive Mobile Grid / PC 4-Column Enhanced) -->
+    <section class="py-8 md:py-12 bg-surface" id="new-drops">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-end justify-between mb-6">
+                <div>
+                    <span class="font-label-badge text-label-badge text-terracotta-rich uppercase tracking-wider font-extrabold block">HOT RELEASES</span>
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold text-on-surface tracking-tight">New Arrivals</h2>
+                </div>
+                <a class="font-label-md text-label-md text-primary font-bold flex items-center gap-1 hover:text-terracotta-rich transition-colors" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>">
+                    View all <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </a>
+            </div>
 
+            <!-- Responsive Product Cards Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+                <!-- Product 1 -->
+                <div class="group flex flex-col bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative aspect-[3/4] w-full bg-surface-container overflow-hidden">
+                        <img alt="Heavenly Stripes Set Ladies - Olive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1VwCeG0fQNpeA4O0djAQOvl7HREfBTeW5_LuJmMdi8G3DNl0G5cgsBzeoP5vE2ubOk5fJ2NiE9BvK-GWiUQ9hiUXjffnzvv3sF4gxMR2jq7oIMp3jHd_AdjcKRzHgMZMBw2CHhp-8zgbcwbTSsSTheLindjCQjB5SqTjlU9JUOIKxoWgye8WEGZ8kmfW2jzROuxRBT5_KnmEgb4-7ScHRSrYv_sVIUPY2014OmI3_LFiVsmlUksZNZ0OD2h" />
+                        <span class="absolute top-2 left-2 bg-terracotta-rich text-on-primary font-label-badge text-label-badge px-2 py-0.5 font-extrabold">50% OFF 2ND</span>
+                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 hover:text-primary transition-transform" onclick="toggleWishlist(this, 'Heavenly Stripes Set (Ladies)')">
+                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
+                        </button>
+                    </div>
+                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
+                        <div>
+                            <span class="font-body-sm text-body-sm text-secondary block">Women's Loungewear</span>
+                            <h3 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1 mt-0.5">Heavenly Stripes Set (Ladies)- Olive</h3>
+                        </div>
+                        <div class="mt-3">
+                            <div class="flex items-baseline gap-2">
+                                <span class="font-label-lg text-label-lg font-extrabold text-primary">LE 1,499.00</span>
+                                <span class="font-body-sm text-body-sm text-secondary line-through">LE 949.00</span>
+                            </div>
+                            <button class="mt-2.5 w-full py-2 bg-surface-container text-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 active:bg-primary active:text-on-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToCart('Heavenly Stripes Set (Ladies)- Olive')">
+                                <span class="material-symbols-outlined text-[16px]">shopping_bag</span>Add to Bag
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Product 2 -->
+                <div class="group flex flex-col bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative aspect-[3/4] w-full bg-surface-container overflow-hidden">
+                        <img alt="Heavenly Stripe Set Men - Baby Blue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1Xt8iTmQBIsTUqH1cH3QjUba-6evLhtfSDtZs3w0Zkt0POrAOyQX_HfhB5hNnQKK5aqlvcNKZSGdBMNBh2IHmCWdIw0C3V3oc--d00G9H5jhozsouPTtTHPaUmGuOovWAiKJEImb1OchbROMwEyMnq7x5xRqWVVg4Pmgp5XN-D-C2LoTvAy_PeTIf28HYrkiGVzzRdWrtUVnPf0v2BgVqjQdYIIFni-rz05-L8NsCWxbjXDbEBp2ljtTQI" />
+                        <span class="absolute top-2 left-2 bg-inverse-surface text-inverse-on-surface font-label-badge text-label-badge px-2 py-0.5 font-extrabold">COUPLES PAIR</span>
+                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 hover:text-primary transition-transform" onclick="toggleWishlist(this, 'Heavenly Stripe Set (Men)')">
+                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
+                        </button>
+                    </div>
+                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
+                        <div>
+                            <span class="font-body-sm text-body-sm text-secondary block">Men's Relaxed Fit</span>
+                            <h3 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1 mt-0.5">Heavenly Stripe Set (Men)- Baby Blue</h3>
+                        </div>
+                        <div class="mt-3">
+                            <div class="flex items-baseline gap-2">
+                                <span class="font-label-lg text-label-lg font-extrabold text-primary">LE 1,499.00</span>
+                                <span class="font-body-sm text-body-sm text-secondary line-through">LE 949.00</span>
+                            </div>
+                            <button class="mt-2.5 w-full py-2 bg-surface-container text-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 active:bg-primary active:text-on-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToCart('Heavenly Stripe Set (Men)- Baby Blue')">
+                                <span class="material-symbols-outlined text-[16px]">shopping_bag</span>Add to Bag
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Product 3 -->
+                <div class="group flex flex-col bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative aspect-[3/4] w-full bg-surface-container overflow-hidden">
+                        <img alt="Serenity Stripe Short Set Blue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1WsztWbC7LnZvHfwf9yG0LjwCHnYp8zr3memxfq3YFqj0alRImyzYhB-l8-VEHRpmCIQQyd9gsOQfmVHesPDnzUULcavi_Pkm3BUbxrvB6d-Ecqi1aBwniv3dKsB60rswMJ1gT4QXQSy9iqao17423I60MbYVkKzeNuVGYsch3HLvaW0-tsK5xy1ZybIlu-BiDwSXWwURg_OXYJ6T1C_0wZ2ObgR4E2ra5LDw_PNy6GnFtyrFfVax4AIYWx" />
+                        <span class="absolute top-2 left-2 bg-sale-yellow text-on-background font-label-badge text-label-badge px-2 py-0.5 font-extrabold">BESTSELLER</span>
+                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 hover:text-primary transition-transform" onclick="toggleWishlist(this, 'Serenity Stripe Short Set')">
+                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
+                        </button>
+                    </div>
+                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
+                        <div>
+                            <span class="font-body-sm text-body-sm text-secondary block">Cotton Short Set</span>
+                            <h3 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1 mt-0.5">Serenity Stripe Short Set Blue</h3>
+                        </div>
+                        <div class="mt-3">
+                            <div class="flex items-baseline gap-2">
+                                <span class="font-label-lg text-label-lg font-extrabold text-primary">LE 1,299.00</span>
+                                <span class="font-body-sm text-body-sm text-secondary line-through">LE 899.00</span>
+                            </div>
+                            <button class="mt-2.5 w-full py-2 bg-surface-container text-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 active:bg-primary active:text-on-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToCart('Serenity Stripe Short Set Blue')">
+                                <span class="material-symbols-outlined text-[16px]">shopping_bag</span>Add to Bag
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Product 4 -->
+                <div class="group flex flex-col bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative aspect-[3/4] w-full bg-surface-container overflow-hidden">
+                        <img alt="Dots PJ 3 Pieces Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1WPXewYZN1Zq8Yg0wyounPitnYkQPlfs7Gq15JjGg3Sd3SCXtfRxRtjYlp95CJEt3-T9CVBWm3nZzhadYyPz6BlhydxNlPl_Zh5smhHVnicLMFci5zyh4ogEIyUfEUBhrkAzGbFNHT2SckxP-St6syOhhk_TMzgENyjPZiOPSbkknbbNdzGpKgDYRjhuiqaYILjZP_nXP1VFnPXyaWsOgVFSxsiMWiDfykQb3Tah4Lx7J9lsrrqgqPaGCeT" />
+                        <span class="absolute top-2 left-2 bg-primary text-on-primary font-label-badge text-label-badge px-2 py-0.5 font-extrabold">3-PIECE VALUE</span>
+                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 hover:text-primary transition-transform" onclick="toggleWishlist(this, 'Dots PJ 3 Pieces Set')">
+                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
+                        </button>
+                    </div>
+                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
+                        <div>
+                            <span class="font-body-sm text-body-sm text-secondary block">Full Loungewear Trio</span>
+                            <h3 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1 mt-0.5">Dots PJ 3 Pieces Set</h3>
+                        </div>
+                        <div class="mt-3">
+                            <div class="flex items-baseline gap-2">
+                                <span class="font-label-lg text-label-lg font-extrabold text-primary">LE 1,549.00</span>
+                                <span class="font-body-sm text-body-sm text-secondary line-through">LE 1,199.00</span>
+                            </div>
+                            <button class="mt-2.5 w-full py-2 bg-surface-container text-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 active:bg-primary active:text-on-primary hover:bg-primary hover:text-on-primary transition-colors" onclick="addToCart('Dots PJ 3 Pieces Set')">
+                                <span class="material-symbols-outlined text-[16px]">shopping_bag</span>Add to Bag
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Editorial Feature - 'The Art of Everyday Elegance' (Enhanced PC Split Layout) -->
+    <section class="py-8 md:py-16 bg-primary-container text-on-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <!-- Text Narrative -->
+                <div class="flex flex-col justify-center">
+                    <span class="font-label-badge text-label-badge text-sale-yellow uppercase tracking-widest font-extrabold block mb-2">
+                        EDITORIAL LOOKBOOK
+                    </span>
+                    <h2 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-4xl lg:text-5xl font-extrabold text-warm-white tracking-tight uppercase leading-tight">
+                        The Art of Everyday Elegance
+                    </h2>
+                    <p class="font-body-md md:font-body-lg text-body-md md:text-lg text-on-primary-container mt-4 leading-relaxed">
+                        Softness you can genuinely feel. Crafted with pride using organic cottons and whisper-light satin finishes, tailored for lazy weekend mornings and sun-drenched balconies.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sale-yellow text-[20px]">check_circle</span>
+                            <span class="font-label-md text-label-md text-warm-white font-bold">100% Breathable Weave</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sale-yellow text-[20px]">check_circle</span>
+                            <span class="font-label-md text-label-md text-warm-white font-bold">Non-Pilling Satin</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sale-yellow text-[20px]">check_circle</span>
+                            <span class="font-label-md text-label-md text-warm-white font-bold">Cairo &amp; Istanbul Craft</span>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a class="inline-flex items-center gap-2 bg-sale-yellow text-on-background px-6 py-3 font-label-lg text-label-lg font-bold shadow hover:bg-yellow-400 active:scale-95 transition-all" href="#satin-section">
+                            EXPLORE CAPSULE <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
 
+                <!-- Editorial Visual Imagery -->
+                <div class="relative w-full aspect-[4/3] md:aspect-[5/4] overflow-hidden shadow-2xl">
+                    <img alt="Editorial Loungewear Setting" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB809kO4ZJAOqb63h11rKiXdwFeidxMKkxEv9KhLh-3Cdu5c5AnHyRQsPUBdLjrGmzBQPyIUw0D6DXxlu-hY-zaS4zgUpE5CpWpFME1eeMSqVxIqnMF45cH06uX_pwxIsEBabTOMYGh3yhSTbDyghYTUVu0QgndqHwKx-WnXv53OrxjKAfg3v3GKI8PgdC7nW_FNOL5dChTUlW69ghVOa6XeQBFz0jkfxH1cGxw_9rAyaUEIkkM0wbTrIg1HjG02yzdb2Q" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/85 via-transparent to-transparent flex items-end p-5 md:p-8">
+                        <div class="flex items-center justify-between w-full">
+                            <div>
+                                <span class="font-label-badge text-label-badge text-sale-yellow uppercase font-extrabold tracking-wider">Featured Capsule</span>
+                                <p class="font-headline-sm md:font-headline-md text-headline-sm md:text-2xl font-bold text-warm-white">Heavenly Stripe &amp; Satin</p>
+                            </div>
+                            <span class="bg-warm-white/90 backdrop-blur-sm text-on-surface px-4 py-2 font-label-md text-label-md font-extrabold shadow hidden sm:inline-block">
+                                LE 1,249 FLAT
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Satin Shorts Spotlight (Responsive Desktop Grid) -->
+    <section class="py-8 md:py-12 bg-surface-container-low" id="satin-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-end justify-between mb-6">
+                <div>
+                    <span class="font-label-badge text-label-badge text-primary uppercase tracking-wider font-extrabold block">GLOSSY SILK TOUCH</span>
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold text-on-surface tracking-tight">Satin Shorts</h2>
+                </div>
+                <span class="bg-blush-tint text-primary px-3 py-1 font-label-badge text-label-badge font-bold border border-primary/20">
+                    LE 1,249 FLAT PRICE
+                </span>
+            </div>
 
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
+                <!-- Satin 1 -->
+                <div class="group flex flex-col bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative aspect-[3/4] w-full bg-surface-container overflow-hidden">
+                        <img alt="Bows Satin Pyjama Short Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1WPPZkBI_R2AAGWi3YWayPjm9ZspL2ac17jUmVbpFqCdrIkGmtU5SxRiuX-f5-UGiu_BvBjU_pTTm87_miz_bzfrUkZ-okjeFkCRLX7rtRMp_9sDBFFaDCXphaGjnD0Xd99--r0JX-j6UQDdsaSZIZYckU3LimGxcBSYFNiTfUgLKV-aRsC5ROf7GMJE-JekKgNYuHYM3N_pcx6sCViMv1JW3p5JQrhfYNwqYUOM1lFFfvGz8iE1qtiLvqF" />
+                        <span class="absolute top-2 left-2 bg-sale-yellow text-on-background font-label-badge text-label-badge px-2 py-0.5 font-extrabold">TRENDING</span>
+                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 hover:text-primary transition-transform" onclick="toggleWishlist(this, 'Bows Satin Pyjama Set')">
+                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
+                        </button>
+                    </div>
+                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
+                        <h4 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1">Bows Satin Pyjama Short Set</h4>
+                        <div class="mt-2">
+                            <div class="flex items-baseline gap-1.5">
+                                <span class="font-label-lg text-label-lg font-bold text-primary">LE 1,249.00</span>
+                                <span class="font-body-sm text-body-sm text-secondary line-through">LE 949.00</span>
+                            </div>
+                            <button class="mt-2.5 w-full py-2 bg-surface-container text-on-surface font-label-badge text-label-badge uppercase font-bold active:bg-primary active:text-on-primary hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1" onclick="addToCart('Bows Satin Pyjama Short Set')">
+                                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span> Quick Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Satin 2 -->
+                <div class="group flex flex-col bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative aspect-[3/4] w-full bg-surface-container overflow-hidden">
+                        <img alt="Zebra Satin Pyjama Short Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1X1kO5qIrnleN2sbhJ_-wglyBgzXbIeep--lxuWX8wajBQJSGTWIWqA4GSwwYR-gHjXIAKB_oAmdJbyqDsHPlyo-A9NIIbWNlX0uOsmO7wQaXXSCVFtWBB-LPRgTLAAjS6GNwNLe7p8tz3dAbMhkX0kz91lHZ4MDtQvjN3LX_kmaSFdL_6YXq9qsjy5Mgnqfze-gKCJ_jIGvhUTtHSQ5SwLLVZ62-ETKblTp44_KhHPKUNmbcaxM6Rg8_OK" />
+                        <span class="absolute top-2 left-2 bg-inverse-surface text-inverse-on-surface font-label-badge text-label-badge px-2 py-0.5 font-extrabold">WILD SILK</span>
+                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 hover:text-primary transition-transform" onclick="toggleWishlist(this, 'Zebra Satin Pyjama Set')">
+                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
+                        </button>
+                    </div>
+                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
+                        <h4 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1">Zebra Satin Pyjama Short Set</h4>
+                        <div class="mt-2">
+                            <div class="flex items-baseline gap-1.5">
+                                <span class="font-label-lg text-label-lg font-bold text-primary">LE 1,249.00</span>
+                                <span class="font-body-sm text-body-sm text-secondary line-through">LE 949.00</span>
+                            </div>
+                            <button class="mt-2.5 w-full py-2 bg-surface-container text-on-surface font-label-badge text-label-badge uppercase font-bold active:bg-primary active:text-on-primary hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1" onclick="addToCart('Zebra Satin Pyjama Short Set')">
+                                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span> Quick Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Satin 3 -->
+                <div class="group flex flex-col bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-shadow col-span-2 sm:col-span-1">
+                    <div class="relative aspect-[3/4] w-full bg-surface-container overflow-hidden">
+                        <img alt="Red Hearts Satin Pyjama Short Set" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1V2YvKFWDhfpJAa8_Qcck_cMhcUmPE9PoCqoxoeeKSVSsGS0aewrIIab7Edcl5Q1sdMxbIVFRpBe8-IK3PiywuQ0jXT5OwPV0QMYnmM0Ri_AsSH2KeuSobuxuI1aPrgWszV6oqjHbA408MH_WfFX1kjrQ6toebduM-tWTUZHMaAQkifrit6kIiYPEZ1nFkLlkfupZTiiKiwvGKluHZMDu58DKTtNmwvpwRXSBLyW-3VtEVw1VF4EzgYQGc" />
+                        <span class="absolute top-2 left-2 bg-terracotta-rich text-on-primary font-label-badge text-label-badge px-2 py-0.5 font-extrabold">LOVER EDIT</span>
+                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 hover:text-primary transition-transform" onclick="toggleWishlist(this, 'Red Hearts Satin Pyjama Set')">
+                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
+                        </button>
+                    </div>
+                    <div class="p-3 sm:p-4 flex flex-col flex-1 justify-between">
+                        <h4 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1">Red Hearts Satin Pyjama Short Set</h4>
+                        <div class="mt-2">
+                            <div class="flex items-baseline gap-1.5">
+                                <span class="font-label-lg text-label-lg font-bold text-primary">LE 1,249.00</span>
+                                <span class="font-body-sm text-body-sm text-secondary line-through">LE 949.00</span>
+                            </div>
+                            <button class="mt-2.5 w-full py-2 bg-surface-container text-on-surface font-label-badge text-label-badge uppercase font-bold active:bg-primary active:text-on-primary hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1" onclick="addToCart('Red Hearts Satin Pyjama Short Set')">
+                                <span class="material-symbols-outlined text-[16px]">add_shopping_cart</span> Quick Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Best Selling Patterned & Everyday Pyjamas -->
+    <section class="py-8 md:py-12 bg-surface" id="patterned-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-end justify-between mb-6">
+                <div>
+                    <span class="font-label-badge text-label-badge text-terracotta-rich uppercase tracking-wider font-extrabold block">SUMMER FAVORITES</span>
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold text-on-surface tracking-tight">Everyday &amp; Patterned</h2>
+                </div>
+                <a class="font-label-md text-label-md text-primary font-bold flex items-center gap-0.5 hover:text-terracotta-rich transition-colors" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>">
+                    See 24+ <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </a>
+            </div>
 
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                <!-- Card 1 -->
+                <div class="flex flex-col bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative aspect-[3/4] w-full bg-surface-container overflow-hidden">
+                        <img alt="Everyday Check Set Red" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1UV79PZn6ChU5aSYe_e1oeSy8_917VS3XsEuLF1KZQaN3ZSZJS5LbhacDetMSZ_E4Gn3RBVHlqc5gJruY32C4EV8uXa3OT1wYjhj1zn3wD_kny1pD83-itXwag3uH2I9gXImiFdoh1rfnDCjPnM4pSiJ_6gVfj7nZJyRHAWXOHpyb1NI3rxBbEh2qvY-qsnd85x_UH7jk_n3FcKMWaTOd1GPtI0Sm5K08eUb66gGaWKEMAUVXzxAsI1Ykzp" />
+                        <span class="absolute top-2 left-2 bg-sale-yellow text-on-background font-label-badge text-label-badge px-2 py-0.5 font-extrabold">CLASSIC CHECK</span>
+                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 hover:text-primary transition-transform" onclick="toggleWishlist(this, 'Everyday Check Set Red')">
+                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
+                        </button>
+                    </div>
+                    <div class="p-4 flex flex-col flex-1 justify-between">
+                        <h3 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1">Everyday Check Set Red</h3>
+                        <div class="mt-3">
+                            <div class="flex items-baseline gap-1.5">
+                                <span class="font-label-lg text-label-lg font-extrabold text-primary">LE 1,349.00</span>
+                                <span class="font-body-sm text-body-sm text-secondary line-through">LE 999.00</span>
+                            </div>
+                            <button class="mt-2.5 w-full py-2 bg-surface-container text-on-surface font-label-md text-label-md font-bold active:bg-primary active:text-on-primary hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1.5" onclick="addToCart('Everyday Check Set Red')">
+                                <span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add to Bag
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Card 2 -->
+                <div class="flex flex-col bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative aspect-[3/4] w-full bg-surface-container overflow-hidden">
+                        <img alt="Pillow Talk Pj Lavender" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1WbpwaU9rpcQI6q4LdI9xASfcKjKfGcbteE2z100BQuWDVBIrSM6EC-CS-Hn0sxEE5IKCjHaY3LpqVdMDk2KztjkKynAFiZSs5Ow0SURx08roHAF0TO13ddL8caRJc7QoMHoFktlkv0rEaGBn0ecxJvQ9eQ2ryc6xNsG4HkORX-tIS_2HgkOWagVeZiSrFTYm5JyO6pRJH49_L05IGR6Wm9nwTXcbq7yzIn65wEJdqoTqPX_6gFYxv5zMPl" />
+                        <span class="absolute top-2 left-2 bg-blush-tint text-primary font-label-badge text-label-badge px-2 py-0.5 font-bold">COZY MODAL</span>
+                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 hover:text-primary transition-transform" onclick="toggleWishlist(this, 'Pillow Talk Pj Lavender')">
+                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
+                        </button>
+                    </div>
+                    <div class="p-4 flex flex-col flex-1 justify-between">
+                        <h3 class="font-body-md text-body-md font-bold text-on-surface line-clamp-1">Pillow Talk Pj Lavender</h3>
+                        <div class="mt-3">
+                            <div class="flex items-baseline gap-1.5">
+                                <span class="font-label-lg text-label-lg font-extrabold text-primary">LE 1,349.00</span>
+                                <span class="font-body-sm text-body-sm text-secondary line-through">LE 999.00</span>
+                            </div>
+                            <button class="mt-2.5 w-full py-2 bg-surface-container text-on-surface font-label-md text-label-md font-bold active:bg-primary active:text-on-primary hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1.5" onclick="addToCart('Pillow Talk Pj Lavender')">
+                                <span class="material-symbols-outlined text-[16px]">shopping_bag</span> Add to Bag
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-</body></html>
+                <!-- Card 3 (Trio Set Feature) -->
+                <div class="flex flex-col bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative aspect-[3/4] w-full bg-surface-container overflow-hidden">
+                        <img alt="Stars PJ 3 Pieces Set Navy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida/AEtjO1WqdMVkKM8AnKJoSM14TGIX5rIi1_gW7_ku2tN12mohAqgq-PnRgE4bdOdfBVbssZEMhTNkaljxsbCR1UmC-pQXK1dp9gaFzD_ZaOiye_L-nveYTxv4NHrAuaqF7nc-0HCRTl3_oVvoCErzZiiG2WFvAhxil8RMzRr8gGk32JG70hIZb3MM3COa4tLOxcwc4yTOM4m0hMKFtcvAcBcTnPbBuTeiY_Ch6HnDUkfgO2yU8Mcip447I3kMkF14" />
+                        <span class="absolute top-2 left-2 bg-terracotta-rich text-on-primary font-label-badge text-label-badge px-2 py-0.5 font-extrabold">TRIO SET</span>
+                        <button aria-label="Add to wishlist" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-warm-white/90 backdrop-blur-sm flex items-center justify-center text-charcoal-muted shadow active:scale-90 hover:text-primary transition-transform" onclick="toggleWishlist(this, 'Stars PJ 3 Pieces Set Navy')">
+                            <span class="material-symbols-outlined text-[18px]">favorite_border</span>
+                        </button>
+                    </div>
+                    <div class="p-4 flex flex-col flex-1 justify-between">
+                        <div>
+                            <span class="font-label-badge text-label-badge text-secondary uppercase font-bold">Includes Robe, Tank &amp; Pants</span>
+                            <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1">Stars PJ 3 Pieces Set Navy</h3>
+                        </div>
+                        <div class="mt-3">
+                            <div class="flex items-baseline gap-2 mb-2">
+                                <span class="font-headline-sm text-headline-sm font-extrabold text-primary">LE 1,549.00</span>
+                                <span class="font-body-sm text-body-sm text-secondary line-through">LE 1,199.00</span>
+                            </div>
+                            <button class="w-full py-2.5 bg-primary text-on-primary font-label-md text-label-md font-bold active:scale-95 hover:bg-terracotta-rich transition-all flex items-center justify-center gap-1.5 shadow-sm" onclick="addToCart('Stars PJ 3 Pieces Set Navy')">
+                                <span class="material-symbols-outlined text-[18px]">shopping_bag</span> Claim 50% On 2nd
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Collection: 'Isdal Family' (Desktop Enhanced Showcase) -->
+    <section class="py-8 md:py-14 bg-surface-container" id="isdal-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <span class="font-label-badge text-label-badge text-terracotta-rich uppercase tracking-wider font-extrabold block">PRAYER &amp; MODEST SILKS</span>
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold text-on-surface tracking-tight">Isdal Family</h2>
+                </div>
+                <span class="font-label-badge text-label-badge bg-warm-white text-on-surface px-3 py-1.5 font-bold shadow-sm border border-outline-variant">
+                    MUMMY &amp; ME
+                </span>
+            </div>
+
+            <!-- Enhanced Desktop Side-by-Side Card -->
+            <div class="bg-surface-container-lowest overflow-hidden shadow-sm p-4 sm:p-6 md:p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 items-center">
+                    <div class="relative w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[4/3] overflow-hidden">
+                        <img alt="Kids Celestial Starry Satin Isdal Set" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VNgKX7fZPp-dRz4BLC6A4O8njt8PY4X2nXEiwzyP5AzoHBBXA_rwdMJky7R_44cK8MB06coVeYeIbZFzV4hOUyQJsFdfzTuLgveeOx01b_OqWgfpitVMaIFwE1kHk7RTbMCuJR44VbdcN2VDtQtVd77z2PZTGXsvkO-20S5sJw9NIrXXTV3f62vfWuNMODVHF9z0hSeTZqN9ZQZ0DYZ5GRhOkGC_EvXRU6R5KC1wVu7PXtAnFETzYh95aP" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/75 via-transparent to-transparent flex items-end p-4">
+                            <span class="bg-sale-yellow text-on-background font-label-badge text-label-badge px-3 py-1 font-extrabold shadow">
+                                MATCHING MOTHER &amp; DAUGHTER
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-between h-full py-2">
+                        <div>
+                            <span class="font-label-badge text-label-badge text-terracotta-rich uppercase font-bold tracking-wider">Modest Comfort Collection</span>
+                            <h3 class="font-headline-md md:font-headline-lg text-headline-md md:text-3xl font-extrabold text-on-surface mt-1">
+                                Kids Celestial Starry Satin Isdal Set
+                            </h3>
+                            <p class="font-body-md text-body-md text-secondary mt-3 leading-relaxed">
+                                Crafted with breathable satin-touch fabric and gentle draping for delicate comfort during prayer, family gatherings, and everyday relaxation. Designed for matching moments between mother and daughter.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-surface-variant flex flex-wrap items-center justify-between gap-4">
+                            <div>
+                                <span class="font-body-sm text-body-sm text-secondary block">Special Campaign Price</span>
+                                <span class="font-headline-md text-2xl md:text-3xl font-black text-primary">LE 900.00</span>
+                            </div>
+                            <button class="px-6 py-3 bg-primary text-on-primary font-label-md text-label-md font-bold active:scale-95 hover:bg-terracotta-rich transition-all flex items-center gap-2 shadow-md" onclick="addToCart('Kids Celestial Starry Satin Isdal Set')">
+                                <span class="material-symbols-outlined text-[20px]">shopping_bag</span> Shop Isdal Collection
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges Bar (3 Columns on Desktop) -->
+    <section class="py-8 bg-warm-white border-t border-b border-surface-variant">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 text-center">
+                <div class="flex flex-col items-center p-4 bg-surface-container-low border border-outline-variant/30">
+                    <span class="material-symbols-outlined text-primary text-[28px]">local_shipping</span>
+                    <span class="font-label-badge text-label-badge font-extrabold text-on-surface mt-2 uppercase tracking-wider">Fast Delivery</span>
+                    <span class="font-body-sm text-xs text-secondary mt-0.5">Express Across Cairo &amp; All Egypt Governorates</span>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-surface-container-low border border-outline-variant/30">
+                    <span class="material-symbols-outlined text-primary text-[28px]">payments</span>
+                    <span class="font-label-badge text-label-badge font-extrabold text-on-surface mt-2 uppercase tracking-wider">COD Ready</span>
+                    <span class="font-body-sm text-xs text-secondary mt-0.5">Pay at Doorstep With Cash or Visa</span>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-surface-container-low border border-outline-variant/30">
+                    <span class="material-symbols-outlined text-primary text-[28px]">sync_alt</span>
+                    <span class="font-label-badge text-label-badge font-extrabold text-on-surface mt-2 uppercase tracking-wider">14-Day Easy Exchange</span>
+                    <span class="font-body-sm text-xs text-secondary mt-0.5">Hassle-Free Sizing &amp; Fitting Exchanges</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter & Community Perks -->
+    <section class="py-12 md:py-16 bg-surface-container-highest">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-surface-container-lowest p-6 sm:p-10 shadow-sm text-center">
+                <div class="w-14 h-14 rounded-full bg-blush-tint text-primary flex items-center justify-center mx-auto mb-4">
+                    <span class="material-symbols-outlined text-[30px]">mark_email_unread</span>
+                </div>
+                <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold text-on-surface tracking-tight">
+                    Join the FLUFF Club
+                </h2>
+                <p class="font-body-md text-body-md text-secondary mt-2 mb-6 max-w-lg mx-auto">
+                    We create pieces that feel softer, fit better, and last longer. Sign up for exclusive 50% discount codes, secret restocks, and first access to seasonal drops.
+                </p>
+                <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="handleNewsletter(event)">
+                    <input class="flex-1 px-4 py-3 bg-surface-container text-on-surface font-body-md text-body-md placeholder-secondary focus:outline-none focus:ring-2 focus:ring-primary" id="emailInput" placeholder="Enter your email address" required="" type="email" />
+                    <button class="py-3 px-6 bg-primary text-on-primary font-label-lg text-label-lg font-bold shadow-md hover:bg-terracotta-rich active:scale-95 transition-all shrink-0" type="submit">
+                        GET 10% OFF
+                    </button>
+                </form>
+
+                <!-- Social Channels -->
+                <div class="mt-8 pt-6 border-t border-surface-variant flex flex-col items-center">
+                    <span class="font-label-badge text-label-badge text-secondary uppercase tracking-widest font-extrabold mb-3">
+                        FOLLOW OUR STORY
+                    </span>
+                    <div class="flex items-center gap-4">
+                        <a aria-label="Instagram" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors" href="https://www.instagram.com/chummy_ts/" rel="noopener noreferrer" target="_blank">
+                            <span class="font-label-badge text-label-badge font-bold">IG</span>
+                        </a>
+                        <a aria-label="TikTok" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors" href="https://tiktok.com/@chummy_ts/" rel="noopener noreferrer" target="_blank">
+                            <span class="font-label-badge text-label-badge font-bold">TT</span>
+                        </a>
+                        <a aria-label="Facebook" class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors" href="https://www.facebook.com/Chummyts" rel="noopener noreferrer" target="_blank">
+                            <span class="font-label-badge text-label-badge font-bold">FB</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Micro Brand Footer Note -->
+            <div class="mt-8 text-center text-secondary">
+                <p class="font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant font-bold">
+                    &copy; <?php echo date('Y'); ?> FLUFF SLEEPWEAR. POWERED BY CHAM.STD &amp; VITALDC
+                </p>
+                <p class="font-body-sm text-[11px] text-secondary mt-1">
+                    Pure Egyptian Cotton &amp; Silky Satin Loungewear | Cairo &amp; Istanbul Ateliers
+                </p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<?php
+get_footer();
+?>
