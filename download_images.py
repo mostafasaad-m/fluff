@@ -6,6 +6,9 @@ import urllib.request
 import urllib.error
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+import re
+import shutil
+
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 
 def get_extension_from_url(url):
@@ -20,7 +23,8 @@ def download_single_image(item):
     line_idx, sku, img_idx, url, output_dir, organize_folders, retries, timeout, force = item
     
     ext = get_extension_from_url(url)
-    sku_identifier = sku if sku else f"item_{line_idx:03d}"
+    clean_sku = re.sub(r'[\\/*?:"<>|]', '', str(sku)).strip() if sku else None
+    sku_identifier = clean_sku if clean_sku else f"item_{line_idx:03d}"
     
     filename = f"{sku_identifier}_{img_idx}{ext}"
     
@@ -88,7 +92,9 @@ def main():
                     if not ('trendyol.com/' in token and not token.endswith(('.jpg', '.jpeg', '.png', '.webp'))):
                         img_urls.append(token)
                 else:
-                    sku = token
+                    clean_token = re.sub(r'[\\/*?:"<>|]', '', token).strip()
+                    if clean_token and sku is None:
+                        sku = clean_token
 
             for img_idx, url in enumerate(img_urls, 1):
                 tasks.append((line_idx, sku, img_idx, url, args.output, not args.flat, args.retries, args.timeout, args.force))
@@ -130,6 +136,15 @@ def main():
     print(f"\n" + "-" * 60)
     print(f"Finished in {elapsed:.2f} seconds.")
     print(f"Total: {total_urls} | Downloaded: {success_count} | Skipped: {skipped_count} | Failed: {failed_count}")
+
+    # Zip output directory
+    zip_dest = f"{args.output}.zip"
+    print(f"\nCreating zip archive '{zip_dest}'...")
+    try:
+        shutil.make_archive(args.output, 'zip', args.output)
+        print(f"Archive successfully created: {os.path.abspath(zip_dest)}")
+    except Exception as e:
+        print(f"Warning: Could not create zip archive: {e}")
 
 if __name__ == "__main__":
     main()
