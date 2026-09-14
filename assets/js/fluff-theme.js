@@ -213,9 +213,13 @@ function addToCart(productName) {
 
 function handleNewsletter(e) {
     if (e && e.preventDefault) e.preventDefault();
-    const input = document.getElementById('emailInput');
+    const form = e ? e.target : null;
+    const input = (form && form.querySelector) 
+        ? form.querySelector('input[type="email"]') 
+        : (document.getElementById('emailInput') || document.getElementById('emailInputFooter'));
+    
     if (input && input.value) {
-        showToast('Welcome to Chummy / FLUFF Club!');
+        showToast('Welcome to FLUFF Club! Your 10% code: FLUFF10');
         input.value = '';
     }
 }

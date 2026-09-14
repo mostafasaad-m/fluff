@@ -20,7 +20,7 @@ $fluff_used_ids = array();
             <a href="#new-drops" class="block w-full cursor-pointer">
                 <picture class="w-full block">
                     <!-- Desktop Viewport: Wide Hero Image (min-width: 768px) -->
-                    <source media="(min-width: 768px)" srcset="<?php echo esc_url( home_url( '/wp-content/uploads/2026/09/photo_2026-09-13_19-02-41-1.jpg' ) ); ?>" />
+                    <source media="(min-width: 768px)" srcset="<?php echo esc_url( home_url( '/wp-content/uploads/2026/09/IMG_3498.png' ) ); ?>" />
                     <!-- Mobile Viewport: Vertical Hero Image (< 768px) -->
                     <img alt="FLUFF Clearance Campaign" class="w-full h-auto object-cover block" src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/09/ChatGPT-Image-Sep-13-2026-07_19_04-PM-1-1.png' ) ); ?>" />
                 </picture>
