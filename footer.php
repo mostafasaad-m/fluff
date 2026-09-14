@@ -85,18 +85,7 @@ $wa_url   = 'https://wa.me/' . preg_replace( '/[^0-9]/', '', $wa_phone );
                     Thoughtfully designed sleepwear crafted between our Istanbul design ateliers and Cairo delivery hubs. Tailored with pure organic Turkish cotton, liquid touch satin, and ultra-soft ribbed knitwear for effortless everyday elegance.
                 </p>
 
-                <!-- Dual Delivery Badges -->
-                <div class="flex flex-wrap items-center gap-2 pt-1">
-                    <div class="px-3 py-1.5 font-label-badge text-[11px] uppercase flex items-center gap-1.5 font-bold" style="background-color: #647A96; color: #ffffff;">
-                        <span class="material-symbols-outlined text-[15px]">local_shipping</span>
-                        <span>Cairo Express (<?php echo esc_html( fluff_get_option('fluff_cairo_delivery', '2-4 business days') ); ?>)</span>
-                    </div>
-                    <div class="px-3 py-1.5 font-label-badge text-[11px] uppercase flex items-center gap-1.5 font-bold" style="background-color: #D8B4C1; color: #1F2F4F;">
-                        <span class="material-symbols-outlined text-[15px]">flight_takeoff</span>
-                        <span>Istanbul Special (<?php echo esc_html( fluff_get_option('fluff_istanbul_delivery', '10-12 business days') ); ?>)</span>
-                    </div>
-                </div>
-
+               
                 <!-- Direct Concierge Button -->
                 <div class="pt-2">
                     <a href="<?php echo esc_url( $wa_url ); ?>" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-4 py-2.5 border transition-all duration-200 hover:scale-[1.02] active:scale-95" style="background-color: rgba(37, 211, 102, 0.12); border-color: rgba(37, 211, 102, 0.4); color: #F8F6EF;">
