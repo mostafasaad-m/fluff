@@ -38,14 +38,8 @@
             <!-- Brand Logo for Desktop PC (Left-aligned) -->
             <div class="hidden lg:flex items-center desktop-only-nav">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex flex-col items-start justify-center group py-0.5">
-                    <?php if ( has_custom_logo() ) : ?>
-                        <div class="max-h-14 max-w-[200px] flex items-center overflow-hidden">
-                            <?php the_custom_logo(); ?>
-                        </div>
-                    <?php else : ?>
-                        <span class="fluff-brand-title hover:opacity-90 transition-opacity">FLUFF</span>
-                        <span class="fluff-brand-sub mt-0.5">PREMIUM SLEEPWEAR</span>
-                    <?php endif; ?>
+                    <span class="fluff-brand-title hover:opacity-90 transition-opacity">FLUFF</span>
+                    <span class="fluff-brand-sub mt-0.5">PREMIUM SLEEPWEAR</span>
                 </a>
             </div>
         </div>
@@ -53,14 +47,8 @@
         <!-- Center Logo for Mobile & Tablets (< lg) -->
         <div class="lg:hidden absolute left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-auto z-10 mobile-only-control">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex flex-col items-center justify-center group py-0.5">
-                <?php if ( has_custom_logo() ) : ?>
-                    <div class="max-h-12 max-w-[160px] flex items-center overflow-hidden">
-                        <?php the_custom_logo(); ?>
-                    </div>
-                <?php else : ?>
-                    <span class="fluff-brand-title hover:opacity-90 transition-opacity">FLUFF</span>
-                    <span class="fluff-brand-sub mt-0.5">PREMIUM SLEEPWEAR</span>
-                <?php endif; ?>
+                <span class="fluff-brand-title hover:opacity-90 transition-opacity">FLUFF</span>
+                <span class="fluff-brand-sub mt-0.5">PREMIUM SLEEPWEAR</span>
             </a>
         </div>
 

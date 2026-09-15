@@ -17,13 +17,31 @@ $fluff_used_ids = array();
     <!-- Hero Promotional Campaign Section -->
     <section class="relative w-full overflow-hidden bg-[#1F2F4F] text-on-primary">
         <div class="relative w-full">
-            <a href="#new-drops" class="block w-full cursor-pointer">
+            <a href="#new-drops" class="block w-full cursor-pointer relative group">
                 <picture class="w-full block">
                     <!-- Desktop Viewport: Wide Hero Image (min-width: 768px) -->
                     <source media="(min-width: 768px)" srcset="<?php echo esc_url( home_url( '/wp-content/uploads/2026/09/IMG_3498.png' ) ); ?>" />
                     <!-- Mobile Viewport: Vertical Hero Image (< 768px) -->
                     <img alt="FLUFF Clearance Campaign" class="w-full h-auto object-cover block" src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/09/ChatGPT-Image-Sep-13-2026-07_19_04-PM-1-1.png' ) ); ?>" />
                 </picture>
+
+                <!-- Hero Editorial Text Overlay: Heading & Subheading each on a 30% -->
+                <div class="absolute inset-0 z-10 flex flex-col justify-center items-start px-5 sm:px-10 lg:px-16 pointer-events-none">
+                    <div class="flex flex-col gap-2 sm:gap-3 max-w-[90%] sm:max-w-[60%] lg:max-w-[38%] pointer-events-auto">
+                        <!-- Heading on 30% overlay -->
+                        <div class="inline-flex self-start py-2 px-4 sm:px-5 border border-white/20 shadow-md backdrop-blur-md transition-transform group-hover:scale-[1.01]" style="background-color: rgba(31, 47, 79, 0.30);">
+                            <h1 class="text-[22px] sm:text-[30px] lg:text-[36px] font-extrabold uppercase tracking-wide leading-tight text-white m-0" style="font-family: 'Bodoni Moda', Didot, 'Bodoni MT', serif; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+                                Softer Nights
+                            </h1>
+                        </div>
+                        <!-- Subheading on 30% overlay -->
+                        <div class="inline-flex self-start py-1.5 px-3.5 sm:px-4 border border-white/15 shadow-md backdrop-blur-md transition-transform group-hover:scale-[1.01]" style="background-color: rgba(31, 47, 79, 0.30);">
+                            <p class="text-xs sm:text-sm lg:text-[16px] uppercase tracking-[4px] sm:tracking-[5px] font-semibold text-[#D4B586] m-0" style="font-family: 'Cinzel', serif; text-shadow: 0 1px 6px rgba(0,0,0,0.5);">
+                                Brighter Tomorrow
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </a>
         </div>
 
