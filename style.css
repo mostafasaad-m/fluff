@@ -91,7 +91,7 @@ header.fixed button[aria-label="Search"],
 header.fixed a[aria-label="User Account"],
 header.fixed button[aria-label="Shopping Bag"],
 header.fixed svg {
-  color: #D4B586 !important;
+  color: #fff !important;
 }
 
 header.fixed nav a:hover,
