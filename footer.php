@@ -1,7 +1,7 @@
 <?php
 /**
  * FLUFF Sleepwear Theme Footer
- * Designed & Developed by Mostafa Saad (vitaldc.com)
+ * Crafted for FLUFF Sleepwear (vitaldc.com)
  */
 
 $wa_phone = fluff_get_option( 'fluff_whatsapp', '201000000000' );
@@ -264,7 +264,7 @@ $wa_url   = 'https://wa.me/' . preg_replace( '/[^0-9]/', '', $wa_phone );
                 </div>
             </div>
             <p class="font-medium" style="color: #D4B586;">
-                Designed &amp; Developed by <a href="https://vitaldc.com" target="_blank" rel="noopener" class="underline hover:text-white transition-colors font-bold">Mostafa Saad (vitaldc.com)</a>
+                Crafted for <a href="https://vitaldc.com" target="_blank" rel="noopener" class="underline hover:text-white transition-colors font-bold">vitaldc.com</a>
             </p>
         </div>
     </div>
@@ -439,7 +439,7 @@ $wa_url   = 'https://wa.me/' . preg_replace( '/[^0-9]/', '', $wa_phone );
 
     <!-- Drawer Footer -->
     <div class="pt-4 border-t text-xs font-medium flex items-center justify-between shrink-0" style="border-color: #B7C7D9 !important; color: #647A96 !important; background-color: #F8F6EF !important;">
-        <span>Crafted by Mostafa Saad</span>
+        <span>Crafted for FLUFF</span>
         <span class="font-bold" style="color: #1F2F4F !important;">vitaldc.com</span>
     </div>
 </div>
@@ -452,24 +452,24 @@ $wa_url   = 'https://wa.me/' . preg_replace( '/[^0-9]/', '', $wa_phone );
     </div>
 </div>
 
-<!-- Mobile Bottom Navigation Bar (Hidden on PC/Desktop >= 1024px) -->
-<nav class="fixed bottom-0 w-full z-40 pb-safe shadow-[0_-2px_12px_rgba(31,47,79,0.08)] border-t lg:hidden mobile-only-control" style="background-color: rgba(248, 246, 239, 0.95); backdrop-filter: blur(16px); border-color: #B7C7D9;">
-    <div class="flex justify-around items-center h-16 px-2">
-        <a aria-current="page" class="flex flex-col items-center justify-center min-w-[64px] h-12 transition-colors gap-1 font-label-md font-bold" style="color: #1F2F4F;" data-path="home" href="<?php echo esc_url( home_url('/') ); ?>">
+<!-- Mobile Bottom Navigation Bar (Hidden on PC/Desktop >= 1024px, Clear 25% per item) -->
+<nav class="fixed bottom-0 left-0 right-0 w-full z-40 pb-safe shadow-[0_-2px_12px_rgba(31,47,79,0.08)] border-t lg:hidden mobile-only-control" style="background-color: rgba(248, 246, 239, 0.98); backdrop-filter: blur(16px); border-color: #B7C7D9;">
+    <div class="grid grid-cols-4 w-full h-16 max-w-lg mx-auto">
+        <a aria-current="page" class="w-full h-full flex flex-col items-center justify-center transition-colors gap-1 font-label-md font-bold text-center" style="color: #1F2F4F;" data-path="home" href="<?php echo esc_url( home_url('/') ); ?>">
             <span class="material-symbols-outlined text-[22px]">home</span>
-            <span class="font-label-md text-label-md">Home</span>
+            <span class="text-[11px] font-bold leading-none tracking-wide">Home</span>
         </a>
-        <a class="flex flex-col items-center justify-center min-w-[64px] h-12 hover:opacity-100 transition-colors gap-1" style="color: #647A96;" data-path="collections" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/') ); ?>">
+        <a class="w-full h-full flex flex-col items-center justify-center hover:opacity-100 transition-colors gap-1 text-center" style="color: #647A96;" data-path="collections" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/') ); ?>">
             <span class="material-symbols-outlined text-[22px]">grid_view</span>
-            <span class="font-label-md text-label-md">Catalog</span>
+            <span class="text-[11px] font-bold leading-none tracking-wide">Catalog</span>
         </a>
-        <a class="flex flex-col items-center justify-center min-w-[64px] h-12 hover:opacity-100 transition-colors gap-1" style="color: #647A96;" data-path="wishlist" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>">
+        <a class="w-full h-full flex flex-col items-center justify-center hover:opacity-100 transition-colors gap-1 text-center" style="color: #647A96;" data-path="wishlist" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>">
             <span class="material-symbols-outlined text-[22px]">favorite_border</span>
-            <span class="font-label-md text-label-md">Wishlist</span>
+            <span class="text-[11px] font-bold leading-none tracking-wide">Wishlist</span>
         </a>
-        <a class="flex flex-col items-center justify-center min-w-[64px] h-12 hover:opacity-100 transition-colors gap-1" style="color: #647A96;" data-path="account" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : '#' ); ?>">
+        <a class="w-full h-full flex flex-col items-center justify-center hover:opacity-100 transition-colors gap-1 text-center" style="color: #647A96;" data-path="account" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : '#' ); ?>">
             <span class="material-symbols-outlined text-[22px]">person</span>
-            <span class="font-label-md text-label-md">Account</span>
+            <span class="text-[11px] font-bold leading-none tracking-wide">Account</span>
         </a>
     </div>
 </nav>

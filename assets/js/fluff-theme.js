@@ -1,6 +1,6 @@
 /**
- * FLUFF Sleepwear Theme JavaScript
- * Designed & Developed by Mostafa Saad (vitaldc.com)
+ * FLUFF Sleepwear Theme Scripts
+ * Crafted for FLUFF Sleepwear (vitaldc.com)
  */
 
 document.addEventListener('DOMContentLoaded', function() {

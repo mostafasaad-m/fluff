@@ -1,9 +1,9 @@
 /*
 Theme Name: FLUFF Sleepwear
 Theme URI: https://vitaldc.com
-Author: Mostafa Saad
+Author: FLUFF Sleepwear
 Author URI: https://vitaldc.com
-Description: Premium slow-luxury sleepwear WooCommerce theme crafted for FLUFF Sleepwear by Mostafa Saad (vitaldc.com).
+Description: Premium slow-luxury sleepwear WooCommerce theme crafted for FLUFF Sleepwear (vitaldc.com).
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -356,4 +356,122 @@ header .custom-logo {
 
 .product-card-offwhite:hover {
   box-shadow: 0 8px 24px rgba(31, 47, 79, 0.08) !important;
+}
+
+/* Related Products Height Normalization & Responsive Grid (PC & Mobile) */
+.related.products,
+.upsells.products {
+  width: 100% !important;
+  margin-top: 2rem !important;
+}
+
+.related.products > h2,
+.upsells.products > h2 {
+  font-family: 'Bodoni Moda', Didot, 'Bodoni MT', serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #1F2F4F !important;
+  margin-bottom: 1.25rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.related.products ul.products,
+.upsells.products ul.products,
+ul.products.columns-2,
+ul.products.columns-3,
+ul.products.columns-4 {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1rem !important;
+  align-items: stretch !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+@media (min-width: 768px) {
+  .related.products ul.products,
+  .upsells.products ul.products,
+  ul.products.columns-3,
+  ul.products.columns-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+ul.products li.product {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  background-color: #F0EDE4 !important;
+  padding: 0.875rem !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+ul.products li.product .aspect-\[4\/5\],
+ul.products li.product .aspect-\[3\/4\],
+ul.products li.product a img {
+  aspect-ratio: 3/4 !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+ul.products li.product h2,
+ul.products li.product h3,
+ul.products li.product .woocommerce-loop-product__title {
+  font-size: 0.9375rem !important;
+  line-height: 1.35 !important;
+  font-weight: 600 !important;
+  color: #1F2F4F !important;
+  min-height: 2.55rem !important;
+  max-height: 2.55rem !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+ul.products li.product .price {
+  font-size: 0.9375rem !important;
+  font-weight: 700 !important;
+  color: #1F2F4F !important;
+  min-height: 1.5rem !important;
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+ul.products li.product .button,
+ul.products li.product a.button,
+ul.products li.product button {
+  margin-top: auto !important;
+  width: 100% !important;
+  padding: 0.65rem 1rem !important;
+  font-size: 0.8125rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  background-color: #1F2F4F !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+ul.products li.product .button:hover,
+ul.products li.product a.button:hover,
+ul.products li.product button:hover {
+  background-color: #D4B586 !important;
+  color: #1F2F4F !important;
 }

@@ -2,7 +2,7 @@
 /**
  * FLUFF Sleepwear Theme Functions & Setup
  * 
- * Designed & Developed by Mostafa Saad (vitaldc.com)
+ * Crafted for FLUFF Sleepwear (vitaldc.com)
  * 
  * @package FLUFF
  * @version 1.0.0
