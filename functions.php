@@ -239,7 +239,7 @@ function fluff_scripts() {
                     'preorder-badge': '#D8B4C1'
                 },
                 fontFamily: {
-                    'logo': ['"Bodoni Moda"', 'Didot', '"Bodoni MT"', 'serif'],
+                    'logo': ['Bodoni Moda', 'Didot', 'Bodoni MT', 'serif'],
                     'logo-sub': ['Cinzel', 'serif'],
                     'body-lg': ['Plus Jakarta Sans', 'Manrope', 'sans-serif'],
                     'label-badge': ['Plus Jakarta Sans', 'sans-serif'],
