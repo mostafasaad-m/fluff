@@ -69,10 +69,10 @@ img {
   opacity: 1 !important;
 }
 
-/* Top Bar Headings & Header Controls in #1F2F4F bg + #D4B586 text (EDITORIAL LOOKBOOK styling) */
+/* Top Bar Headings & Header Controls (Brand Guide Styling: #F8ECF0 bg + #1D1D1B text) */
 header.fixed {
-  background-color: #1F2F4F !important;
-  border-bottom: 1px solid rgba(212, 181, 134, 0.25) !important;
+  background-color: #F8ECF0 !important;
+  border-bottom: 1px solid rgba(29, 29, 27, 0.08) !important;
 }
 
 header.fixed aside {
@@ -81,28 +81,71 @@ header.fixed aside {
 }
 
 header.fixed aside span {
-  color: #fff !important;
+  color: #D4B586 !important;
 }
 
-header.fixed .font-headline-lg-mobile,
+/* FLUFF Brand Typography Guide - Bodoni Moda SemiBold + Cinzel Regular */
+.fluff-brand-title {
+  font-family: 'Bodoni Moda', Didot, 'Bodoni MT', serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  color: #1D1D1B !important;
+  text-transform: uppercase !important;
+  font-size: 42px;
+  line-height: 1;
+}
+
+@media (min-width: 1024px) {
+  .fluff-brand-title {
+    font-size: 58px;
+    line-height: 1;
+  }
+}
+
+.fluff-brand-sub {
+  font-family: 'Cinzel', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 5px !important;
+  color: #1D1D1B !important;
+  text-transform: uppercase !important;
+  font-size: 8.5px;
+  line-height: 1;
+}
+
+@media (min-width: 1024px) {
+  .fluff-brand-sub {
+    font-size: 10px;
+    line-height: 1;
+  }
+}
+
 header.fixed nav a,
 header.fixed button[aria-label="Open Menu"],
 header.fixed button[aria-label="Search"],
 header.fixed a[aria-label="User Account"],
 header.fixed button[aria-label="Shopping Bag"],
 header.fixed svg {
-  color: #fff !important;
+  color: #1D1D1B !important;
 }
 
 header.fixed nav a:hover,
 header.fixed button:hover,
 header.fixed a:hover {
-  color: #F8F6EF !important;
+  opacity: 0.72;
 }
 
 header.fixed .fluff-cart-count-badge {
-  background-color: #D4B586 !important;
-  color: #1F2F4F !important;
+  background-color: #1D1D1B !important;
+  color: #F8ECF0 !important;
+  min-width: 20px !important;
+  height: 20px !important;
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18) !important;
 }
 
 /* Responsive Desktop / Mobile Breakpoint Rules (1024px / lg) */
@@ -185,19 +228,18 @@ header.fixed .fluff-cart-count-badge {
   }
 }
 
-/* Strict Logo Sizing Limits across all pages */
+/* Logo Sizing Limits across all pages */
 .custom-logo-link {
   display: inline-flex;
   align-items: center;
-  max-height: 2.5rem;
+  max-height: 3.75rem;
 }
 
 .custom-logo,
 .custom-logo-link img,
-header img,
 header .custom-logo {
-  max-height: 2.5rem !important;
-  height: 2.5rem !important;
+  max-height: 3.75rem !important;
+  height: 3.75rem !important;
   width: auto !important;
   object-fit: contain !important;
 }

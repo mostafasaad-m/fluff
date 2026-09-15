@@ -70,13 +70,13 @@
 </div>
 </div>
 <div class="flex items-center justify-between mt-2 pt-2">
-<div class="flex items-center bg-surface-container rounded-full px-2 py-1 gap-2.5">
-<button aria-label="Decrease quantity" class="w-5 h-5 flex items-center justify-center text-on-surface hover:text-primary active:scale-95 text-xs">
-<span class="material-symbols-outlined text-[14px]">remove</span>
+<div class="flex items-center bg-surface-container rounded-full px-2.5 py-1 gap-2.5">
+<button aria-label="Decrease quantity" class="w-7 h-7 flex items-center justify-center text-on-surface hover:text-primary active:scale-95 text-xs">
+<span class="material-symbols-outlined text-[18px]">remove</span>
 </button>
-<span class="font-label-md text-label-md text-primary w-3 text-center">1</span>
-<button aria-label="Increase quantity" class="w-5 h-5 flex items-center justify-center text-on-surface hover:text-primary active:scale-95 text-xs">
-<span class="material-symbols-outlined text-[14px]">add</span>
+<span class="font-label-md text-label-md text-primary w-5 text-center font-bold">1</span>
+<button aria-label="Increase quantity" class="w-7 h-7 flex items-center justify-center text-on-surface hover:text-primary active:scale-95 text-xs">
+<span class="material-symbols-outlined text-[18px]">add</span>
 </button>
 </div>
 <span class="font-headline-sm text-headline-sm text-primary font-serif">1,350 <span class="font-body-sm text-[11px] font-sans text-on-surface-variant">EGP</span></span>
@@ -105,13 +105,13 @@
 </div>
 </div>
 <div class="flex items-center justify-between mt-2 pt-2">
-<div class="flex items-center bg-surface-container rounded-full px-2 py-1 gap-2.5">
-<button aria-label="Decrease quantity" class="w-5 h-5 flex items-center justify-center text-on-surface hover:text-primary active:scale-95 text-xs">
-<span class="material-symbols-outlined text-[14px]">remove</span>
+<div class="flex items-center bg-surface-container rounded-full px-2.5 py-1 gap-2.5">
+<button aria-label="Decrease quantity" class="w-7 h-7 flex items-center justify-center text-on-surface hover:text-primary active:scale-95 text-xs">
+<span class="material-symbols-outlined text-[18px]">remove</span>
 </button>
-<span class="font-label-md text-label-md text-primary w-3 text-center">1</span>
-<button aria-label="Increase quantity" class="w-5 h-5 flex items-center justify-center text-on-surface hover:text-primary active:scale-95 text-xs">
-<span class="material-symbols-outlined text-[14px]">add</span>
+<span class="font-label-md text-label-md text-primary w-5 text-center font-bold">1</span>
+<button aria-label="Increase quantity" class="w-7 h-7 flex items-center justify-center text-on-surface hover:text-primary active:scale-95 text-xs">
+<span class="material-symbols-outlined text-[18px]">add</span>
 </button>
 </div>
 <span class="font-headline-sm text-headline-sm text-primary font-serif">1,650 <span class="font-body-sm text-[11px] font-sans text-on-surface-variant">EGP</span></span>

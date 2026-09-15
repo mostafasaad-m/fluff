@@ -75,7 +75,7 @@ $wa_url   = 'https://wa.me/' . preg_replace( '/[^0-9]/', '', $wa_phone );
             <!-- Column 1: Brand Essence & Dual Ateliers (Spans 4 cols on lg) -->
             <div class="lg:col-span-4 flex flex-col gap-4">
                 <div class="flex items-center gap-2.5">
-                    <span class="font-headline-md tracking-tight font-black text-2xl lg:text-3xl uppercase" style="color: #D4B586;">FLUFF</span>
+                    <span class="font-semibold tracking-[0.5px] text-2xl lg:text-3xl uppercase" style="font-family: 'Bodoni Moda', Didot, 'Bodoni MT', serif; color: #D4B586;">FLUFF</span>
                     <span class="px-2 py-0.5 font-label-badge text-[10px] uppercase font-bold tracking-widest border" style="background-color: rgba(212, 181, 134, 0.15); border-color: rgba(212, 181, 134, 0.35); color: #D4B586;">SLOW LUXURY</span>
                 </div>
                 <p class="font-arabic-sub text-base font-semibold" style="color: #F8F6EF;">
@@ -375,8 +375,9 @@ $wa_url   = 'https://wa.me/' . preg_replace( '/[^0-9]/', '', $wa_phone );
 <div id="fluffMobileMenu" class="fixed inset-0 z-[999999] hidden flex flex-col justify-between p-6 overflow-y-auto" style="background-color: #F8F6EF !important; background: #F8F6EF !important; opacity: 1 !important; z-index: 999999 !important;">
     <!-- Drawer Header Bar -->
     <div class="flex items-center justify-between border-b pb-4 shrink-0" style="border-color: #B7C7D9 !important; background-color: #F8F6EF !important;">
-        <div class="flex items-center gap-2">
-            <span class="font-headline-md text-headline-md font-extrabold text-2xl uppercase tracking-tight" style="color: #1F2F4F !important;">FLUFF</span>
+        <div class="flex flex-col items-start justify-center">
+            <span class="font-semibold uppercase tracking-[0.5px] leading-none text-2xl" style="font-family: 'Bodoni Moda', Didot, 'Bodoni MT', serif; color: #1D1D1B !important;">FLUFF</span>
+            <span class="uppercase tracking-[4px] font-normal leading-tight text-[8.5px] mt-1" style="font-family: 'Cinzel', serif; color: #1D1D1B !important;">PREMIUM SLEEPWEAR</span>
         </div>
         <button data-action="close-menu" class="w-10 h-10 flex items-center justify-center shadow-sm active:scale-95 transition-transform" style="background-color: #ffffff !important; border: 1px solid #B7C7D9 !important; color: #1F2F4F !important;" aria-label="Close Menu">
             <span class="material-symbols-outlined text-[22px]" style="color: #1F2F4F !important;">close</span>

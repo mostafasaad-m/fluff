@@ -174,6 +174,8 @@ function fluff_scripts() {
     wp_enqueue_style( 'fluff-google-fonts-plus-jakarta', 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap', array(), null );
     wp_enqueue_style( 'fluff-google-fonts-manrope', 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap', array(), null );
     wp_enqueue_style( 'fluff-google-fonts-playfair', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap', array(), null );
+    wp_enqueue_style( 'fluff-google-fonts-bodoni-moda', 'https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600;1,6..96,700&display=swap', array(), null );
+    wp_enqueue_style( 'fluff-google-fonts-cinzel', 'https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap', array(), null );
     wp_enqueue_style( 'fluff-material-symbols', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200', array(), null );
 
     wp_enqueue_script( 'fluff-tailwind-cdn', 'https://cdn.tailwindcss.com', array(), '3.4.0', false );
@@ -237,6 +239,8 @@ function fluff_scripts() {
                     'preorder-badge': '#D8B4C1'
                 },
                 fontFamily: {
+                    'logo': ['"Bodoni Moda"', 'Didot', '"Bodoni MT"', 'serif'],
+                    'logo-sub': ['Cinzel', 'serif'],
                     'body-lg': ['Plus Jakarta Sans', 'Manrope', 'sans-serif'],
                     'label-badge': ['Plus Jakarta Sans', 'sans-serif'],
                     'label-caps': ['Plus Jakarta Sans', 'Manrope', 'sans-serif'],
@@ -303,7 +307,7 @@ function fluff_woocommerce_cart_count_fragment( $fragments ) {
     ob_start();
     $count = ( function_exists('WC') && WC()->cart ) ? WC()->cart->get_cart_contents_count() : 0;
     ?>
-    <span class="fluff-cart-count-badge absolute top-1.5 right-1.5 flex items-center justify-center w-4 h-4 rounded-full font-bold text-[9px]" style="background-color: #D4B586 !important; color: #1F2F4F !important;">
+    <span class="fluff-cart-count-badge absolute -top-1 -right-1 flex items-center justify-center min-w-[20px] h-5 px-1 rounded-full font-extrabold text-[11px] leading-none shadow-sm" style="background-color: #1D1D1B !important; color: #F8ECF0 !important;">
         <?php echo esc_html( $count > 0 ? $count : '0' ); ?>
     </span>
     <?php
