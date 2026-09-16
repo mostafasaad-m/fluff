@@ -78,13 +78,13 @@ $fluff_used_ids = array();
         </div>
     </section>
 
-    <!-- Section 1: Featured New Drops (1 Row Horizontal Scroll) -->
+    <!-- Section 1: Featured New Drops (Romantic Details) -->
     <section class="py-8 md:py-12 bg-surface" id="new-drops">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-end justify-between mb-6">
                 <div>
-                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block" style="color: #647A96;">HOT RELEASES</span>
-                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold tracking-tight" style="color: #1F2F4F;">New Arrivals &amp; Featured</h2>
+                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block" style="color: #647A96;">ROMANTIC DETAILS</span>
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold tracking-tight" style="color: #1F2F4F;">New Arrivals &amp; Romantic Drops</h2>
                 </div>
                 <a class="font-label-md text-label-md font-bold flex items-center gap-1 hover:text-[#D4B586] transition-colors" style="color: #1F2F4F;" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>">
                     View all <span class="material-symbols-outlined text-[16px]">chevron_right</span>
@@ -94,7 +94,7 @@ $fluff_used_ids = array();
             <!-- 1-Row Horizontally Scrolling Product Cards (No borders, Off-white background) -->
             <div class="flex overflow-x-auto no-scrollbar gap-4 sm:gap-6 pb-4 pt-1 snap-x scroll-smooth">
                 <?php
-                $featured_products = fluff_get_section_products( 'featured', $fluff_used_ids, 6 );
+                $featured_products = fluff_get_section_products( 'romantic-details', $fluff_used_ids, 6 );
                 if ( ! empty( $featured_products ) ) {
                     foreach ( $featured_products as $product ) {
                         fluff_render_product_card( $product );
@@ -105,82 +105,79 @@ $fluff_used_ids = array();
         </div>
     </section>
 
-    <!-- Editorial Feature - 'The Art of Everyday Elegance' (Enhanced PC Split Layout) -->
-   
-
-    <!-- Satin Shorts Spotlight (Responsive Desktop Grid) -->
-    <section class="py-8 md:py-12" id="satin-section" style="background-color: #F8F6EF;">
+    <!-- Section 2: Soft Lounge Spotlight -->
+    <section class="py-8 md:py-12" id="soft-lounge-section" style="background-color: #F8F6EF;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-end justify-between mb-6">
                 <div>
-                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block" style="color: #647A96;">GLOSSY SILK TOUCH</span>
-                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold tracking-tight" style="color: #1F2F4F;">Satin Shorts</h2>
-                </div>
-                <span class="px-3 py-1 font-label-badge text-label-badge font-bold border" style="background-color: #D8B4C1; color: #1F2F4F; border-color: #B7C7D9;">
-                    LE 1,249 FLAT PRICE
-                </span>
-            </div>
-
-            <!-- 1-Row Horizontally Scrolling Satin Cards (No borders, Off-white background) -->
-            <div class="flex overflow-x-auto no-scrollbar gap-4 sm:gap-6 pb-4 pt-1 snap-x scroll-smooth">
-                <?php
-                $satin_products = fluff_get_section_products( 'satin', $fluff_used_ids, 6 );
-                if ( ! empty( $satin_products ) ) {
-                    foreach ( $satin_products as $product ) {
-                        fluff_render_product_card( $product );
-                    }
-                }
-                ?>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 3: Best Selling Patterned & Everyday Pyjamas -->
-    <section class="py-8 md:py-12" id="patterned-section" style="background-color: #F8F6EF;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-end justify-between mb-6">
-                <div>
-                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block" style="color: #647A96;">SUMMER FAVORITES</span>
-                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold tracking-tight" style="color: #1F2F4F;">Everyday &amp; Patterned</h2>
-                </div>
-                <a class="font-label-md text-label-md font-bold flex items-center gap-0.5 hover:text-[#D4B586] transition-colors" style="color: #1F2F4F;" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>">
-                    See 24+ <span class="material-symbols-outlined text-[16px]">chevron_right</span>
-                </a>
-            </div>
-
-            <!-- 1-Row Horizontally Scrolling Patterned Cards (No borders, Off-white background) -->
-            <div class="flex overflow-x-auto no-scrollbar gap-4 sm:gap-6 pb-4 pt-1 snap-x scroll-smooth">
-                <?php
-                $patterned_products = fluff_get_section_products( 'patterned', $fluff_used_ids, 6 );
-                if ( ! empty( $patterned_products ) ) {
-                    foreach ( $patterned_products as $product ) {
-                        fluff_render_product_card( $product );
-                    }
-                }
-                ?>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4: Winter & Curated Ribbed Loungewear (1 Row Horizontal Scroll) -->
-    <section class="py-8 md:py-12" id="winter-section" style="background-color: #F8F6EF;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-end justify-between mb-6">
-                <div>
-                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block" style="color: #647A96;">COZY LUXURY &amp; WARMTH</span>
-                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold tracking-tight" style="color: #1F2F4F;">Winter Ribbed &amp; Robes</h2>
+                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block" style="color: #647A96;">PURE COMFORT</span>
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold tracking-tight" style="color: #1F2F4F;">Soft Lounge Collection</h2>
                 </div>
                 <a class="font-label-md text-label-md font-bold flex items-center gap-1 hover:text-[#D4B586] transition-colors" style="color: #1F2F4F;" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>">
                     View all <span class="material-symbols-outlined text-[16px]">chevron_right</span>
                 </a>
             </div>
 
-            <!-- 1-Row Horizontally Scrolling Winter Cards (No borders, Off-white background) -->
+            <!-- 1-Row Horizontally Scrolling Soft Lounge Cards -->
             <div class="flex overflow-x-auto no-scrollbar gap-4 sm:gap-6 pb-4 pt-1 snap-x scroll-smooth">
                 <?php
-                $winter_products = fluff_get_section_products( 'winter', $fluff_used_ids, 6 );
-                if ( ! empty( $winter_products ) ) {
-                    foreach ( $winter_products as $product ) {
+                $soft_lounge_products = fluff_get_section_products( 'soft-lounge', $fluff_used_ids, 6 );
+                if ( ! empty( $soft_lounge_products ) ) {
+                    foreach ( $soft_lounge_products as $product ) {
+                        fluff_render_product_card( $product );
+                    }
+                }
+                ?>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Seasonal Edit & Transitional Sets -->
+    <section class="py-8 md:py-12" id="seasonal-section" style="background-color: #F8F6EF;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-end justify-between mb-6">
+                <div>
+                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block" style="color: #647A96;">CURATED WEATHER EDITS</span>
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold tracking-tight" style="color: #1F2F4F;">Seasonal Edit &amp; Sets</h2>
+                </div>
+                <a class="font-label-md text-label-md font-bold flex items-center gap-0.5 hover:text-[#D4B586] transition-colors" style="color: #1F2F4F;" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>">
+                    See all <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </a>
+            </div>
+
+            <!-- 1-Row Horizontally Scrolling Seasonal Cards -->
+            <div class="flex overflow-x-auto no-scrollbar gap-4 sm:gap-6 pb-4 pt-1 snap-x scroll-smooth">
+                <?php
+                $seasonal_products = fluff_get_section_products( 'seasonal-edit', $fluff_used_ids, 6 );
+                if ( ! empty( $seasonal_products ) ) {
+                    foreach ( $seasonal_products as $product ) {
+                        fluff_render_product_card( $product );
+                    }
+                }
+                ?>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Cotton Essentials (1 Row Horizontal Scroll) -->
+    <section class="py-8 md:py-12" id="cotton-section" style="background-color: #F8F6EF;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-end justify-between mb-6">
+                <div>
+                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block" style="color: #647A96;">TIMELESS BASICS</span>
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold tracking-tight" style="color: #1F2F4F;">Cotton Essentials</h2>
+                </div>
+                <a class="font-label-md text-label-md font-bold flex items-center gap-1 hover:text-[#D4B586] transition-colors" style="color: #1F2F4F;" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>">
+                    View all <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </a>
+            </div>
+
+            <!-- 1-Row Horizontally Scrolling Cotton Essentials Cards -->
+            <div class="flex overflow-x-auto no-scrollbar gap-4 sm:gap-6 pb-4 pt-1 snap-x scroll-smooth">
+                <?php
+                $cotton_products = fluff_get_section_products( 'cotton-essentials', $fluff_used_ids, 6 );
+                if ( ! empty( $cotton_products ) ) {
+                    foreach ( $cotton_products as $product ) {
                         fluff_render_product_card( $product );
                     }
                 }

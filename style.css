@@ -475,3 +475,23 @@ ul.products li.product button:hover {
   background-color: #D4B586 !important;
   color: #1F2F4F !important;
 }
+
+/* FLUFF Engraved Specifications Table */
+.fluff-specs-engraved-table {
+  border: 1px solid #B7C7D9;
+  background-color: #FFFFFF;
+}
+
+.fluff-specs-engraved-table .divide-y > div:nth-child(even) {
+  background-color: rgba(240, 237, 228, 0.45);
+}
+
+.woocommerce-Tabs-panel--fluff_specs {
+  margin-top: 1.5rem;
+}
+
+.swatch-size-pill:disabled {
+  opacity: 0.65;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}

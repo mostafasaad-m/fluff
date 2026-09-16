@@ -160,6 +160,24 @@ while ( have_posts() ) :
                 </div>
 
                 <!-- Sizing Swatches & Size Advisor Modal Trigger -->
+                <?php
+                $all_sizes = array( 'XS', 'S', 'M', 'L', 'XL' );
+                $var_stock_map = array();
+                if ( $product && method_exists( $product, 'is_type' ) && $product->is_type( 'variable' ) ) {
+                    $available_vars = $product->get_available_variations();
+                    foreach ( $available_vars as $avar ) {
+                        $s_val = '';
+                        if ( isset( $avar['attributes']['attribute_size'] ) ) {
+                            $s_val = strtoupper( $avar['attributes']['attribute_size'] );
+                        } elseif ( isset( $avar['attributes']['attribute_pa_size'] ) ) {
+                            $s_val = strtoupper( $avar['attributes']['attribute_pa_size'] );
+                        }
+                        if ( $s_val ) {
+                            $var_stock_map[ $s_val ] = ! empty( $avar['is_in_stock'] );
+                        }
+                    }
+                }
+                ?>
                 <div class="space-y-2.5 pt-1">
                     <div class="flex items-center justify-between">
                         <span class="font-label-badge text-xs text-[#1F2F4F] uppercase font-extrabold tracking-wider">Select Size</span>
@@ -167,11 +185,20 @@ while ( have_posts() ) :
                             <span class="material-symbols-outlined text-[15px]">straighten</span> Sizing Guide
                         </button>
                     </div>
-                    <div class="grid grid-cols-4 gap-2.5">
-                        <button type="button" class="swatch-size-pill py-3 px-2 text-center font-label-md text-sm font-extrabold border border-[#1F2F4F] bg-[#1F2F4F] text-white transition-all active:scale-95 cursor-pointer">S</button>
-                        <button type="button" class="swatch-size-pill py-3 px-2 text-center font-label-md text-sm font-extrabold border border-[#B7C7D9] bg-[#F0EDE4] text-[#1F2F4F] hover:border-[#1F2F4F] transition-all active:scale-95 cursor-pointer">M</button>
-                        <button type="button" class="swatch-size-pill py-3 px-2 text-center font-label-md text-sm font-extrabold border border-[#B7C7D9] bg-[#F0EDE4] text-[#1F2F4F] hover:border-[#1F2F4F] transition-all active:scale-95 cursor-pointer">L</button>
-                        <button type="button" class="swatch-size-pill py-3 px-2 text-center font-label-md text-sm font-extrabold border border-[#B7C7D9] bg-[#F0EDE4] text-[#1F2F4F] hover:border-[#1F2F4F] transition-all active:scale-95 cursor-pointer">XL</button>
+                    <div class="grid grid-cols-5 gap-2">
+                        <?php foreach ( $all_sizes as $sz_idx => $sz ) : 
+                            $is_available = ! isset( $var_stock_map[ $sz ] ) || $var_stock_map[ $sz ];
+                            $pill_classes = $is_available 
+                                ? ( $sz_idx === 0 ? 'border-[#1F2F4F] bg-[#1F2F4F] text-white' : 'border-[#B7C7D9] bg-[#F0EDE4] text-[#1F2F4F] hover:border-[#1F2F4F]' ) 
+                                : 'border-[#B7C7D9]/60 bg-[#EAE6DB]/60 text-[#53627A]/50 line-through cursor-not-allowed';
+                        ?>
+                            <button type="button" class="swatch-size-pill py-2.5 px-1 text-center font-label-md text-xs sm:text-sm font-extrabold border transition-all <?php echo esc_attr( $pill_classes ); ?>" <?php echo $is_available ? '' : 'disabled title="Out of stock"'; ?>>
+                                <span><?php echo esc_html( $sz ); ?></span>
+                                <?php if ( ! $is_available ) : ?>
+                                    <span class="block text-[8px] font-normal no-underline uppercase tracking-tighter">Sold out</span>
+                                <?php endif; ?>
+                            </button>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 
@@ -191,8 +218,28 @@ while ( have_posts() ) :
                     ?>
                 </div>
 
-                <!-- Fabric & Care Accordion -->
+                <!-- Engraved Product Specifications Drawer (Dynamic Custom Fields) -->
                 <div class="border border-[#B7C7D9] bg-[#F0EDE4] overflow-hidden mt-2">
+                    <details class="group p-4 cursor-pointer" open>
+                        <summary class="flex items-center justify-between list-none">
+                            <div class="flex items-center gap-2.5">
+                                <span class="material-symbols-outlined text-[#1F2F4F] text-[20px]">tune</span>
+                                <span class="font-label-md text-sm text-[#1F2F4F] font-extrabold uppercase tracking-wide">Product Specifications</span>
+                            </div>
+                            <span class="material-symbols-outlined text-[#647A96] transition-transform group-open:rotate-180 text-[20px]">expand_more</span>
+                        </summary>
+                        <div class="pt-3 border-t border-[#B7C7D9]/40 mt-3">
+                            <?php 
+                            if ( function_exists( 'fluff_render_product_specs_table' ) ) {
+                                fluff_render_product_specs_table( get_the_ID() );
+                            }
+                            ?>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Fabric & Care Accordion -->
+                <div class="border border-[#B7C7D9] bg-[#F0EDE4] overflow-hidden mt-1">
                     <details class="group p-4 cursor-pointer">
                         <summary class="flex items-center justify-between list-none">
                             <div class="flex items-center gap-2.5">
@@ -231,11 +278,15 @@ while ( have_posts() ) :
             </div>
         </div>
 
-        <!-- Related Products Section (Equalized Heights for PC & Mobile) -->
+        <!-- Related Products Section (Aligned with Homepage View Collection) -->
         <section class="mt-14 pt-10 border-t border-[#B7C7D9]/40">
+            <?php
+            $current_hp_view = get_post_meta( get_the_ID(), '_fluff_homepage_view', true );
+            $section_subtitle = ! empty( $current_hp_view ) ? 'FROM THE ' . strtoupper( $current_hp_view ) . ' EDIT' : 'COMPLETE YOUR WARDROBE';
+            ?>
             <div class="flex items-end justify-between mb-6">
                 <div>
-                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block text-[#647A96]">COMPLETE YOUR WARDROBE</span>
+                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block text-[#647A96]"><?php echo esc_html( $section_subtitle ); ?></span>
                     <h3 class="text-2xl sm:text-3xl font-extrabold text-[#1F2F4F] uppercase tracking-wide" style="font-family: 'Bodoni Moda', 'Playfair Display', serif;">
                         You May Also Dream In
                     </h3>
@@ -246,8 +297,20 @@ while ( have_posts() ) :
             </div>
 
             <?php
-            // Output WooCommerce related products
-            if ( function_exists('woocommerce_related_products') ) {
+            $related_items = function_exists( 'fluff_get_related_homepage_products' ) ? fluff_get_related_homepage_products( get_the_ID(), 4 ) : array();
+            if ( ! empty( $related_items ) ) {
+                ?>
+                <div class="flex overflow-x-auto no-scrollbar gap-4 sm:gap-6 pb-4 pt-1 snap-x scroll-smooth">
+                    <?php
+                    foreach ( $related_items as $r_item ) {
+                        if ( function_exists( 'fluff_render_product_card' ) ) {
+                            fluff_render_product_card( $r_item );
+                        }
+                    }
+                    ?>
+                </div>
+                <?php
+            } elseif ( function_exists('woocommerce_related_products') ) {
                 woocommerce_related_products( array(
                     'posts_per_page' => 4,
                     'columns'        => 4,
