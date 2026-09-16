@@ -1,6 +1,6 @@
 <?php
 /**
- * Generic Page Template
+ * Generic Page Template for wordpress
  * 
  * @package FLUFF
  */
