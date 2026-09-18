@@ -120,18 +120,89 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Single Product Image Gallery Switcher ---
+    // --- Single Product Image Gallery & Navigation Chevrons Controller ---
     const mainProductImg = document.getElementById('main-product-img');
-    const galleryThumbs = document.querySelectorAll('.gallery-thumb');
+    const galleryThumbs  = document.querySelectorAll('.gallery-thumb');
+    const prevImgBtn      = document.getElementById('fluffGalleryPrev');
+    const nextImgBtn      = document.getElementById('fluffGalleryNext');
+    const galleryCounter  = document.getElementById('fluffGalleryCounter');
 
-    galleryThumbs.forEach(thumb => {
-        thumb.addEventListener('click', function() {
-            const newSrc = this.getAttribute('data-full-img') || this.src;
-            if (mainProductImg && newSrc) {
-                mainProductImg.src = newSrc;
-                galleryThumbs.forEach(t => t.classList.remove('ring-2', 'ring-primary'));
-                this.classList.add('ring-2', 'ring-primary');
+    let galleryList = [];
+    if (galleryThumbs.length > 0) {
+        galleryThumbs.forEach(thumb => {
+            const src = thumb.getAttribute('data-full-img') || (thumb.querySelector('img') ? thumb.querySelector('img').src : thumb.src);
+            if (src && !galleryList.includes(src)) {
+                galleryList.push(src);
             }
+        });
+    }
+    if (galleryList.length === 0 && mainProductImg && mainProductImg.src) {
+        galleryList.push(mainProductImg.src);
+    }
+
+    let activeGalleryIdx = 0;
+
+    function switchGalleryImage(index) {
+        if (galleryList.length === 0) return;
+        if (index < 0) {
+            index = galleryList.length - 1;
+        } else if (index >= galleryList.length) {
+            index = 0;
+        }
+        activeGalleryIdx = index;
+
+        if (mainProductImg && galleryList[activeGalleryIdx]) {
+            mainProductImg.style.opacity = '0.5';
+            mainProductImg.src = galleryList[activeGalleryIdx];
+            setTimeout(() => {
+                mainProductImg.style.opacity = '1';
+            }, 120);
+        }
+
+        if (galleryCounter) {
+            galleryCounter.textContent = `${activeGalleryIdx + 1} / ${galleryList.length}`;
+        }
+
+        // Highlight active thumbnail and scroll into view
+        galleryThumbs.forEach((thumb, i) => {
+            const thumbSrc = thumb.getAttribute('data-full-img');
+            if (thumbSrc === galleryList[activeGalleryIdx] || i === activeGalleryIdx) {
+                thumb.classList.add('border-2', 'border-[#1F2F4F]');
+                thumb.classList.remove('border-[#B7C7D9]');
+                thumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            } else {
+                thumb.classList.remove('border-2', 'border-[#1F2F4F]');
+                thumb.classList.add('border-[#B7C7D9]');
+            }
+        });
+    }
+
+    // Initialize gallery counter
+    if (galleryCounter && galleryList.length > 0) {
+        galleryCounter.textContent = `1 / ${galleryList.length}`;
+    }
+
+    if (prevImgBtn) {
+        prevImgBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            switchGalleryImage(activeGalleryIdx - 1);
+        });
+    }
+
+    if (nextImgBtn) {
+        nextImgBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            switchGalleryImage(activeGalleryIdx + 1);
+        });
+    }
+
+    // Thumbnail click handler
+    galleryThumbs.forEach((thumb, idx) => {
+        thumb.addEventListener('click', function(e) {
+            e.preventDefault();
+            switchGalleryImage(idx);
         });
     });
 
@@ -161,13 +232,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Connect with WooCommerce variations form
-        const wcForm = document.querySelector('form.variations_form');
+        const wcForm = document.querySelector('form.variations_form, form.cart');
         if (wcForm) {
-            const selects = wcForm.querySelectorAll('select[name*="size"], select');
+            const selects = wcForm.querySelectorAll('select[name*="size"], select[name*="attribute"], select');
             selects.forEach(sel => {
                 let matched = false;
                 for (let i = 0; i < sel.options.length; i++) {
-                    if (sel.options[i].value.toUpperCase() === size.toUpperCase()) {
+                    const optVal = sel.options[i].value.trim().toUpperCase();
+                    if (optVal === size.toUpperCase() || optVal === size.toLowerCase()) {
                         sel.selectedIndex = i;
                         matched = true;
                         break;
@@ -183,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if (varId) {
-                const varInput = wcForm.querySelector('input.variation_id, input[name="variation_id"]');
+                let varInput = wcForm.querySelector('input.variation_id, input[name="variation_id"]');
                 if (varInput) {
                     varInput.value = varId;
                 }

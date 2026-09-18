@@ -94,5 +94,10 @@
     </div>
 </header>
 
+<?php
+$is_front     = is_front_page() || is_home();
+$main_classes = $is_front ? 'pt-[68px] sm:pt-[72px] lg:pt-[80px]' : 'pt-[108px] sm:pt-[112px] lg:pt-[122px]';
+$main_bg      = $is_front ? '#16233B' : '#F8F6EF';
+?>
 <!-- Main Container -->
-<main class="flex flex-col relative w-full pt-[108px] sm:pt-[112px] lg:pt-[122px] pb-28 lg:pb-12 bg-surface min-h-screen" style="background-color: #F8F6EF;">
+<main class="flex flex-col relative w-full <?php echo esc_attr( $main_classes ); ?> pb-28 lg:pb-12 min-h-screen" style="background-color: <?php echo esc_attr( $main_bg ); ?>;">

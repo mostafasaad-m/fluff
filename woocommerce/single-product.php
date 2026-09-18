@@ -26,23 +26,31 @@ while ( have_posts() ) :
             
             <!-- Left Column: Product Gallery Showcase (lg:col-span-7) -->
             <div class="lg:col-span-7 flex flex-col gap-3 relative lg:sticky lg:top-28">
-                <div class="relative w-full aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] rounded-none overflow-hidden bg-surface-container-low shadow-sm border border-[#B7C7D9]/40">
+                <div class="relative w-full aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] rounded-none overflow-hidden bg-surface-container-low shadow-sm border border-[#B7C7D9]/40 group/gallery" id="fluffGalleryStage">
                     <!-- Main Visual Image -->
                     <?php
                     if ( has_post_thumbnail() ) {
                         the_post_thumbnail( 'full', array(
                             'id'    => 'main-product-img',
-                            'class' => 'w-full h-full object-cover transition-all duration-300'
+                            'class' => 'w-full h-full object-cover transition-opacity duration-300 select-none'
                         ) );
                     } else {
                         ?>
-                        <img id="main-product-img" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuwfI3EExIhQr-dG-9Dkn2xafcNeRJKorDBABE-77YXDX7HSFYYyQxgo1uBPTMzDCQ26o4knS-8D_kNHxsaBsijVRuJbKPyJ8A2X1y5k0ynaKmQSjPAInpGcE3hpypDQC4CIz2lF88xFmm6VOzjG-z1EyWd90tTgC9sCM8ypGKcsT0IBLilQMDRTzxeyq6suPGIXJBBEshUubURbgugFg4M5VAiNa8my9_Eaa8U8y5yl9BUPnVhkOpJQ" alt="<?php the_title_attribute(); ?>"/>
+                        <img id="main-product-img" class="w-full h-full object-cover transition-opacity duration-300 select-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuwfI3EExIhQr-dG-9Dkn2xafcNeRJKorDBABE-77YXDX7HSFYYyQxgo1uBPTMzDCQ26o4knS-8D_kNHxsaBsijVRuJbKPyJ8A2X1y5k0ynaKmQSjPAInpGcE3hpypDQC4CIz2lF88xFmm6VOzjG-z1EyWd90tTgC9sCM8ypGKcsT0IBLilQMDRTzxeyq6suPGIXJBBEshUubURbgugFg4M5VAiNa8my9_Eaa8U8y5yl9BUPnVhkOpJQ" alt="<?php the_title_attribute(); ?>"/>
                         <?php
                     }
                     ?>
 
+                    <!-- Floating Navigation Chevrons -->
+                    <button type="button" id="fluffGalleryPrev" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-white bg-[#16233B]/75 hover:bg-[#16233B] hover:text-[#D4B586] backdrop-blur-md border border-white/20 shadow-md transition-all active:scale-90 cursor-pointer" aria-label="Previous Product Image">
+                        <span class="material-symbols-outlined text-[24px]">chevron_left</span>
+                    </button>
+                    <button type="button" id="fluffGalleryNext" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-white bg-[#16233B]/75 hover:bg-[#16233B] hover:text-[#D4B586] backdrop-blur-md border border-white/20 shadow-md transition-all active:scale-90 cursor-pointer" aria-label="Next Product Image">
+                        <span class="material-symbols-outlined text-[24px]">chevron_right</span>
+                    </button>
+
                     <!-- Origin & Collection Badges -->
-                    <div class="absolute top-3.5 left-3.5 flex flex-col gap-1.5 items-start z-10">
+                    <div class="absolute top-3.5 left-3.5 flex flex-col gap-1.5 items-start z-10 pointer-events-none">
                         <?php if ( $is_preorder ) : ?>
                             <span class="font-label-badge text-[10px] px-3 py-1 shadow-sm flex items-center gap-1 uppercase tracking-wider font-extrabold" style="background-color: #D8B4C1 !important; color: #1F2F4F !important;">
                                 <span class="material-symbols-outlined text-[13px]">flight_takeoff</span> Pre-Order • Istanbul Atelier
@@ -60,8 +68,13 @@ while ( have_posts() ) :
                         <?php endif; ?>
                     </div>
 
+                    <!-- Slide Counter Indicator -->
+                    <div id="fluffGalleryCounter" class="absolute bottom-3.5 left-3.5 bg-[#16233B]/80 backdrop-blur-md text-white px-2.5 py-1 text-[10px] font-extrabold tracking-wider z-10 border border-white/20">
+                        1 / 1
+                    </div>
+
                     <!-- Fabric Touch Callout Pin -->
-                    <div class="absolute bottom-3.5 right-3.5 bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-md flex items-center gap-2 border border-[#B7C7D9]/60 z-10">
+                    <div class="absolute bottom-3.5 right-3.5 bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-md flex items-center gap-2 border border-[#B7C7D9]/60 z-10 pointer-events-none">
                         <div class="w-6 h-6 overflow-hidden bg-[#F0EDE4] flex items-center justify-center border border-[#B7C7D9]">
                             <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABYr5oGJKTfjmStIIief-QWqVSNZAItQWof64WAc68f0MSE-t8yFzO2QNYQyyaUkXrjBIkkbTHbTbBjDgGb3P28FXfw8jZ_Vl8FxyQoJ-SR6JrY_lfNkIMCGW9Y0fuNLVDHDEQj7GuXzsxUcTuZIO7KOBz95EL725icBGnWX_l93YvklQGhZVdk30Vaakqacdx1smKNf8xNUAbVgqjoZ-BEZrPPy4HGJzuLP1pqXeMuzwrU-CdXfdPlA" alt="Fabric Texture"/>
                         </div>

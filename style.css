@@ -96,6 +96,27 @@ header.fixed {
   }
 }
 
+/* Seamless zero whitespace on homepage between fixed header & hero slider */
+body.home main,
+body.front-page main {
+  padding-top: 68px !important;
+  background-color: #16233B !important;
+}
+
+@media (min-width: 640px) {
+  body.home main,
+  body.front-page main {
+    padding-top: 72px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  body.home main,
+  body.front-page main {
+    padding-top: 80px !important;
+  }
+}
+
 header.fixed aside {
   background-color: #16233B !important;
   border-bottom: 1px solid rgba(212, 181, 134, 0.2) !important;
@@ -657,9 +678,41 @@ ul.products li.product button:hover {
   font-weight: 700;
 }
 
-/* Hide native WooCommerce unstyled dropdown table when custom swatches active */
-form.variations_form table.variations {
+/* When custom swatches are present, hide native unstyled table.variations */
+.fluff-sizing-block ~ .fluff-add-to-cart-wrapper form.variations_form table.variations,
+.fluff-sizing-block + .fluff-add-to-cart-wrapper form.variations_form table.variations {
   display: none !important;
+}
+
+/* Fallback styling for variations table if custom swatches are not present */
+form.variations_form table.variations {
+  width: 100% !important;
+  margin-bottom: 1.25rem !important;
+  border-collapse: separate !important;
+  border-spacing: 0 0.5rem !important;
+}
+
+form.variations_form table.variations td.label {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #1F2F4F !important;
+  padding-right: 1rem !important;
+}
+
+form.variations_form table.variations td.value select {
+  width: 100% !important;
+  height: 48px !important;
+  border: 1.5px solid #1F2F4F !important;
+  background-color: #FFFFFF !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  color: #1F2F4F !important;
+  padding: 0 1rem !important;
+  border-radius: 0 !important;
+  cursor: pointer !important;
 }
 
 form.variations_form .single_variation_wrap {
