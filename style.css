@@ -71,7 +71,6 @@ img {
 
 /* Top Bar Headings & Header Controls (Brand Guide Styling: #F8ECF0 bg + #1D1D1B text) */
 header.fixed {
-  background-color: #F8ECF0 !important;
   border-bottom: 1px solid rgba(29, 29, 27, 0.08) !important;
 }
 
@@ -365,8 +364,8 @@ header .custom-logo {
   margin-top: 2rem !important;
 }
 
-.related.products > h2,
-.upsells.products > h2 {
+.related.products>h2,
+.upsells.products>h2 {
   font-family: 'Bodoni Moda', Didot, 'Bodoni MT', serif !important;
   font-size: 1.5rem !important;
   font-weight: 700 !important;
@@ -391,6 +390,7 @@ ul.products.columns-4 {
 }
 
 @media (min-width: 768px) {
+
   .related.products ul.products,
   .upsells.products ul.products,
   ul.products.columns-3,
@@ -482,7 +482,7 @@ ul.products li.product button:hover {
   background-color: #FFFFFF;
 }
 
-.fluff-specs-engraved-table .divide-y > div:nth-child(even) {
+.fluff-specs-engraved-table .divide-y>div:nth-child(even) {
   background-color: rgba(240, 237, 228, 0.45);
 }
 
@@ -752,6 +752,7 @@ form.variations_form button.single_add_to_cart_button:hover,
 }
 
 @media (min-width: 768px) {
+
   .related.products ul.products,
   .upsells.products ul.products {
     grid-template-columns: repeat(4, 1fr) !important;
