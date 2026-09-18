@@ -94,47 +94,47 @@ while ( have_posts() ) :
             </div>
 
             <!-- Right Column: Product Narrative, Specs & Commerce Form (lg:col-span-5) -->
-            <div class="lg:col-span-5 flex flex-col gap-4 mt-5 lg:mt-0">
+            <div class="lg:col-span-5 flex flex-col space-y-7 mt-6 lg:mt-0">
                 
-                <!-- Breadcrumbs & SKU -->
-                <div class="flex items-center justify-between pb-1 border-b border-[#B7C7D9]/30">
+                <!-- Block 1: Breadcrumbs & SKU -->
+                <div class="flex items-center justify-between pb-4 border-b border-[#B7C7D9]/40">
                     <div class="flex items-center gap-2 font-label-badge text-xs uppercase tracking-wider text-[#647A96]">
                         <span><?php echo esc_html( strip_tags( wc_get_product_category_list( get_the_ID(), ', ' ) ) ?: 'Sleepwear Collection' ); ?></span>
                         <span class="text-[#B7C7D9]">/</span>
                         <span class="font-extrabold text-[#1F2F4F]">Style <?php echo esc_html( $product_sku ); ?></span>
                     </div>
-                    <div class="flex items-center gap-1 bg-[#F0EDE4] px-2.5 py-1 text-[#1F2F4F] font-label-badge text-[10px] uppercase font-bold">
-                        <span class="material-symbols-outlined text-[14px] text-[#D4B586]">verified</span>
+                    <div class="flex items-center gap-1.5 bg-[#F0EDE4] px-3 py-1.5 text-[#1F2F4F] font-label-badge text-[10px] uppercase font-extrabold border border-[#B7C7D9]/50 shadow-sm">
+                        <span class="material-symbols-outlined text-[15px] text-[#D4B586]">verified</span>
                         <span>Turkish Cotton</span>
                     </div>
                 </div>
 
-                <!-- Product Title & Arabic Tagline -->
+                <!-- Block 2: Product Title & Arabic Tagline -->
                 <div>
-                    <h1 class="text-2xl sm:text-3xl font-extrabold text-[#1F2F4F] uppercase tracking-wide leading-tight" style="font-family: 'Bodoni Moda', 'Playfair Display', serif;">
+                    <h1 class="text-2xl sm:text-3xl lg:text-[32px] font-extrabold text-[#1F2F4F] uppercase tracking-wide leading-tight" style="font-family: 'Bodoni Moda', 'Playfair Display', serif;">
                         <?php the_title(); ?>
                     </h1>
-                    <p class="font-arabic-sub text-sm sm:text-base text-[#53627A] mt-1" dir="rtl">
+                    <p class="font-arabic-sub text-sm sm:text-base text-[#53627A] mt-2.5 leading-relaxed" dir="rtl">
                         طقم بيجامة قطن تركي مضلع فاخر بتطريز أنيق ولمسة حريرية ناعمة
                     </p>
                 </div>
 
-                <!-- Pricing Row -->
-                <div class="flex items-baseline gap-3 pt-1">
-                    <div class="text-2xl sm:text-3xl font-black text-[#1F2F4F]">
+                <!-- Block 3: Pricing Row -->
+                <div class="flex items-baseline gap-3.5 pt-1">
+                    <div class="text-3xl sm:text-4xl font-black text-[#1F2F4F] tracking-tight">
                         <?php echo $product ? $product->get_price_html() : '1,350 EGP'; ?>
                     </div>
                     <?php if ( $product && $product->is_on_sale() ) : ?>
-                        <span class="bg-[#D8B4C1] text-[#1F2F4F] font-label-badge text-[10px] px-2.5 py-1 uppercase tracking-wider font-extrabold">
+                        <span class="bg-[#D8B4C1] text-[#1F2F4F] font-label-badge text-[10px] px-3 py-1 uppercase tracking-wider font-extrabold shadow-sm">
                             Special Offer
                         </span>
                     <?php endif; ?>
                 </div>
 
-                <!-- Installment / ValU Micro-banner -->
-                <div class="bg-[#F0EDE4] p-3.5 border border-[#B7C7D9] flex items-center justify-between gap-3 shadow-sm">
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 bg-white flex items-center justify-center text-[#1F2F4F] shrink-0 border border-[#B7C7D9]">
+                <!-- Block 4: Installment / ValU Micro-banner -->
+                <div class="bg-[#F0EDE4] p-4 border border-[#B7C7D9] flex items-center justify-between gap-3 shadow-sm hover:border-[#1F2F4F] transition-colors">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-9 h-9 bg-white flex items-center justify-center text-[#1F2F4F] shrink-0 border border-[#B7C7D9]">
                             <span class="material-symbols-outlined text-[20px]">payments</span>
                         </div>
                         <div class="flex flex-col">
@@ -145,25 +145,13 @@ while ( have_posts() ) :
                     <span class="material-symbols-outlined text-[#647A96] text-[18px]">arrow_forward_ios</span>
                 </div>
 
-                <!-- Delivery & Origin Guarantee Card -->
-                <div class="bg-white p-4 border border-[#B7C7D9] shadow-sm flex flex-col gap-2">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-[20px]" style="color: #D4B586;">local_shipping</span>
-                            <span class="font-label-md text-sm text-[#1F2F4F] font-bold">Direct Doorstep Delivery</span>
-                        </div>
-                        <span class="font-arabic-sub text-xs font-semibold text-[#647A96]">توصيل سريع لكل المحافظات</span>
-                    </div>
-                    <p class="text-xs sm:text-sm text-[#53627A] leading-relaxed">
-                        <?php echo $is_preorder ? 'Pre-Order direct from Istanbul ateliers: 10–12 business days delivery.' : 'Ready Stock in Cairo: 2–4 business days express doorstep delivery.'; ?>
-                    </p>
-                </div>
-
-                <!-- Sizing Swatches & Size Advisor Modal Trigger -->
+                <!-- Block 5: Sizing Swatches (Sliced-Off Unavailable Sizes & Crisp Available Sizes) -->
                 <?php
                 $all_sizes = array( 'XS', 'S', 'M', 'L', 'XL' );
                 $var_stock_map = array();
-                if ( $product && method_exists( $product, 'is_type' ) && $product->is_type( 'variable' ) ) {
+                $is_variable = ( $product && method_exists( $product, 'is_type' ) && $product->is_type( 'variable' ) );
+
+                if ( $is_variable ) {
                     $available_vars = $product->get_available_variations();
                     foreach ( $available_vars as $avar ) {
                         $s_val = '';
@@ -173,37 +161,112 @@ while ( have_posts() ) :
                             $s_val = strtoupper( $avar['attributes']['attribute_pa_size'] );
                         }
                         if ( $s_val ) {
-                            $var_stock_map[ $s_val ] = ! empty( $avar['is_in_stock'] );
+                            $in_stock = ! empty( $avar['is_in_stock'] );
+                            if ( isset( $avar['max_qty'] ) && $avar['max_qty'] !== '' && $avar['max_qty'] !== null && (int) $avar['max_qty'] <= 0 ) {
+                                $in_stock = false;
+                            }
+                            $var_stock_map[ $s_val ] = array(
+                                'in_stock'     => $in_stock,
+                                'variation_id' => $avar['variation_id'],
+                                'price_html'   => isset( $avar['price_html'] ) ? $avar['price_html'] : '',
+                                'price'        => isset( $avar['display_price'] ) ? $avar['display_price'] : 0,
+                            );
+                        }
+                    }
+
+                    // Direct child inspection fallback
+                    if ( empty( $var_stock_map ) && method_exists( $product, 'get_children' ) ) {
+                        foreach ( $product->get_children() as $child_id ) {
+                            $child_obj = wc_get_product( $child_id );
+                            if ( $child_obj ) {
+                                $attrs = $child_obj->get_attributes();
+                                $s_val = isset( $attrs['size'] ) ? strtoupper( $attrs['size'] ) : ( isset( $attrs['pa_size'] ) ? strtoupper( $attrs['pa_size'] ) : '' );
+                                if ( $s_val ) {
+                                    $in_stock = $child_obj->is_in_stock();
+                                    $qty = $child_obj->get_stock_quantity();
+                                    if ( $qty !== null && (int) $qty <= 0 ) {
+                                        $in_stock = false;
+                                    }
+                                    $var_stock_map[ $s_val ] = array(
+                                        'in_stock'     => $in_stock,
+                                        'variation_id' => $child_id,
+                                        'price'        => $child_obj->get_price(),
+                                    );
+                                }
+                            }
                         }
                     }
                 }
+
+                // Identify first available in-stock size to pre-select
+                $first_available_size = '';
+                foreach ( $all_sizes as $sz ) {
+                    if ( isset( $var_stock_map[ $sz ] ) && $var_stock_map[ $sz ]['in_stock'] ) {
+                        $first_available_size = $sz;
+                        break;
+                    }
+                }
+                if ( ! $first_available_size && ! $is_variable ) {
+                    $first_available_size = 'M';
+                }
                 ?>
-                <div class="space-y-2.5 pt-1">
+                <div class="fluff-sizing-block space-y-3.5">
                     <div class="flex items-center justify-between">
-                        <span class="font-label-badge text-xs text-[#1F2F4F] uppercase font-extrabold tracking-wider">Select Size</span>
-                        <button type="button" onclick="document.getElementById('size-modal')?.classList.remove('hidden')" class="font-label-badge text-xs uppercase font-extrabold text-[#D4B586] hover:underline flex items-center gap-1 cursor-pointer">
-                            <span class="material-symbols-outlined text-[15px]">straighten</span> Sizing Guide
+                        <div class="flex items-center gap-2">
+                            <span class="font-label-badge text-xs uppercase font-extrabold tracking-wider text-[#1F2F4F]">Select Size:</span>
+                            <span id="fluffSelectedSizeName" class="font-label-badge text-xs font-black uppercase text-[#1F2F4F] bg-[#F0EDE4] px-2.5 py-0.5 border border-[#B7C7D9]/70">
+                                <?php echo esc_html( $first_available_size ? $first_available_size : 'Please choose' ); ?>
+                            </span>
+                        </div>
+                        <button type="button" onclick="document.getElementById('size-modal')?.classList.remove('hidden')" class="font-label-badge text-xs uppercase font-extrabold text-[#D4B586] hover:underline flex items-center gap-1 cursor-pointer transition-colors">
+                            <span class="material-symbols-outlined text-[15px]">straighten</span> Sizing &amp; Fit Guide
                         </button>
                     </div>
-                    <div class="grid grid-cols-5 gap-2">
-                        <?php foreach ( $all_sizes as $sz_idx => $sz ) : 
-                            $is_available = ! isset( $var_stock_map[ $sz ] ) || $var_stock_map[ $sz ];
-                            $pill_classes = $is_available 
-                                ? ( $sz_idx === 0 ? 'border-[#1F2F4F] bg-[#1F2F4F] text-white' : 'border-[#B7C7D9] bg-[#F0EDE4] text-[#1F2F4F] hover:border-[#1F2F4F]' ) 
-                                : 'border-[#B7C7D9]/60 bg-[#EAE6DB]/60 text-[#53627A]/50 line-through cursor-not-allowed';
+
+                    <!-- Swatches Row (5 Sizes: XS, S, M, L, XL) -->
+                    <div class="grid grid-cols-5 gap-2.5 sm:gap-3" id="fluffSizeSwatchesContainer">
+                        <?php foreach ( $all_sizes as $sz ) : 
+                            $is_available = isset( $var_stock_map[ $sz ] ) ? $var_stock_map[ $sz ]['in_stock'] : ( ! $is_variable );
+                            $is_selected  = ( $sz === $first_available_size );
+                            $var_id       = isset( $var_stock_map[ $sz ]['variation_id'] ) ? $var_stock_map[ $sz ]['variation_id'] : '';
                         ?>
-                            <button type="button" class="swatch-size-pill py-2.5 px-1 text-center font-label-md text-xs sm:text-sm font-extrabold border transition-all <?php echo esc_attr( $pill_classes ); ?>" <?php echo $is_available ? '' : 'disabled title="Out of stock"'; ?>>
-                                <span><?php echo esc_html( $sz ); ?></span>
+                            <button 
+                                type="button" 
+                                class="fluff-swatch-pill relative flex flex-col items-center justify-center py-3 px-1 border transition-all duration-200 select-none <?php echo $is_available ? 'is-instock' : 'is-outofstock'; ?> <?php echo ( $is_available && $is_selected ) ? 'is-selected' : ''; ?>"
+                                data-size="<?php echo esc_attr( $sz ); ?>"
+                                data-variation-id="<?php echo esc_attr( $var_id ); ?>"
+                                <?php echo $is_available ? '' : 'disabled="disabled" aria-disabled="true" title="Size ' . esc_attr( $sz ) . ' is currently sold out"'; ?>
+                            >
+                                <span class="font-label-md text-sm sm:text-base font-extrabold leading-none tracking-wide">
+                                    <?php echo esc_html( $sz ); ?>
+                                </span>
                                 <?php if ( ! $is_available ) : ?>
-                                    <span class="block text-[8px] font-normal no-underline uppercase tracking-tighter">Sold out</span>
+                                    <span class="text-[9px] font-bold uppercase tracking-tight mt-1 leading-none fluff-soldout-label">
+                                        Sold Out
+                                    </span>
+                                <?php else : ?>
+                                    <span class="text-[9px] font-bold uppercase tracking-tight mt-1 leading-none fluff-avail-label">
+                                        In Stock
+                                    </span>
                                 <?php endif; ?>
                             </button>
                         <?php endforeach; ?>
                     </div>
+
+                    <!-- Dynamic Stock Status Feedback -->
+                    <div id="fluffStockFeedback" class="text-xs font-bold pt-1 flex items-center gap-2">
+                        <?php if ( $first_available_size ) : ?>
+                            <span class="w-2.5 h-2.5 rounded-full bg-[#25D366] animate-pulse"></span>
+                            <span class="text-[#25D366]">Size <?php echo esc_html( $first_available_size ); ?> is in stock &amp; ready for Cairo Express delivery.</span>
+                        <?php else : ?>
+                            <span class="w-2.5 h-2.5 rounded-full bg-[#ba1a1a]"></span>
+                            <span class="text-[#ba1a1a]">All sizes currently out of stock. Contact Concierge for custom Istanbul order.</span>
+                        <?php endif; ?>
+                    </div>
                 </div>
 
-                <!-- Add to Cart Action -->
-                <div class="pt-2">
+                <!-- Block 6: Add to Cart Action -->
+                <div class="pt-1 fluff-add-to-cart-wrapper">
                     <?php
                     if ( function_exists('woocommerce_template_single_add_to_cart') ) {
                         woocommerce_template_single_add_to_cart();
@@ -218,48 +281,65 @@ while ( have_posts() ) :
                     ?>
                 </div>
 
-                <!-- Engraved Product Specifications Drawer (Dynamic Custom Fields) -->
-                <div class="border border-[#B7C7D9] bg-[#F0EDE4] overflow-hidden mt-2">
-                    <details class="group p-4 cursor-pointer" open>
-                        <summary class="flex items-center justify-between list-none">
-                            <div class="flex items-center gap-2.5">
-                                <span class="material-symbols-outlined text-[#1F2F4F] text-[20px]">tune</span>
-                                <span class="font-label-md text-sm text-[#1F2F4F] font-extrabold uppercase tracking-wide">Product Specifications</span>
-                            </div>
-                            <span class="material-symbols-outlined text-[#647A96] transition-transform group-open:rotate-180 text-[20px]">expand_more</span>
-                        </summary>
-                        <div class="pt-3 border-t border-[#B7C7D9]/40 mt-3">
-                            <?php 
-                            if ( function_exists( 'fluff_render_product_specs_table' ) ) {
-                                fluff_render_product_specs_table( get_the_ID() );
-                            }
-                            ?>
+                <!-- Block 7: Delivery & Origin Guarantee Card -->
+                <div class="bg-white p-4 sm:p-5 border border-[#B7C7D9] shadow-sm flex flex-col gap-2.5">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2.5">
+                            <span class="material-symbols-outlined text-[22px]" style="color: #D4B586;">local_shipping</span>
+                            <span class="font-label-md text-sm text-[#1F2F4F] font-bold uppercase tracking-wider">Direct Doorstep Delivery</span>
                         </div>
-                    </details>
+                        <span class="font-arabic-sub text-xs font-semibold text-[#647A96]">توصيل سريع لكل المحافظات</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-[#53627A] leading-relaxed">
+                        <?php echo $is_preorder ? 'Pre-Order direct from Istanbul ateliers: 10–12 business days express delivery.' : 'Ready Stock in Cairo Hub: 2–4 business days express doorstep delivery.'; ?>
+                    </p>
                 </div>
 
-                <!-- Fabric & Care Accordion -->
-                <div class="border border-[#B7C7D9] bg-[#F0EDE4] overflow-hidden mt-1">
-                    <details class="group p-4 cursor-pointer">
-                        <summary class="flex items-center justify-between list-none">
-                            <div class="flex items-center gap-2.5">
-                                <span class="material-symbols-outlined text-[#1F2F4F] text-[20px]">strikethrough_s</span>
-                                <span class="font-label-md text-sm text-[#1F2F4F] font-extrabold uppercase tracking-wide">Fabric &amp; Care Details</span>
+                <!-- Block 8: Product Specifications & Fabric Care Drawers -->
+                <div class="space-y-3.5">
+                    <!-- Engraved Product Specifications Drawer (Dynamic Custom Fields) -->
+                    <div class="border border-[#B7C7D9] bg-[#F0EDE4] overflow-hidden shadow-sm">
+                        <details class="group p-4 cursor-pointer" open>
+                            <summary class="flex items-center justify-between list-none">
+                                <div class="flex items-center gap-2.5">
+                                    <span class="material-symbols-outlined text-[#1F2F4F] text-[20px]">tune</span>
+                                    <span class="font-label-md text-sm text-[#1F2F4F] font-extrabold uppercase tracking-wide">Product Specifications</span>
+                                </div>
+                                <span class="material-symbols-outlined text-[#647A96] transition-transform group-open:rotate-180 text-[20px]">expand_more</span>
+                            </summary>
+                            <div class="pt-3.5 border-t border-[#B7C7D9]/40 mt-3">
+                                <?php 
+                                if ( function_exists( 'fluff_render_product_specs_table' ) ) {
+                                    fluff_render_product_specs_table( get_the_ID() );
+                                }
+                                ?>
                             </div>
-                            <span class="material-symbols-outlined text-[#647A96] transition-transform group-open:rotate-180 text-[20px]">expand_more</span>
-                        </summary>
-                        <div class="pt-3 text-xs sm:text-sm text-[#53627A] space-y-1.5 border-t border-[#B7C7D9]/40 mt-3 leading-relaxed">
-                            <p>• 100% Organic Turkish Ribbed Cotton woven in Istanbul design ateliers.</p>
-                            <p>• Machine wash cold on gentle cycle with similar colors.</p>
-                            <p>• Do not tumble dry. Line dry in shade to preserve soft slow-luxury texture.</p>
-                            <p>• 14-day exchange guarantee provided the hygienic security seal remains intact.</p>
-                        </div>
-                    </details>
+                        </details>
+                    </div>
+
+                    <!-- Fabric & Care Accordion -->
+                    <div class="border border-[#B7C7D9] bg-[#F0EDE4] overflow-hidden shadow-sm">
+                        <details class="group p-4 cursor-pointer">
+                            <summary class="flex items-center justify-between list-none">
+                                <div class="flex items-center gap-2.5">
+                                    <span class="material-symbols-outlined text-[#1F2F4F] text-[20px]">strikethrough_s</span>
+                                    <span class="font-label-md text-sm text-[#1F2F4F] font-extrabold uppercase tracking-wide">Fabric &amp; Care Details</span>
+                                </div>
+                                <span class="material-symbols-outlined text-[#647A96] transition-transform group-open:rotate-180 text-[20px]">expand_more</span>
+                            </summary>
+                            <div class="pt-3.5 text-xs sm:text-sm text-[#53627A] space-y-1.5 border-t border-[#B7C7D9]/40 mt-3 leading-relaxed">
+                                <p>• 100% Organic Turkish Cotton woven in Istanbul design ateliers.</p>
+                                <p>• Machine wash cold on gentle cycle with similar colors.</p>
+                                <p>• Do not tumble dry. Line dry in shade to preserve soft slow-luxury texture.</p>
+                                <p>• 14-day exchange guarantee provided the hygienic security seal remains intact.</p>
+                            </div>
+                        </details>
+                    </div>
                 </div>
 
-                <!-- Complimentary Sterling Gift Banner -->
-                <div class="p-4 border border-[#D4B586]/40 shadow-sm relative overflow-hidden" style="background-color: #16233B; color: #F8F6EF;">
-                    <div class="flex items-center gap-3 relative z-10">
+                <!-- Block 9: Complimentary Sterling Gift Banner -->
+                <div class="p-4 sm:p-5 border border-[#D4B586]/40 shadow-sm relative overflow-hidden" style="background-color: #16233B; color: #F8F6EF;">
+                    <div class="flex items-center gap-3.5 relative z-10">
                         <div class="w-10 h-10 border border-[#D4B586] flex items-center justify-center shrink-0" style="background-color: rgba(212, 181, 134, 0.15); color: #D4B586;">
                             <span class="material-symbols-outlined text-[22px]">redeem</span>
                         </div>
@@ -279,15 +359,15 @@ while ( have_posts() ) :
         </div>
 
         <!-- Related Products Section (Aligned with Homepage View Collection) -->
-        <section class="mt-14 pt-10 border-t border-[#B7C7D9]/40">
+        <section class="mt-20 pt-12 border-t border-[#B7C7D9]/50 related-products-section">
             <?php
             $current_hp_view = get_post_meta( get_the_ID(), '_fluff_homepage_view', true );
             $section_subtitle = ! empty( $current_hp_view ) ? 'FROM THE ' . strtoupper( $current_hp_view ) . ' EDIT' : 'COMPLETE YOUR WARDROBE';
             ?>
-            <div class="flex items-end justify-between mb-6">
+            <div class="flex items-end justify-between mb-8">
                 <div>
                     <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block text-[#647A96]"><?php echo esc_html( $section_subtitle ); ?></span>
-                    <h3 class="text-2xl sm:text-3xl font-extrabold text-[#1F2F4F] uppercase tracking-wide" style="font-family: 'Bodoni Moda', 'Playfair Display', serif;">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-[#1F2F4F] uppercase tracking-wide mt-1" style="font-family: 'Bodoni Moda', 'Playfair Display', serif;">
                         You May Also Dream In
                     </h3>
                 </div>
@@ -296,27 +376,23 @@ while ( have_posts() ) :
                 </a>
             </div>
 
-            <?php
-            $related_items = function_exists( 'fluff_get_related_homepage_products' ) ? fluff_get_related_homepage_products( get_the_ID(), 4 ) : array();
-            if ( ! empty( $related_items ) ) {
-                ?>
-                <div class="flex overflow-x-auto no-scrollbar gap-4 sm:gap-6 pb-4 pt-1 snap-x scroll-smooth">
-                    <?php
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <?php
+                $related_items = function_exists( 'fluff_get_related_homepage_products' ) ? fluff_get_related_homepage_products( get_the_ID(), 4 ) : array();
+                if ( ! empty( $related_items ) ) {
                     foreach ( $related_items as $r_item ) {
                         if ( function_exists( 'fluff_render_product_card' ) ) {
                             fluff_render_product_card( $r_item );
                         }
                     }
-                    ?>
-                </div>
-                <?php
-            } elseif ( function_exists('woocommerce_related_products') ) {
-                woocommerce_related_products( array(
-                    'posts_per_page' => 4,
-                    'columns'        => 4,
-                ) );
-            }
-            ?>
+                } elseif ( function_exists('woocommerce_related_products') ) {
+                    woocommerce_related_products( array(
+                        'posts_per_page' => 4,
+                        'columns'        => 4,
+                    ) );
+                }
+                ?>
+            </div>
         </section>
 
     </div>

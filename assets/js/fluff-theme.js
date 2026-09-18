@@ -135,27 +135,76 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- Product Swatches Selector (Size / Color) ---
-    const swatchBtns = document.querySelectorAll('.swatch-btn');
-    swatchBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const group = this.closest('.swatch-group');
-            if (group) {
-                group.querySelectorAll('.swatch-btn').forEach(b => {
-                    b.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
-                    b.classList.add('bg-surface-container', 'text-on-surface');
-                });
-                this.classList.add('bg-primary', 'text-on-primary', 'border-primary');
-                this.classList.remove('bg-surface-container', 'text-on-surface');
+    // --- FLUFF Single Product Variation Swatches Controller ---
+    const fluffSwatches = document.querySelectorAll('.fluff-swatch-pill');
+    const sizeDisplay = document.getElementById('fluffSelectedSizeName');
+    const stockFeedback = document.getElementById('fluffStockFeedback');
 
-                // Update hidden input if present in variation form
-                const hiddenInput = group.querySelector('input[type="hidden"]');
-                if (hiddenInput) {
-                    hiddenInput.value = this.getAttribute('data-value') || this.textContent.trim();
+    function activateFluffSize(btn) {
+        if (!btn || btn.classList.contains('is-outofstock') || btn.hasAttribute('disabled')) {
+            return;
+        }
+
+        const size = btn.getAttribute('data-size');
+        const varId = btn.getAttribute('data-variation-id');
+
+        // Update UI state
+        fluffSwatches.forEach(s => s.classList.remove('is-selected'));
+        btn.classList.add('is-selected');
+
+        if (sizeDisplay) {
+            sizeDisplay.innerText = size;
+        }
+
+        if (stockFeedback) {
+            stockFeedback.innerHTML = `<span class="w-2.5 h-2.5 rounded-full bg-[#25D366] animate-pulse"></span><span class="text-[#25D366]">Size ${size} is in stock & ready for Cairo Express delivery.</span>`;
+        }
+
+        // Connect with WooCommerce variations form
+        const wcForm = document.querySelector('form.variations_form');
+        if (wcForm) {
+            const selects = wcForm.querySelectorAll('select[name*="size"], select');
+            selects.forEach(sel => {
+                let matched = false;
+                for (let i = 0; i < sel.options.length; i++) {
+                    if (sel.options[i].value.toUpperCase() === size.toUpperCase()) {
+                        sel.selectedIndex = i;
+                        matched = true;
+                        break;
+                    }
+                }
+                if (matched) {
+                    if (typeof jQuery !== 'undefined') {
+                        jQuery(sel).trigger('change');
+                    } else {
+                        sel.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
+                }
+            });
+
+            if (varId) {
+                const varInput = wcForm.querySelector('input.variation_id, input[name="variation_id"]');
+                if (varInput) {
+                    varInput.value = varId;
                 }
             }
+        }
+    }
+
+    fluffSwatches.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            activateFluffSize(this);
         });
     });
+
+    // Automatically trigger initial selected size on load
+    const initialSelected = document.querySelector('.fluff-swatch-pill.is-instock.is-selected') || document.querySelector('.fluff-swatch-pill.is-instock');
+    if (initialSelected) {
+        setTimeout(function() {
+            activateFluffSize(initialSelected);
+        }, 150);
+    }
 
     // --- Accordion Toggles ---
     const accordionToggles = document.querySelectorAll('.accordion-toggle');

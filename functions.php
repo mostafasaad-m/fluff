@@ -1172,6 +1172,20 @@ function fluff_get_related_homepage_products( $product_id = 0, $limit = 4 ) {
         }
     }
 
+    // Secondary fallback to sample catalogue items to guarantee complete 4-card display
+    if ( count( $related ) < $limit && function_exists( 'fluff_get_sample_products' ) ) {
+        $samples = fluff_get_sample_products();
+        foreach ( $samples as $s_item ) {
+            if ( count( $related ) >= $limit ) {
+                break;
+            }
+            $s_id = fluff_extract_product_id( $s_item );
+            if ( $s_id !== (int) $product_id && ! in_array( $s_id, array_map( 'fluff_extract_product_id', $related ), true ) ) {
+                $related[] = $s_item;
+            }
+        }
+    }
+
     return $related;
 }
 

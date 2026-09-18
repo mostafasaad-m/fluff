@@ -573,3 +573,205 @@ ul.products li.product button:hover {
 .fluff-slick-next:active {
   transform: translateY(-50%) scale(0.95);
 }
+
+/* ==========================================================================
+   FLUFF Luxury Variation Swatches (Sliced-Off Unavailable Sizes)
+   ========================================================================== */
+.fluff-swatch-pill {
+  position: relative;
+  border-radius: 0;
+  min-height: 54px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* In-Stock Available Swatch */
+.fluff-swatch-pill.is-instock {
+  background-color: #FFFFFF !important;
+  border: 1.5px solid #1F2F4F !important;
+  color: #1F2F4F !important;
+}
+
+.fluff-swatch-pill.is-instock:hover {
+  border-color: #D4B586 !important;
+  background-color: #F8F6EF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(31, 47, 79, 0.12);
+}
+
+.fluff-swatch-pill.is-instock.is-selected {
+  background-color: #1F2F4F !important;
+  border-color: #1F2F4F !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(31, 47, 79, 0.25);
+}
+
+.fluff-swatch-pill.is-instock.is-selected .fluff-avail-label {
+  color: #D4B586 !important;
+}
+
+/* Sliced-Off Out-of-Stock Swatch */
+.fluff-swatch-pill.is-outofstock {
+  background-color: #ECE8E0 !important;
+  border: 1px dashed #C5BEB3 !important;
+  color: #8C827A !important;
+  opacity: 0.65;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  overflow: hidden;
+}
+
+/* Prominent Artisanal Diagonal Slicing Slash */
+.fluff-swatch-pill.is-outofstock::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -25%;
+  width: 150%;
+  height: 2px;
+  background-color: #93897E;
+  transform: translateY(-50%) rotate(-35deg);
+  pointer-events: none;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.fluff-swatch-pill.is-outofstock .fluff-soldout-label {
+  color: #93897E !important;
+  font-weight: 700;
+}
+
+/* Hide native WooCommerce unstyled dropdown table when custom swatches active */
+form.variations_form table.variations {
+  display: none !important;
+}
+
+form.variations_form .single_variation_wrap {
+  margin-top: 0.5rem;
+}
+
+form.variations_form .woocommerce-variation-add-to-cart {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  width: 100% !important;
+}
+
+form.variations_form .quantity,
+.fluff-add-to-cart-wrapper .quantity {
+  display: flex !important;
+  align-items: center !important;
+  height: 52px !important;
+  border: 1px solid #B7C7D9 !important;
+  background: #FFFFFF !important;
+}
+
+form.variations_form .quantity input.qty,
+.fluff-add-to-cart-wrapper .quantity input.qty {
+  width: 55px !important;
+  height: 100% !important;
+  text-align: center !important;
+  border: none !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  color: #1F2F4F !important;
+  background: transparent !important;
+}
+
+form.variations_form button.single_add_to_cart_button,
+.fluff-add-to-cart-wrapper button.single_add_to_cart_button {
+  flex: 1 !important;
+  height: 52px !important;
+  background-color: #1F2F4F !important;
+  color: #FFFFFF !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  border: none !important;
+  border-radius: 0 !important;
+  transition: all 0.25s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  box-shadow: 0 4px 14px rgba(31, 47, 79, 0.18) !important;
+  cursor: pointer !important;
+}
+
+form.variations_form button.single_add_to_cart_button:hover,
+.fluff-add-to-cart-wrapper button.single_add_to_cart_button:hover {
+  background-color: #D4B586 !important;
+  color: #1F2F4F !important;
+}
+
+/* ==========================================================================
+   Related Products Visibility & Grid Styling
+   ========================================================================== */
+.related-products-section {
+  width: 100%;
+}
+
+.related-products-section .grid {
+  display: grid !important;
+}
+
+.related-products-section .product-card-offwhite,
+.grid .product-card-offwhite {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex-shrink: 1 !important;
+  box-sizing: border-box !important;
+}
+
+/* Native WooCommerce related & upsell products fallback guarantee */
+.related.products,
+.upsells.products {
+  margin-top: 4rem !important;
+  padding-top: 3rem !important;
+  border-top: 1px solid rgba(183, 199, 217, 0.5) !important;
+}
+
+.related.products h2,
+.upsells.products h2 {
+  font-family: 'Bodoni Moda', 'Playfair Display', serif !important;
+  font-size: 1.75rem !important;
+  font-weight: 800 !important;
+  color: #1F2F4F !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  margin-bottom: 2rem !important;
+}
+
+.related.products ul.products,
+.upsells.products ul.products {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 1.25rem !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+@media (min-width: 768px) {
+  .related.products ul.products,
+  .upsells.products ul.products {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+.related.products ul.products li.product,
+.upsells.products ul.products li.product {
+  background-color: #F0EDE4 !important;
+  border: none !important;
+  padding: 0.75rem !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  transition: transform 0.3s ease !important;
+}
+
+.related.products ul.products li.product:hover,
+.upsells.products ul.products li.product:hover {
+  transform: translateY(-4px) !important;
+}
