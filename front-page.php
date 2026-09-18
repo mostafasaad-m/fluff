@@ -22,8 +22,8 @@ $fluff_used_ids = array();
                 <div class="fluff-hero-slide relative w-full overflow-hidden">
                     <a href="<?php echo esc_url( home_url( '/category-special-collection/' ) ); ?>" class="block w-full cursor-pointer relative" aria-label="Winter Collection">
                         <picture class="w-full block">
-                            <source media="(min-width: 768px)" srcset="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/winter-collection-pc-slider.PNG" />
-                            <img alt="FLUFF Winter Collection" class="w-full h-auto object-cover block select-none" src="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/winter-collection-mobile-slider.PNG" fetchpriority="high" />
+                            <source media="(min-width: 768px)" srcset="/wp-content/uploads/2026/09/winter-collection-pc-slider.png" />
+                            <img alt="FLUFF Winter Collection" class="w-full h-auto object-cover block select-none" src="/wp-content/uploads/2026/09/winter-collection-mobile-slider.png" fetchpriority="high" />
                         </picture>
                     </a>
                 </div>
@@ -32,8 +32,8 @@ $fluff_used_ids = array();
                 <div class="fluff-hero-slide relative w-full overflow-hidden">
                     <a href="<?php echo esc_url( home_url( '/category-special-collection/' ) ); ?>" class="block w-full cursor-pointer relative" aria-label="Winter Collection Warmth">
                         <picture class="w-full block">
-                            <source media="(min-width: 768px)" srcset="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/winter-collection-pc-slider2.png" />
-                            <img alt="FLUFF Winter Touch" class="w-full h-auto object-cover block select-none" src="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/winter-collection-mobile-slider2.PNG" loading="lazy" />
+                            <source media="(min-width: 768px)" srcset="/wp-content/uploads/2026/09/winter-collection-pc-slider2.png" />
+                            <img alt="FLUFF Winter Touch" class="w-full h-auto object-cover block select-none" src="/wp-content/uploads/2026/09/winter-collection-mobile-slider2.png" loading="lazy" />
                         </picture>
                     </a>
                 </div>
@@ -42,8 +42,8 @@ $fluff_used_ids = array();
                 <div class="fluff-hero-slide relative w-full overflow-hidden">
                     <a href="<?php echo esc_url( home_url( '/category-special-collection/' ) ); ?>" class="block w-full cursor-pointer relative" aria-label="Winter Artisanal Sleepwear">
                         <picture class="w-full block">
-                            <source media="(min-width: 768px)" srcset="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/winter-collection-pc-slider3.PNG" />
-                            <img alt="FLUFF Artisanal Edit" class="w-full h-auto object-cover block select-none" src="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/winter-collection-mobile-slider3.PNG" loading="lazy" />
+                            <source media="(min-width: 768px)" srcset="/wp-content/uploads/2026/09/winter-collection-pc-slider3.png" />
+                            <img alt="FLUFF Artisanal Edit" class="w-full h-auto object-cover block select-none" src="/wp-content/uploads/2026/09/winter-collection-mobile-slider3.png" loading="lazy" />
                         </picture>
                     </a>
                 </div>
@@ -52,8 +52,8 @@ $fluff_used_ids = array();
                 <div class="fluff-hero-slide relative w-full overflow-hidden">
                     <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/') ); ?>" class="block w-full cursor-pointer relative" aria-label="Visa 20% Discount Offer">
                         <picture class="w-full block">
-                            <source media="(min-width: 768px)" srcset="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/visa-off-pc-slider.PNG" />
-                            <img alt="FLUFF Visa Discount Offer" class="w-full h-auto object-cover block select-none" src="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/visa-off-mobile-slider.PNG" loading="lazy" />
+                            <source media="(min-width: 768px)" srcset="/wp-content/uploads/2026/09/visa-off-pc-slider.png" />
+                            <img alt="FLUFF Visa Discount Offer" class="w-full h-auto object-cover block select-none" src="/wp-content/uploads/2026/09/visa-off-mobile-slider.png" loading="lazy" />
                         </picture>
                     </a>
                 </div>

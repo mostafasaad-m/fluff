@@ -69,73 +69,90 @@ img {
   opacity: 1 !important;
 }
 
-/* Top Bar Headings & Header Controls (Brand Guide Styling: #F8ECF0 bg + #1D1D1B text) */
+/* Top Bar Headings & Header Controls (Brand Guide Styling: #16233B bg + White text/icons) */
 header.fixed {
-  border-bottom: 1px solid rgba(29, 29, 27, 0.08) !important;
+  background-color: #16233B !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 99999 !important;
+  max-height: 110px !important;
+}
+
+.admin-bar header.fixed {
+  top: 32px !important;
+}
+
+@media (max-width: 782px) {
+  .admin-bar header.fixed {
+    top: 46px !important;
+  }
+
+  .admin-bar main {
+    padding-top: 158px !important;
+  }
 }
 
 header.fixed aside {
   background-color: #16233B !important;
   border-bottom: 1px solid rgba(212, 181, 134, 0.2) !important;
+  height: 28px !important;
+  max-height: 28px !important;
 }
 
 header.fixed aside span {
   color: #D4B586 !important;
 }
 
-/* FLUFF Brand Typography Guide - Bodoni Moda SemiBold + Cinzel Regular */
-.fluff-brand-title {
-  font-family: 'Bodoni Moda', Didot, 'Bodoni MT', serif !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.5px !important;
-  color: #1D1D1B !important;
-  text-transform: uppercase !important;
-  font-size: 42px;
-  line-height: 1;
+/* Guard against oversized logo blowing up header height */
+header.fixed img {
+  max-height: 38px !important;
+  height: 38px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
 }
 
-@media (min-width: 1024px) {
-  .fluff-brand-title {
-    font-size: 58px;
-    line-height: 1;
-  }
-}
-
-.fluff-brand-sub {
-  font-family: 'Cinzel', serif !important;
-  font-weight: 400 !important;
-  letter-spacing: 5px !important;
-  color: #1D1D1B !important;
-  text-transform: uppercase !important;
-  font-size: 8.5px;
-  line-height: 1;
-}
-
-@media (min-width: 1024px) {
-  .fluff-brand-sub {
-    font-size: 10px;
-    line-height: 1;
-  }
-}
-
+/* Header Action Controls & Navigation Colors: Crisp Pure White (#FFFFFF) */
 header.fixed nav a,
-header.fixed button[aria-label="Open Menu"],
-header.fixed button[aria-label="Search"],
-header.fixed a[aria-label="User Account"],
-header.fixed button[aria-label="Shopping Bag"],
+header.fixed button,
+header.fixed a,
 header.fixed svg {
-  color: #1D1D1B !important;
+  color: #FFFFFF !important;
+}
+
+header.fixed svg {
+  stroke: #FFFFFF !important;
+}
+
+header.fixed svg path {
+  stroke: #FFFFFF !important;
+}
+
+header.fixed nav a {
+  color: #FFFFFF !important;
+  transition: color 0.2s ease !important;
 }
 
 header.fixed nav a:hover,
-header.fixed button:hover,
-header.fixed a:hover {
-  opacity: 0.72;
+header.fixed button:hover svg,
+header.fixed a:hover svg {
+  color: #D4B586 !important;
+  stroke: #D4B586 !important;
+}
+
+header.fixed nav a:hover svg path,
+header.fixed button:hover svg path,
+header.fixed a:hover svg path {
+  stroke: #D4B586 !important;
 }
 
 header.fixed .fluff-cart-count-badge {
-  background-color: #1D1D1B !important;
-  color: #F8ECF0 !important;
+  background-color: #D4B586 !important;
+  color: #16233B !important;
   min-width: 20px !important;
   height: 20px !important;
   padding-left: 4px !important;
@@ -144,7 +161,7 @@ header.fixed .fluff-cart-count-badge {
   font-weight: 800 !important;
   line-height: 1 !important;
   border-radius: 9999px !important;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25) !important;
 }
 
 /* Responsive Desktop / Mobile Breakpoint Rules (1024px / lg) */
@@ -708,19 +725,75 @@ form.variations_form button.single_add_to_cart_button:hover,
    Related Products Visibility & Grid Styling
    ========================================================================== */
 .related-products-section {
-  width: 100%;
+  width: 100% !important;
+  display: block !important;
+  clear: both !important;
 }
 
 .related-products-section .grid {
   display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+@media (min-width: 640px) {
+  .related-products-section .grid {
+    gap: 16px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .related-products-section .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+  }
 }
 
 .related-products-section .product-card-offwhite,
 .grid .product-card-offwhite {
   width: 100% !important;
   max-width: 100% !important;
+  min-width: 0 !important;
+  flex: 1 1 0% !important;
   flex-shrink: 1 !important;
   box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background-color: #F0EDE4 !important;
+  border: 1px solid rgba(183, 199, 217, 0.45) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.related-products-section .product-card-offwhite:hover,
+.grid .product-card-offwhite:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(22, 35, 59, 0.08) !important;
+  border-color: #1F2F4F !important;
+}
+
+/* Bulletproof 3:4 responsive image container for related products */
+.related-products-section .product-card-offwhite .relative.aspect-\[3\/4\],
+.grid .product-card-offwhite .relative.aspect-\[3\/4\] {
+  position: relative !important;
+  width: 100% !important;
+  padding-bottom: 133.33% !important; /* Strict 3:4 aspect ratio */
+  height: 0 !important;
+  overflow: hidden !important;
+  background-color: #EAE6DB !important;
+}
+
+.related-products-section .product-card-offwhite img,
+.grid .product-card-offwhite img {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
 }
 
 /* Native WooCommerce related & upsell products fallback guarantee */

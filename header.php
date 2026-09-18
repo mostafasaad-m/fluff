@@ -20,17 +20,17 @@
     <!-- Main Navigation Strip -->
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between relative">
         <!-- Left Zone (Mobile: Drawer Toggle & Search; Desktop: Brand Logo) -->
-        <div class="flex items-center gap-2 lg:gap-8 z-20">
+        <div class="flex items-center gap-1 sm:gap-2 lg:gap-8 z-20">
             <!-- Mobile Menu Drawer Toggle: Strictly hidden on PC (lg:hidden) -->
-            <button aria-label="Open Menu" data-action="open-menu" class="w-11 h-11 flex items-center justify-center transition-opacity lg:hidden mobile-only-control hover:opacity-80" style="color: #FFFFFF !important;">
-                <svg class="w-7 h-7 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke="#fff">
+            <button aria-label="Open Menu" data-action="open-menu" class="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center transition-opacity lg:hidden mobile-only-control hover:opacity-80" style="color: #FFFFFF !important;">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke="#FFFFFF">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
                 </svg>
             </button>
 
             <!-- Mobile Search Toggle: Shown only on mobile left -->
-            <button aria-label="Search" data-action="open-search" class="w-11 h-11 flex items-center justify-center transition-opacity lg:hidden mobile-only-control hover:opacity-80" style="color: #FFFFFF !important;">
-                <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke="#fff">
+            <button aria-label="Search" data-action="open-search" class="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center transition-opacity lg:hidden mobile-only-control hover:opacity-80" style="color: #FFFFFF !important;">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke="#FFFFFF">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
                 </svg>
             </button>
@@ -38,7 +38,7 @@
             <!-- Brand Logo for Desktop PC (Left-aligned) -->
             <div class="hidden lg:flex items-center desktop-only-nav">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center justify-start group py-0.5">
-                    <img src="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/logo-light.png" alt="<?php bloginfo( 'name' ); ?>" class="h-9 sm:h-10 w-auto object-contain transition-opacity group-hover:opacity-90" />
+                    <img src="/wp-content/uploads/2026/09/logo-light.png" alt="<?php bloginfo( 'name' ); ?>" class="h-9 sm:h-10 w-auto object-contain transition-opacity group-hover:opacity-90" style="max-height: 38px !important; height: 38px !important; width: auto !important;" />
                 </a>
             </div>
         </div>
@@ -46,12 +46,12 @@
         <!-- Center Logo for Mobile & Tablets (< lg) -->
         <div class="lg:hidden absolute left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-auto z-10 mobile-only-control">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center justify-center group py-0.5">
-                <img src="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/logo-light.png" alt="<?php bloginfo( 'name' ); ?>" class="h-8 sm:h-9 w-auto object-contain transition-opacity group-hover:opacity-90" />
+                <img src="/wp-content/uploads/2026/09/logo-light.png" alt="<?php bloginfo( 'name' ); ?>" class="h-8 sm:h-9 w-auto object-contain transition-opacity group-hover:opacity-90" style="max-height: 34px !important; height: 34px !important; width: auto !important;" />
             </a>
         </div>
 
         <!-- Desktop Navigation Links in Center (lg: and above) -->
-        <nav class="hidden lg:flex desktop-only-nav items-center justify-center gap-4 xl:gap-7 font-label-md text-xs xl:text-sm uppercase tracking-wider font-extrabold z-10 flex-1 px-4">
+        <nav class="hidden lg:flex desktop-only-nav items-center justify-center gap-3 xl:gap-6 font-label-md text-xs xl:text-sm uppercase tracking-wider font-extrabold z-10 flex-1 px-4 flex-nowrap overflow-hidden">
             <a href="#new-drops" class="hover:text-[#D4B586] transition-colors py-1 whitespace-nowrap" style="color: #FFFFFF !important;">New Arrivals</a>
             <a href="#satin-section" class="hover:text-[#D4B586] transition-colors py-1 whitespace-nowrap" style="color: #FFFFFF !important;">Satin Shorts</a>
             <a href="#patterned-section" class="hover:text-[#D4B586] transition-colors py-1 whitespace-nowrap" style="color: #FFFFFF !important;">Everyday &amp; Patterned</a>
@@ -65,22 +65,22 @@
         <!-- Right Header Actions (Search on PC, Account, Cart) -->
         <div class="flex items-center gap-1 sm:gap-2 z-20 shrink-0">
             <!-- Desktop Search Button (Shown on PC) -->
-            <button aria-label="Search" data-action="open-search" class="hidden lg:flex desktop-only-nav w-11 h-11 items-center justify-center transition-opacity hover:opacity-80" style="color: #FFFFFF !important;">
-                <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke="#fff">
+            <button aria-label="Search" data-action="open-search" class="hidden lg:flex desktop-only-nav w-10 h-10 sm:w-11 sm:h-11 items-center justify-center transition-opacity hover:opacity-80" style="color: #FFFFFF !important;">
+                <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke="#FFFFFF">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
                 </svg>
             </button>
 
             <!-- User Account -->
-            <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : '#' ); ?>" aria-label="User Account" class="w-11 h-11 flex items-center justify-center transition-opacity hover:opacity-80" style="color: #FFFFFF !important;">
-                <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke="#fff">
+            <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : '#' ); ?>" aria-label="User Account" class="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center transition-opacity hover:opacity-80" style="color: #FFFFFF !important;">
+                <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke="#FFFFFF">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"></path>
                 </svg>
             </a>
 
             <!-- Shopping Bag -->
-            <button aria-label="Shopping Bag" data-action="open-cart" class="relative w-11 h-11 flex items-center justify-center transition-opacity hover:opacity-80" style="color: #FFFFFF !important;">
-                <svg class="w-7 h-7 stroke-current" fill="none" stroke-width="1.7" viewBox="0 0 24 24" stroke="#fff">
+            <button aria-label="Shopping Bag" data-action="open-cart" class="relative w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center transition-opacity hover:opacity-80" style="color: #FFFFFF !important;">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 stroke-current" fill="none" stroke-width="1.7" viewBox="0 0 24 24" stroke="#FFFFFF">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25c-.669 0-1.189-.578-1.119-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"></path>
                 </svg>
                 <?php

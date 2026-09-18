@@ -19,13 +19,13 @@ while ( have_posts() ) :
     $product_sku = $product ? ( $product->get_sku() ?: 'S' . str_pad( (string) get_the_ID(), 2, '0', STR_PAD_LEFT ) ) : 'S01';
     ?>
 
-    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 pb-28 lg:pb-16 text-on-surface" id="product-<?php the_ID(); ?>">
+    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 lg:pt-12 pb-28 lg:pb-16 text-on-surface" id="product-<?php the_ID(); ?>">
         
         <!-- Main Product Split Layout: Left Gallery / Right Details on Desktop -->
         <div class="lg:grid lg:grid-cols-12 lg:gap-10 xl:gap-14 lg:items-start">
             
             <!-- Left Column: Product Gallery Showcase (lg:col-span-7) -->
-            <div class="lg:col-span-7 flex flex-col gap-3 relative lg:sticky lg:top-24">
+            <div class="lg:col-span-7 flex flex-col gap-3 relative lg:sticky lg:top-28">
                 <div class="relative w-full aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] rounded-none overflow-hidden bg-surface-container-low shadow-sm border border-[#B7C7D9]/40">
                     <!-- Main Visual Image -->
                     <?php
@@ -94,7 +94,7 @@ while ( have_posts() ) :
             </div>
 
             <!-- Right Column: Product Narrative, Specs & Commerce Form (lg:col-span-5) -->
-            <div class="lg:col-span-5 flex flex-col space-y-7 mt-6 lg:mt-0">
+            <div class="lg:col-span-5 flex flex-col space-y-8 sm:space-y-9 mt-8 lg:mt-0">
                 
                 <!-- Block 1: Breadcrumbs & SKU -->
                 <div class="flex items-center justify-between pb-4 border-b border-[#B7C7D9]/40">
@@ -109,30 +109,52 @@ while ( have_posts() ) :
                     </div>
                 </div>
 
-                <!-- Block 2: Product Title & Arabic Tagline -->
-                <div>
-                    <h1 class="text-2xl sm:text-3xl lg:text-[32px] font-extrabold text-[#1F2F4F] uppercase tracking-wide leading-tight" style="font-family: 'Bodoni Moda', 'Playfair Display', serif;">
+                <!-- Block 2: Product Title & Editorial Narrative -->
+                <div class="space-y-4">
+                    <!-- Title -->
+                    <h1 class="text-3xl sm:text-4xl lg:text-[38px] font-extrabold text-[#1F2F4F] uppercase tracking-wide leading-tight" style="font-family: 'Bodoni Moda', 'Playfair Display', serif;">
                         <?php the_title(); ?>
                     </h1>
-                    <p class="font-arabic-sub text-sm sm:text-base text-[#53627A] mt-2.5 leading-relaxed" dir="rtl">
-                        طقم بيجامة قطن تركي مضلع فاخر بتطريز أنيق ولمسة حريرية ناعمة
-                    </p>
+
+                    <!-- Product Short Description / Narrative -->
+                    <?php
+                    $short_desc = $product ? $product->get_short_description() : '';
+                    if ( empty( $short_desc ) ) {
+                        $short_desc = get_the_excerpt();
+                    }
+                    if ( ! empty( $short_desc ) ) :
+                    ?>
+                        <div class="text-sm sm:text-base text-[#43526E] leading-relaxed pt-2">
+                            <?php echo wp_kses_post( $short_desc ); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <!-- Poetic Arabic Narrative Touch -->
+                    <div class="p-3.5 bg-[#F0EDE4]/70 border-r-2 border-[#1F2F4F] flex items-center justify-between mt-3">
+                        <p class="font-arabic-sub text-xs sm:text-sm text-[#1F2F4F] font-semibold leading-relaxed" dir="rtl">
+                            طقم بيجامة قطن تركي مضلع فاخر بتطريز أنيق ولمسة حريرية ناعمة
+                        </p>
+                        <span class="material-symbols-outlined text-[#D4B586] text-[18px] shrink-0 ml-2">auto_awesome</span>
+                    </div>
                 </div>
 
-                <!-- Block 3: Pricing Row -->
-                <div class="flex items-baseline gap-3.5 pt-1">
-                    <div class="text-3xl sm:text-4xl font-black text-[#1F2F4F] tracking-tight">
-                        <?php echo $product ? $product->get_price_html() : '1,350 EGP'; ?>
+                <!-- Block 3: Pricing Row & Value Reassurance -->
+                <div class="pt-5 border-t border-[#B7C7D9]/40 space-y-2">
+                    <div class="flex items-baseline gap-3.5">
+                        <div class="text-3xl sm:text-4xl lg:text-[40px] font-black text-[#1F2F4F] tracking-tight">
+                            <?php echo $product ? $product->get_price_html() : '1,350 EGP'; ?>
+                        </div>
+                        <?php if ( $product && $product->is_on_sale() ) : ?>
+                            <span class="bg-[#D8B4C1] text-[#1F2F4F] font-label-badge text-[10px] px-3 py-1 uppercase tracking-wider font-extrabold shadow-sm">
+                                Special Offer
+                            </span>
+                        <?php endif; ?>
                     </div>
-                    <?php if ( $product && $product->is_on_sale() ) : ?>
-                        <span class="bg-[#D8B4C1] text-[#1F2F4F] font-label-badge text-[10px] px-3 py-1 uppercase tracking-wider font-extrabold shadow-sm">
-                            Special Offer
-                        </span>
-                    <?php endif; ?>
+                    <span class="text-xs text-[#647A96] block font-medium">All local taxes included • Free express courier above 1500 EGP</span>
                 </div>
 
                 <!-- Block 4: Installment / ValU Micro-banner -->
-                <div class="bg-[#F0EDE4] p-4 border border-[#B7C7D9] flex items-center justify-between gap-3 shadow-sm hover:border-[#1F2F4F] transition-colors">
+                <div class="bg-[#F0EDE4] p-4 sm:p-4.5 border border-[#B7C7D9] flex items-center justify-between gap-3 shadow-sm hover:border-[#1F2F4F] transition-colors">
                     <div class="flex items-center gap-3.5">
                         <div class="w-9 h-9 bg-white flex items-center justify-center text-[#1F2F4F] shrink-0 border border-[#B7C7D9]">
                             <span class="material-symbols-outlined text-[20px]">payments</span>

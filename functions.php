@@ -846,7 +846,28 @@ function fluff_render_product_card( $product ) {
         $name        = method_exists( $product, 'get_name' ) ? $product->get_name() : get_the_title( $id );
         $link        = get_permalink( $id );
         $image_id    = method_exists( $product, 'get_image_id' ) ? $product->get_image_id() : 0;
-        $image_url   = $image_id ? wp_get_attachment_image_url( $image_id, 'medium_large' ) : ( function_exists('wc_placeholder_img_src') ? wc_placeholder_img_src('medium_large') : '' );
+        if ( ! $image_id && has_post_thumbnail( $id ) ) {
+            $image_id = get_post_thumbnail_id( $id );
+        }
+        if ( ! $image_id && method_exists( $product, 'get_gallery_image_ids' ) ) {
+            $gallery = $product->get_gallery_image_ids();
+            if ( ! empty( $gallery ) ) {
+                $image_id = reset( $gallery );
+            }
+        }
+        $image_url = '';
+        if ( $image_id ) {
+            $image_url = wp_get_attachment_image_url( $image_id, 'large' ) 
+                      ?: ( wp_get_attachment_image_url( $image_id, 'medium_large' ) 
+                      ?: ( wp_get_attachment_image_url( $image_id, 'full' ) 
+                      ?: wp_get_attachment_url( $image_id ) ) );
+        }
+        if ( empty( $image_url ) ) {
+            $meta_img = get_post_meta( $id, '_fluff_image_url', true );
+            if ( ! empty( $meta_img ) ) {
+                $image_url = $meta_img;
+            }
+        }
         if ( empty( $image_url ) ) {
             $image_url = 'https://lh3.googleusercontent.com/aida/AEtjO1VwCeG0fQNpeA4O0djAQOvl7HREfBTeW5_LuJmMdi8G3DNl0G5cgsBzeoP5vE2ubOk5fJ2NiE9BvK-GWiUQ9hiUXjffnzvv3sF4gxMR2jq7oIMp3jHd_AdjcKRzHgMZMBw2CHhp-8zgbcwbTSsSTheLindjCQjB5SqTjlU9JUOIKxoWgye8WEGZ8kmfW2jzROuxRBT5_KnmEgb4-7ScHRSrYv_sVIUPY2014OmI3_LFiVsmlUksZNZ0OD2h';
         }
