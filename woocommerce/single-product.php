@@ -29,17 +29,13 @@ while ( have_posts() ) :
                 <div class="relative w-full aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] rounded-none overflow-hidden bg-surface-container-low shadow-sm border border-[#B7C7D9]/40 group/gallery" id="fluffGalleryStage">
                     <!-- Main Visual Image -->
                     <?php
-                    if ( has_post_thumbnail() ) {
-                        the_post_thumbnail( 'full', array(
-                            'id'    => 'main-product-img',
-                            'class' => 'w-full h-full object-cover transition-opacity duration-300 select-none'
-                        ) );
-                    } else {
-                        ?>
-                        <img id="main-product-img" class="w-full h-full object-cover transition-opacity duration-300 select-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuwfI3EExIhQr-dG-9Dkn2xafcNeRJKorDBABE-77YXDX7HSFYYyQxgo1uBPTMzDCQ26o4knS-8D_kNHxsaBsijVRuJbKPyJ8A2X1y5k0ynaKmQSjPAInpGcE3hpypDQC4CIz2lF88xFmm6VOzjG-z1EyWd90tTgC9sCM8ypGKcsT0IBLilQMDRTzxeyq6suPGIXJBBEshUubURbgugFg4M5VAiNa8my9_Eaa8U8y5yl9BUPnVhkOpJQ" alt="<?php the_title_attribute(); ?>"/>
-                        <?php
+                    $main_thumb_id = get_post_thumbnail_id();
+                    $main_img_url  = $main_thumb_id ? wp_get_attachment_image_url( $main_thumb_id, 'full' ) : '';
+                    if ( empty( $main_img_url ) ) {
+                        $main_img_url = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCuwfI3EExIhQr-dG-9Dkn2xafcNeRJKorDBABE-77YXDX7HSFYYyQxgo1uBPTMzDCQ26o4knS-8D_kNHxsaBsijVRuJbKPyJ8A2X1y5k0ynaKmQSjPAInpGcE3hpypDQC4CIz2lF88xFmm6VOzjG-z1EyWd90tTgC9sCM8ypGKcsT0IBLilQMDRTzxeyq6suPGIXJBBEshUubURbgugFg4M5VAiNa8my9_Eaa8U8y5yl9BUPnVhkOpJQ';
                     }
                     ?>
+                    <img id="main-product-img" class="w-full h-full object-cover transition-opacity duration-300 select-none" src="<?php echo esc_url( $main_img_url ); ?>" alt="<?php the_title_attribute(); ?>"/>
 
                     <!-- Floating Navigation Chevrons -->
                     <button type="button" id="fluffGalleryPrev" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-white bg-[#16233B]/75 hover:bg-[#16233B] hover:text-[#D4B586] backdrop-blur-md border border-white/20 shadow-md transition-all active:scale-90 cursor-pointer" aria-label="Previous Product Image">
@@ -378,15 +374,7 @@ while ( have_posts() ) :
                         <div class="w-10 h-10 border border-[#D4B586] flex items-center justify-center shrink-0" style="background-color: rgba(212, 181, 134, 0.15); color: #D4B586;">
                             <span class="material-symbols-outlined text-[22px]">redeem</span>
                         </div>
-                        <div class="flex-1 min-w-0">
-                            <div class="flex items-center gap-2">
-                                <span class="font-label-badge text-[10px] uppercase font-extrabold tracking-widest text-[#D4B586]">COMPLIMENTARY GIFT</span>
-                                <span class="w-1.5 h-1.5 rounded-full bg-[#D4B586]"></span>
-                                <span class="text-xs text-[#F8F6EF]">Included in Parcel</span>
-                            </div>
-                            <p class="font-label-md text-sm text-white truncate font-bold mt-0.5">Solid 925 Sterling Crescent Moon Pendant</p>
-                            <p class="font-arabic-sub text-xs text-[#D4B586] truncate">هدية قلادة هلال الفضة الخالصة ٩٢٥ داخل علبة طلبك الفاخرة</p>
-                        </div>
+                     
                     </div>
                 </div>
 

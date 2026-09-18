@@ -128,6 +128,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const galleryCounter  = document.getElementById('fluffGalleryCounter');
 
     let galleryList = [];
+    if (mainProductImg && mainProductImg.src) {
+        galleryList.push(mainProductImg.src);
+    }
     if (galleryThumbs.length > 0) {
         galleryThumbs.forEach(thumb => {
             const src = thumb.getAttribute('data-full-img') || (thumb.querySelector('img') ? thumb.querySelector('img').src : thumb.src);
@@ -135,9 +138,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 galleryList.push(src);
             }
         });
-    }
-    if (galleryList.length === 0 && mainProductImg && mainProductImg.src) {
-        galleryList.push(mainProductImg.src);
     }
 
     let activeGalleryIdx = 0;
@@ -152,8 +152,26 @@ document.addEventListener('DOMContentLoaded', function() {
         activeGalleryIdx = index;
 
         if (mainProductImg && galleryList[activeGalleryIdx]) {
-            mainProductImg.style.opacity = '0.5';
-            mainProductImg.src = galleryList[activeGalleryIdx];
+            const nextSrc = galleryList[activeGalleryIdx];
+            mainProductImg.style.opacity = '0.3';
+
+            // Strip responsive srcset and sizes so browser does not lock onto initial cached thumbnail
+            mainProductImg.removeAttribute('srcset');
+            mainProductImg.removeAttribute('sizes');
+            mainProductImg.setAttribute('src', nextSrc);
+            mainProductImg.src = nextSrc;
+
+            // Preload to ensure immediate crisp rendering
+            const preloader = new Image();
+            preloader.onload = function() {
+                mainProductImg.src = nextSrc;
+                mainProductImg.style.opacity = '1';
+            };
+            preloader.onerror = function() {
+                mainProductImg.style.opacity = '1';
+            };
+            preloader.src = nextSrc;
+
             setTimeout(() => {
                 mainProductImg.style.opacity = '1';
             }, 120);
@@ -165,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Highlight active thumbnail and scroll into view
         galleryThumbs.forEach((thumb, i) => {
-            const thumbSrc = thumb.getAttribute('data-full-img');
+            const thumbSrc = thumb.getAttribute('data-full-img') || (thumb.querySelector('img') ? thumb.querySelector('img').src : thumb.src);
             if (thumbSrc === galleryList[activeGalleryIdx] || i === activeGalleryIdx) {
                 thumb.classList.add('border-2', 'border-[#1F2F4F]');
                 thumb.classList.remove('border-[#B7C7D9]');
@@ -177,8 +195,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initialize gallery counter
-    if (galleryCounter && galleryList.length > 0) {
+    // Initialize gallery counter & visibility
+    if (galleryList.length <= 1) {
+        if (prevImgBtn) prevImgBtn.style.display = 'none';
+        if (nextImgBtn) nextImgBtn.style.display = 'none';
+        if (galleryCounter) galleryCounter.style.display = 'none';
+    } else if (galleryCounter) {
         galleryCounter.textContent = `1 / ${galleryList.length}`;
     }
 

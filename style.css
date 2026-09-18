@@ -117,6 +117,40 @@ body.front-page main {
   }
 }
 
+/* ==========================================================================
+   Hero Slick Slider Throttling / FOUC Guard
+   Prevents uninitialized slides from stacking or floating on slow connection
+   ========================================================================== */
+.fluff-hero-slider-container {
+  width: 100% !important;
+  overflow: hidden !important;
+  position: relative !important;
+  background-color: #16233B !important;
+}
+
+.fluff-hero-slick:not(.slick-initialized) {
+  display: block !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.fluff-hero-slick:not(.slick-initialized) .fluff-hero-slide:not(:first-child) {
+  display: none !important;
+}
+
+.fluff-hero-slick:not(.slick-initialized) .fluff-hero-slide:first-child {
+  display: block !important;
+  width: 100% !important;
+  opacity: 1 !important;
+}
+
+.fluff-hero-slick:not(.slick-initialized) .fluff-slick-prev,
+.fluff-hero-slick:not(.slick-initialized) .fluff-slick-next {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 header.fixed aside {
   background-color: #16233B !important;
   border-bottom: 1px solid rgba(212, 181, 134, 0.2) !important;
