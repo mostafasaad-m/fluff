@@ -13,7 +13,7 @@
     <!-- Announcement Bar -->
     <aside class="py-1.5 px-4 flex items-center justify-center overflow-hidden" style="background-color: #16233B; border-bottom: 1px solid rgba(212, 181, 134, 0.2);">
         <span class="font-label-badge text-label-badge uppercase tracking-wider text-center truncate font-extrabold" style="color: #D4B586 !important;">
-            <?php echo esc_html( fluff_get_option('fluff_announcement_text', '50% OFF ON SECOND ITEM // CLEARANCE SALE') ); ?>
+            <?php echo esc_html( fluff_get_option('fluff_announcement_text', 'Free Delivery on orders above 1499 EGP') ); ?>
         </span>
     </aside>
 
