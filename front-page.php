@@ -106,8 +106,8 @@ $fluff_used_ids = array();
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-end justify-between mb-6">
                 <div>
-                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block" style="color: #fffff!important;">ROMANTIC DETAILS</span>
-                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold tracking-tight" style="color: #FFFFF !important;">New Arrivals &amp; Romantic Drops</h2>
+                    <span class="font-label-badge text-label-badge uppercase tracking-wider font-extrabold block" style="color: #FFF!important;">ROMANTIC DETAILS</span>
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-3xl font-extrabold tracking-tight" style="color: #FFF !important;">New Arrivals &amp; Romantic Drops</h2>
                 </div>
                 <a class="font-label-md text-label-md font-bold flex items-center gap-1 hover:text-[#D4B586] transition-colors" style="color: #1F2F4F;" href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : '#' ); ?>">
                     View all <span class="material-symbols-outlined text-[16px]">chevron_right</span>
