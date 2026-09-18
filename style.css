@@ -495,3 +495,81 @@ ul.products li.product button:hover {
   text-decoration: line-through;
   cursor: not-allowed;
 }
+
+/* ==========================================================================
+   FLUFF Hero Artisanal Slick Carousel & Navigation Styles
+   ========================================================================== */
+.fluff-hero-slider-container {
+  position: relative;
+  width: 100%;
+}
+
+.fluff-hero-slick .slick-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Artisanal Slick Dots */
+.fluff-hero-slick .slick-dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 25;
+}
+
+.fluff-hero-slick .slick-dots li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.fluff-hero-slick .slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 24px;
+  height: 4px;
+  padding: 0;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.fluff-hero-slick .slick-dots li button:hover {
+  background: rgba(212, 181, 134, 0.7);
+}
+
+.fluff-hero-slick .slick-dots li.slick-active button {
+  width: 44px;
+  background: #D4B586;
+  box-shadow: 0 0 10px rgba(212, 181, 134, 0.6);
+}
+
+.fluff-hero-slick .slick-dots li button:before {
+  display: none !important;
+}
+
+/* Chic Glassmorphic Arrows */
+.fluff-slick-prev,
+.fluff-slick-next {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.fluff-slick-prev:active,
+.fluff-slick-next:active {
+  transform: translateY(-50%) scale(0.95);
+}

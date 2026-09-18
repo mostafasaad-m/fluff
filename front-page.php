@@ -14,35 +14,58 @@ $fluff_used_ids = array();
 
 <div class="flex flex-col w-full">
 
-    <!-- Hero Promotional Campaign Section -->
-    <section class="relative w-full overflow-hidden bg-[#1F2F4F] text-on-primary">
-        <div class="relative w-full">
-            <a href="#new-drops" class="block w-full cursor-pointer relative group">
-                <picture class="w-full block">
-                    <!-- Desktop Viewport: Wide Hero Image (min-width: 768px) -->
-                    <source media="(min-width: 768px)" srcset="<?php echo esc_url( home_url( '/wp-content/uploads/2026/09/IMG_3498.png' ) ); ?>" />
-                    <!-- Mobile Viewport: Vertical Hero Image (< 768px) -->
-                    <img alt="FLUFF Clearance Campaign" class="w-full h-auto object-cover block" src="<?php echo esc_url( home_url( '/wp-content/uploads/2026/09/ChatGPT-Image-Sep-13-2026-07_19_04-PM-1-1.png' ) ); ?>" />
-                </picture>
-
-                <!-- Hero Editorial Text Overlay: Heading & Subheading each on a 30% -->
-                <div class="absolute inset-0 z-10 flex flex-col justify-center items-start px-5 sm:px-10 lg:px-16 pointer-events-none">
-                    <div class="flex flex-col gap-2 sm:gap-3 max-w-[90%] sm:max-w-[60%] lg:max-w-[38%] pointer-events-auto">
-                        <!-- Heading on 30% overlay -->
-                        <div class="inline-flex self-start py-2 px-4 sm:px-5 border border-white/20 shadow-md backdrop-blur-md transition-transform group-hover:scale-[1.01]" style="background-color: rgba(31, 47, 79, 0.30);">
-                            <h1 class="text-[22px] sm:text-[30px] lg:text-[36px] font-extrabold uppercase tracking-wide leading-tight text-white m-0" style="font-family: 'Bodoni Moda', Didot, 'Bodoni MT', serif; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
-                                Softer Nights
-                            </h1>
-                        </div>
-                        <!-- Subheading on 30% overlay -->
-                        <div class="inline-flex self-start py-1.5 px-3.5 sm:px-4 border border-white/15 shadow-md backdrop-blur-md transition-transform group-hover:scale-[1.01]" style="background-color: rgba(31, 47, 79, 0.30);">
-                            <p class="text-xs sm:text-sm lg:text-[16px] uppercase tracking-[4px] sm:tracking-[5px] font-semibold text-[#D4B586] m-0" style="font-family: 'Cinzel', serif; text-shadow: 0 1px 6px rgba(0,0,0,0.5);">
-                                Brighter Tomorrow
-                            </p>
-                        </div>
-                    </div>
+    <!-- Hero Promotional Campaign Section (Artisanal Slick Slider) -->
+    <section class="relative w-full overflow-hidden bg-[#16233B] text-on-primary">
+        <div class="relative w-full fluff-hero-slider-container group">
+            <div class="fluff-hero-slick w-full" id="fluffHeroSlider">
+                <!-- Slide 1: Winter Collection 1 -->
+                <div class="fluff-hero-slide relative w-full overflow-hidden">
+                    <a href="<?php echo esc_url( home_url( '/category-special-collection/' ) ); ?>" class="block w-full cursor-pointer relative" aria-label="Winter Collection">
+                        <picture class="w-full block">
+                            <source media="(min-width: 768px)" srcset="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/winter-collection-pc-slider.PNG" />
+                            <img alt="FLUFF Winter Collection" class="w-full h-auto object-cover block select-none" src="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/winter-collection-mobile-slider.PNG" fetchpriority="high" />
+                        </picture>
+                    </a>
                 </div>
-            </a>
+
+                <!-- Slide 2: Winter Collection 2 -->
+                <div class="fluff-hero-slide relative w-full overflow-hidden">
+                    <a href="<?php echo esc_url( home_url( '/category-special-collection/' ) ); ?>" class="block w-full cursor-pointer relative" aria-label="Winter Collection Warmth">
+                        <picture class="w-full block">
+                            <source media="(min-width: 768px)" srcset="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/winter-collection-pc-slider2.png" />
+                            <img alt="FLUFF Winter Touch" class="w-full h-auto object-cover block select-none" src="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/winter-collection-mobile-slider2.PNG" loading="lazy" />
+                        </picture>
+                    </a>
+                </div>
+
+                <!-- Slide 3: Winter Collection 3 -->
+                <div class="fluff-hero-slide relative w-full overflow-hidden">
+                    <a href="<?php echo esc_url( home_url( '/category-special-collection/' ) ); ?>" class="block w-full cursor-pointer relative" aria-label="Winter Artisanal Sleepwear">
+                        <picture class="w-full block">
+                            <source media="(min-width: 768px)" srcset="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/winter-collection-pc-slider3.PNG" />
+                            <img alt="FLUFF Artisanal Edit" class="w-full h-auto object-cover block select-none" src="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/winter-collection-mobile-slider3.PNG" loading="lazy" />
+                        </picture>
+                    </a>
+                </div>
+
+                <!-- Slide 4: Visa Off Promo -->
+                <div class="fluff-hero-slide relative w-full overflow-hidden">
+                    <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/') ); ?>" class="block w-full cursor-pointer relative" aria-label="Visa 20% Discount Offer">
+                        <picture class="w-full block">
+                            <source media="(min-width: 768px)" srcset="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/visa-off-pc-slider.PNG" />
+                            <img alt="FLUFF Visa Discount Offer" class="w-full h-auto object-cover block select-none" src="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/visa-off-mobile-slider.PNG" loading="lazy" />
+                        </picture>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Chic Artisanal Floating Navigation Controls -->
+            <button type="button" class="fluff-slick-prev absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white/80 hover:text-white transition-all bg-[#16233B]/40 hover:bg-[#16233B]/80 backdrop-blur-md border border-white/20 hover:border-[#D4B586] hover:scale-105 shadow-lg opacity-0 group-hover:opacity-100 focus:opacity-100" aria-label="Previous Slide">
+                <span class="material-symbols-outlined text-[24px]">chevron_left</span>
+            </button>
+            <button type="button" class="fluff-slick-next absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white/80 hover:text-white transition-all bg-[#16233B]/40 hover:bg-[#16233B]/80 backdrop-blur-md border border-white/20 hover:border-[#D4B586] hover:scale-105 shadow-lg opacity-0 group-hover:opacity-100 focus:opacity-100" aria-label="Next Slide">
+                <span class="material-symbols-outlined text-[24px]">chevron_right</span>
+            </button>
         </div>
 
         <!-- Clearance Urgent Moving News Ticker Bar -->

@@ -4,6 +4,31 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+    // --- Hero Artisanal Slick Carousel ---
+    if (typeof jQuery !== 'undefined' && typeof jQuery.fn.slick !== 'undefined') {
+        const $heroSlider = jQuery('#fluffHeroSlider');
+        if ($heroSlider.length) {
+            $heroSlider.slick({
+                dots: true,
+                arrows: true,
+                prevArrow: jQuery('.fluff-slick-prev'),
+                nextArrow: jQuery('.fluff-slick-next'),
+                infinite: true,
+                speed: 750,
+                fade: true,
+                cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                autoplay: true,
+                autoplaySpeed: 5000,
+                pauseOnHover: true,
+                pauseOnFocus: false,
+                adaptiveHeight: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                touchThreshold: 10
+            });
+        }
+    }
+
     // --- Cart Drawer Toggles ---
     const cartDrawer = document.getElementById('fluffCartDrawer');
     const openCartBtns = document.querySelectorAll('[data-action="open-cart"], .open-cart-btn');

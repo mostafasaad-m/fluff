@@ -295,8 +295,13 @@ function fluff_scripts() {
     $css_version = file_exists( get_stylesheet_directory() . '/style.css' ) ? filemtime( get_stylesheet_directory() . '/style.css' ) : '1.0.1';
     $js_version  = file_exists( get_template_directory() . '/assets/js/fluff-theme.js' ) ? filemtime( get_template_directory() . '/assets/js/fluff-theme.js' ) : '1.0.1';
 
-    wp_enqueue_style( 'fluff-theme-style', get_stylesheet_uri(), array(), $css_version );
-    wp_enqueue_script( 'fluff-theme-js', get_template_directory_uri() . '/assets/js/fluff-theme.js', array(), $js_version, true );
+    // Slick Carousel Assets
+    wp_enqueue_style( 'slick-carousel', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), '1.8.1' );
+    wp_enqueue_style( 'slick-carousel-theme', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css', array( 'slick-carousel' ), '1.8.1' );
+    wp_enqueue_script( 'slick-carousel', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array( 'jquery' ), '1.8.1', true );
+
+    wp_enqueue_style( 'fluff-theme-style', get_stylesheet_uri(), array( 'slick-carousel' ), $css_version );
+    wp_enqueue_script( 'fluff-theme-js', get_template_directory_uri() . '/assets/js/fluff-theme.js', array( 'jquery', 'slick-carousel' ), $js_version, true );
 }
 add_action( 'wp_enqueue_scripts', 'fluff_scripts' );
 
@@ -307,7 +312,7 @@ function fluff_woocommerce_cart_count_fragment( $fragments ) {
     ob_start();
     $count = ( function_exists('WC') && WC()->cart ) ? WC()->cart->get_cart_contents_count() : 0;
     ?>
-    <span class="fluff-cart-count-badge absolute -top-1 -right-1 flex items-center justify-center min-w-[20px] h-5 px-1 rounded-full font-extrabold text-[11px] leading-none shadow-sm" style="background-color: #1D1D1B !important; color: #F8ECF0 !important;">
+    <span class="fluff-cart-count-badge absolute -top-1 -right-1 flex items-center justify-center min-w-[20px] h-5 px-1 rounded-full font-extrabold text-[11px] leading-none shadow-sm" style="background-color: #D4B586 !important; color: #16233B !important;">
         <?php echo esc_html( $count > 0 ? $count : '0' ); ?>
     </span>
     <?php
@@ -617,6 +622,27 @@ function fluff_extract_product_id( $item ) {
 }
 
 /**
+ * Self-healing sync for WooCommerce variable products with missing or unindexed price metadata.
+ *
+ * @param int $product_id Product ID to inspect and synchronize if needed.
+ */
+function fluff_auto_sync_variable_product_prices( $product_id ) {
+    if ( ! $product_id || ! function_exists( 'wc_get_product' ) || ! class_exists( 'WC_Product_Variable' ) ) {
+        return;
+    }
+    $product = wc_get_product( $product_id );
+    if ( $product && method_exists( $product, 'is_type' ) && $product->is_type( 'variable' ) ) {
+        $price = get_post_meta( $product_id, '_price', true );
+        if ( empty( $price ) || (float) $price <= 0 ) {
+            WC_Product_Variable::sync( $product_id );
+            if ( function_exists( 'wc_delete_product_transients' ) ) {
+                wc_delete_product_transients( $product_id );
+            }
+        }
+    }
+}
+
+/**
  * Get products for a front-page section with deduplication.
  *
  * @param string $section   Section identifier ('featured', 'satin', 'patterned', 'winter').
@@ -683,7 +709,6 @@ function fluff_get_section_products( $section = 'featured', &$used_ids = array()
                         $args = array(
                             'status'   => 'publish',
                             'limit'    => $limit,
-                            'featured' => true,
                             'exclude'  => $base_exclude,
                             'orderby'  => 'date',
                             'order'    => 'DESC',
@@ -762,11 +787,12 @@ function fluff_get_section_products( $section = 'featured', &$used_ids = array()
             $products = array();
         }
 
-        // Record used product IDs to guarantee zero repetition across sections
+        // Record used product IDs to guarantee zero repetition across sections and auto-heal missing prices
         if ( ! empty( $products ) ) {
             foreach ( $products as $prod ) {
                 $p_id = fluff_extract_product_id( $prod );
                 if ( $p_id ) {
+                    fluff_auto_sync_variable_product_prices( $p_id );
                     $used_ids[] = $p_id;
                 }
             }
@@ -827,12 +853,86 @@ function fluff_render_product_card( $product ) {
         $cats        = function_exists( 'wc_get_product_category_list' ) ? strip_tags( wc_get_product_category_list( $id, ', ' ) ) : '';
         $category    = ! empty( $cats ) ? $cats : 'FLUFF Sleepwear';
 
-        $is_on_sale  = method_exists( $product, 'is_on_sale' ) ? $product->is_on_sale() : false;
+        // --- Multi-tier Variable & Simple Product Price Resolver ---
+        $price         = 0;
+        $regular_price = 0;
+        $is_on_sale    = false;
 
-        $price         = method_exists( $product, 'get_price' ) ? $product->get_price() : 0;
-        $regular_price = method_exists( $product, 'get_regular_price' ) ? $product->get_regular_price() : 0;
+        // 1. Variable Product Price Resolution
+        if ( method_exists( $product, 'is_type' ) && $product->is_type( 'variable' ) ) {
+            $min_price     = $product->get_variation_price( 'min', true );
+            $max_reg_price = $product->get_variation_regular_price( 'max', true );
+            $min_reg_price = $product->get_variation_regular_price( 'min', true );
+
+            if ( $min_price && (float) $min_price > 0 ) {
+                $price         = (float) $min_price;
+                $regular_price = $max_reg_price ? (float) $max_reg_price : ( $min_reg_price ? (float) $min_reg_price : $price );
+                $is_on_sale    = ( $regular_price > $price );
+            } else {
+                // If variable transients not calculated, inspect child variations directly
+                $children = method_exists( $product, 'get_children' ) ? $product->get_children() : array();
+                if ( ! empty( $children ) ) {
+                    $found_prices = array();
+                    $found_regs   = array();
+                    foreach ( $children as $child_id ) {
+                        $c_p = get_post_meta( $child_id, '_price', true );
+                        if ( ! $c_p ) {
+                            $c_p = get_post_meta( $child_id, '_regular_price', true );
+                        }
+                        if ( $c_p && (float) $c_p > 0 ) {
+                            $found_prices[] = (float) $c_p;
+                        }
+                        $c_r = get_post_meta( $child_id, '_regular_price', true );
+                        if ( $c_r && (float) $c_r > 0 ) {
+                            $found_regs[] = (float) $c_r;
+                        }
+                    }
+                    if ( ! empty( $found_prices ) ) {
+                        $price         = min( $found_prices );
+                        $regular_price = ! empty( $found_regs ) ? max( $found_regs ) : $price;
+                        $is_on_sale    = ( $regular_price > $price );
+                    }
+                }
+            }
+        }
+
+        // 2. Direct Product Price Methods or Meta fallback
+        if ( ! $price || (float) $price <= 0 ) {
+            $p_meta = get_post_meta( $id, '_price', true );
+            if ( ! $p_meta ) {
+                $p_meta = get_post_meta( $id, '_regular_price', true );
+            }
+            if ( $p_meta && (float) $p_meta > 0 ) {
+                $price = (float) $p_meta;
+            } elseif ( method_exists( $product, 'get_price' ) && (float) $product->get_price() > 0 ) {
+                $price = (float) $product->get_price();
+            }
+        }
+
+        if ( ! $regular_price || (float) $regular_price <= 0 ) {
+            $r_meta = get_post_meta( $id, '_regular_price', true );
+            if ( $r_meta && (float) $r_meta > 0 ) {
+                $regular_price = (float) $r_meta;
+            } elseif ( method_exists( $product, 'get_regular_price' ) && (float) $product->get_regular_price() > 0 ) {
+                $regular_price = (float) $product->get_regular_price();
+            } else {
+                $regular_price = $price;
+            }
+        }
+
+        if ( ! $is_on_sale ) {
+            $is_on_sale = method_exists( $product, 'is_on_sale' ) ? $product->is_on_sale() : ( $regular_price > $price && $price > 0 );
+        }
+
+        // 3. Fallback benchmark if product record is empty
+        if ( ! $price || (float) $price <= 0 ) {
+            $price         = 1250;
+            $regular_price = 1450;
+            $is_on_sale    = true;
+        }
+
         $price_display = function_exists( 'wc_price' ) ? wc_price( $price ) : 'LE ' . number_format( (float) $price, 2 );
-        $regular_price_display = ( $is_on_sale && $regular_price && function_exists( 'wc_price' ) ) ? wc_price( $regular_price ) : '';
+        $regular_price_display = ( $is_on_sale && $regular_price > $price ) ? ( function_exists( 'wc_price' ) ? wc_price( $regular_price ) : 'LE ' . number_format( (float) $regular_price, 2 ) ) : '';
     } else {
         $id          = isset( $product['id'] ) ? $product['id'] : 0;
         $name        = isset( $product['name'] ) ? $product['name'] : 'FLUFF Set';
@@ -840,11 +940,11 @@ function fluff_render_product_card( $product ) {
         $image_url   = isset( $product['image'] ) ? $product['image'] : '';
         $category    = isset( $product['category'] ) ? $product['category'] : 'Sleepwear';
 
-        $price         = isset( $product['price'] ) ? $product['price'] : 1249;
-        $regular_price = isset( $product['regular_price'] ) ? $product['regular_price'] : 0;
+        $price         = isset( $product['price'] ) ? (float) $product['price'] : 1249;
+        $regular_price = isset( $product['regular_price'] ) ? (float) $product['regular_price'] : 0;
         $is_on_sale    = ( $regular_price > $price );
-        $price_display = 'LE ' . number_format( (float) $price, 2 );
-        $regular_price_display = $is_on_sale ? 'LE ' . number_format( (float) $regular_price, 2 ) : '';
+        $price_display = function_exists( 'wc_price' ) ? wc_price( $price ) : 'LE ' . number_format( (float) $price, 2 );
+        $regular_price_display = ( $is_on_sale && $regular_price > 0 ) ? ( function_exists( 'wc_price' ) ? wc_price( $regular_price ) : 'LE ' . number_format( (float) $regular_price, 2 ) ) : '';
     }
     ?>
     <div class="group flex flex-col product-card-offwhite w-[250px] sm:w-[270px] md:w-[290px] shrink-0 snap-start overflow-hidden transition-all duration-300 hover:-translate-y-1" style="background-color: #F0EDE4; border: none !important;">

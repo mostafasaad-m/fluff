@@ -9,7 +9,7 @@
 <?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); } ?>
 
 <!-- Global Fixed Top Navigation Header -->
-<header class="fixed top-0 w-full z-50 pt-safe shadow-sm border-b" style="background-color: #F8ECF0; border-color: rgba(29, 29, 27, 0.08);">
+<header class="fixed top-0 w-full z-50 pt-safe shadow-sm border-b" style="background-color: #16233B; border-color: rgba(255, 255, 255, 0.08);">
     <!-- Announcement Bar -->
     <aside class="py-1.5 px-4 flex items-center justify-center overflow-hidden" style="background-color: #16233B; border-bottom: 1px solid rgba(212, 181, 134, 0.2);">
         <span class="font-label-badge text-label-badge uppercase tracking-wider text-center truncate font-extrabold" style="color: #D4B586 !important;">
@@ -22,14 +22,14 @@
         <!-- Left Zone (Mobile: Drawer Toggle & Search; Desktop: Brand Logo) -->
         <div class="flex items-center gap-2 lg:gap-8 z-20">
             <!-- Mobile Menu Drawer Toggle: Strictly hidden on PC (lg:hidden) -->
-            <button aria-label="Open Menu" data-action="open-menu" class="w-11 h-11 flex items-center justify-center transition-opacity lg:hidden mobile-only-control hover:opacity-75" style="color: #1D1D1B !important;">
+            <button aria-label="Open Menu" data-action="open-menu" class="w-11 h-11 flex items-center justify-center transition-opacity lg:hidden mobile-only-control hover:opacity-80" style="color: #FFFFFF !important;">
                 <svg class="w-7 h-7 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
                 </svg>
             </button>
 
             <!-- Mobile Search Toggle: Shown only on mobile left -->
-            <button aria-label="Search" data-action="open-search" class="w-11 h-11 flex items-center justify-center transition-opacity lg:hidden mobile-only-control hover:opacity-75" style="color: #1D1D1B !important;">
+            <button aria-label="Search" data-action="open-search" class="w-11 h-11 flex items-center justify-center transition-opacity lg:hidden mobile-only-control hover:opacity-80" style="color: #FFFFFF !important;">
                 <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
                 </svg>
@@ -37,58 +37,56 @@
 
             <!-- Brand Logo for Desktop PC (Left-aligned) -->
             <div class="hidden lg:flex items-center desktop-only-nav">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex flex-col items-start justify-center group py-0.5">
-                    <span class="fluff-brand-title hover:opacity-90 transition-opacity">FLUFF</span>
-                    <span class="fluff-brand-sub mt-0.5">PREMIUM SLEEPWEAR</span>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center justify-start group py-0.5">
+                    <img src="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/logo-light.png" alt="<?php bloginfo( 'name' ); ?>" class="h-9 sm:h-10 w-auto object-contain transition-opacity group-hover:opacity-90" />
                 </a>
             </div>
         </div>
 
         <!-- Center Logo for Mobile & Tablets (< lg) -->
         <div class="lg:hidden absolute left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-auto z-10 mobile-only-control">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex flex-col items-center justify-center group py-0.5">
-                <span class="fluff-brand-title hover:opacity-90 transition-opacity">FLUFF</span>
-                <span class="fluff-brand-sub mt-0.5">PREMIUM SLEEPWEAR</span>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center justify-center group py-0.5">
+                <img src="https://qamareen.vitaldc.com/wp-content/uploads/2026/09/logo-light.png" alt="<?php bloginfo( 'name' ); ?>" class="h-8 sm:h-9 w-auto object-contain transition-opacity group-hover:opacity-90" />
             </a>
         </div>
 
         <!-- Desktop Navigation Links in Center (lg: and above) -->
         <nav class="hidden lg:flex desktop-only-nav items-center justify-center gap-4 xl:gap-7 font-label-md text-xs xl:text-sm uppercase tracking-wider font-extrabold z-10 flex-1 px-4">
-            <a href="#new-drops" class="hover:opacity-75 transition-opacity py-1 whitespace-nowrap" style="color: #1D1D1B !important;">New Arrivals</a>
-            <a href="#satin-section" class="hover:opacity-75 transition-opacity py-1 whitespace-nowrap" style="color: #1D1D1B !important;">Satin Shorts</a>
-            <a href="#patterned-section" class="hover:opacity-75 transition-opacity py-1 whitespace-nowrap" style="color: #1D1D1B !important;">Everyday &amp; Patterned</a>
-            <a href="#isdal-section" class="hover:opacity-75 transition-opacity py-1 whitespace-nowrap" style="color: #1D1D1B !important;">Isdal Family</a>
-            <a href="<?php echo esc_url( home_url('/sizing-fit-advisor/') ); ?>" class="hover:opacity-75 transition-opacity py-1 whitespace-nowrap" style="color: #1D1D1B !important;">Sizing Guide</a>
-            <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/') ); ?>" class="hover:underline transition-colors py-1 flex items-center gap-1 font-black whitespace-nowrap" style="color: #1D1D1B !important;">
-                Shop All <span class="material-symbols-outlined text-[16px]" style="color: #1D1D1B !important;">chevron_right</span>
+            <a href="#new-drops" class="hover:text-[#D4B586] transition-colors py-1 whitespace-nowrap" style="color: #FFFFFF !important;">New Arrivals</a>
+            <a href="#satin-section" class="hover:text-[#D4B586] transition-colors py-1 whitespace-nowrap" style="color: #FFFFFF !important;">Satin Shorts</a>
+            <a href="#patterned-section" class="hover:text-[#D4B586] transition-colors py-1 whitespace-nowrap" style="color: #FFFFFF !important;">Everyday &amp; Patterned</a>
+            <a href="#isdal-section" class="hover:text-[#D4B586] transition-colors py-1 whitespace-nowrap" style="color: #FFFFFF !important;">Isdal Family</a>
+            <a href="<?php echo esc_url( home_url('/sizing-fit-advisor/') ); ?>" class="hover:text-[#D4B586] transition-colors py-1 whitespace-nowrap" style="color: #FFFFFF !important;">Sizing Guide</a>
+            <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('shop') : home_url('/shop/') ); ?>" class="hover:text-[#D4B586] transition-colors py-1 flex items-center gap-1 font-black whitespace-nowrap" style="color: #FFFFFF !important;">
+                Shop All <span class="material-symbols-outlined text-[16px]" style="color: #FFFFFF !important;">chevron_right</span>
             </a>
         </nav>
 
         <!-- Right Header Actions (Search on PC, Account, Cart) -->
         <div class="flex items-center gap-1 sm:gap-2 z-20 shrink-0">
             <!-- Desktop Search Button (Shown on PC) -->
-            <button aria-label="Search" data-action="open-search" class="hidden lg:flex desktop-only-nav w-11 h-11 items-center justify-center transition-opacity hover:opacity-75" style="color: #1D1D1B !important;">
+            <button aria-label="Search" data-action="open-search" class="hidden lg:flex desktop-only-nav w-11 h-11 items-center justify-center transition-opacity hover:opacity-80" style="color: #FFFFFF !important;">
                 <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
                 </svg>
             </button>
 
             <!-- User Account -->
-            <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : '#' ); ?>" aria-label="User Account" class="w-11 h-11 flex items-center justify-center transition-opacity hover:opacity-75" style="color: #1D1D1B !important;">
+            <a href="<?php echo esc_url( function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : '#' ); ?>" aria-label="User Account" class="w-11 h-11 flex items-center justify-center transition-opacity hover:opacity-80" style="color: #FFFFFF !important;">
                 <svg class="w-6 h-6 stroke-current" fill="none" stroke-width="1.8" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"></path>
                 </svg>
             </a>
 
             <!-- Shopping Bag -->
-            <button aria-label="Shopping Bag" data-action="open-cart" class="relative w-11 h-11 flex items-center justify-center transition-opacity hover:opacity-75" style="color: #1D1D1B !important;">
+            <button aria-label="Shopping Bag" data-action="open-cart" class="relative w-11 h-11 flex items-center justify-center transition-opacity hover:opacity-80" style="color: #FFFFFF !important;">
                 <svg class="w-7 h-7 stroke-current" fill="none" stroke-width="1.7" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25c-.669 0-1.189-.578-1.119-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"></path>
                 </svg>
                 <?php
                 $cart_count = ( function_exists('WC') && WC()->cart ) ? WC()->cart->get_cart_contents_count() : 1;
                 ?>
-                <span class="fluff-cart-count-badge absolute -top-1 -right-1 flex items-center justify-center min-w-[20px] h-5 px-1 rounded-full font-extrabold text-[11px] leading-none shadow-sm" style="background-color: #1D1D1B !important; color: #F8ECF0 !important;">
+                <span class="fluff-cart-count-badge absolute -top-1 -right-1 flex items-center justify-center min-w-[20px] h-5 px-1 rounded-full font-extrabold text-[11px] leading-none shadow-sm" style="background-color: #D4B586 !important; color: #16233B !important;">
                     <?php echo esc_html( $cart_count > 0 ? $cart_count : '1' ); ?>
                 </span>
             </button>
